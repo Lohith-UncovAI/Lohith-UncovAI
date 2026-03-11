@@ -1,3 +1,5 @@
+<!-- profile-refresh: 2026-03-11 -->
+
 <div align="center">
   <img src="./profile/generated/hero.svg" alt="Gotham-inspired hero banner for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
   <img src="./profile/generated/terminal.svg" alt="Mission control panel for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
