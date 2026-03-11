@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Generate README and local SVG sections
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: python3 profile/generate.py
 
       - name: Generate contribution snake

@@ -17,9 +17,8 @@
 </p>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=Lohith-UncovAI&hide_border=true&background=0b1119&ring=f4d35e&fire=f4d35e&currStreakLabel=f4d35e&currStreakNum=f3f6fb&sideNums=f3f6fb&sideLabels=f3f6fb&dates=7f8aa3&stroke=273246&border_radius=0&mode=weekly&date_format=j+M%5B+Y%5D" alt="GitHub streak for lohith" style="display: block; width: 100%; max-width: 1000px;" />
-  <img src="https://github-readme-stats.vercel.app/api?username=Lohith-UncovAI&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=0b1119&title_color=f4d35e&text_color=f3f6fb&icon_color=f4d35e&border_radius=0" alt="GitHub stats for lohith" style="width: 58%; max-width: 580px;" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Lohith-UncovAI&layout=compact&langs_count=8&hide=html%2Ccss%2Cjupyter+notebook&hide_border=true&bg_color=0b1119&title_color=f4d35e&text_color=f3f6fb&border_radius=0" alt="Top languages for lohith" style="width: 40%; max-width: 400px;" />
+  <img src="./profile/generated/activity.svg" alt="Public GitHub activity for lohith" style="display: block; width: 100%; max-width: 1000px;" />
+  <img src="./profile/generated/languages.svg" alt="Language mix for lohith" style="display: block; width: 100%; max-width: 1000px;" />
 </div>
 
 <div align="center">

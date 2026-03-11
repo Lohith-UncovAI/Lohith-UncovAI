@@ -17,9 +17,8 @@
 </p>
 
 <div align="center">
-  <img src="{{README_STREAK_URL}}" alt="GitHub streak for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
-  <img src="{{README_STATS_URL}}" alt="GitHub stats for {{DISPLAY_NAME}}" style="width: 58%; max-width: 580px;" />
-  <img src="{{README_LANGS_URL}}" alt="Top languages for {{DISPLAY_NAME}}" style="width: 40%; max-width: 400px;" />
+  <img src="./profile/generated/activity.svg" alt="Public GitHub activity for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
+  <img src="./profile/generated/languages.svg" alt="Language mix for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
 </div>
 
 <div align="center">

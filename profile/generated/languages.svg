@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1000 228" xmlns="http://www.w3.org/2000/svg" width="1000" height="228" role="img" aria-label="Language mix for lohith">
+  <defs>
+    <style>
+      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
+      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }
+    </style>
+  </defs>
+  <rect width="1000" height="228" fill="#04060b" />
+  <rect x="24" y="18" width="952" height="192" rx="16" fill="#0b1119" stroke="#273246" />
+  <text x="44" y="48" class="mono" fill="#f4d35e" font-size="14">language.mix</text>
+  <text x="44" y="76" class="ui" fill="#f3f6fb" font-size="28" font-weight="700">public repo language spread</text>
+  <text x="44" y="98" class="ui" fill="#7f8aa3" font-size="15">aggregated from owned public repositories</text>
+  <rect x="44" y="118" width="912" height="18" rx="9" fill="#101827" />
+  <rect x="44" y="118" width="912" height="18" rx="9" fill="#f4d35e" />
+  <circle cx="52" cy="159" r="6" fill="#f4d35e" />
+  <text x="68" y="164" class="ui" fill="#f3f6fb" font-size="18">Python</text>
+  <text x="948" y="164" text-anchor="end" class="mono" fill="#aeb8ca" font-size="15">100.0%</text>
+  <text x="948" y="98" text-anchor="end" class="mono" fill="#7f8aa3" font-size="12">public orgs: hidden or none</text>
+</svg>
