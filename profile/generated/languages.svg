@@ -1,19 +1,40 @@
-<svg viewBox="0 0 1000 228" xmlns="http://www.w3.org/2000/svg" width="1000" height="228" role="img" aria-label="Language mix for lohith">
+<svg viewBox="0 0 1000 244" xmlns="http://www.w3.org/2000/svg" width="1000" height="244" role="img" aria-label="Language mix for lohith">
   <defs>
+    <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10141d" />
+      <stop offset="100%" stop-color="#04060a" />
+    </linearGradient>
+    <linearGradient id="bar-sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f6f9ff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#f6f9ff" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#f6f9ff" stop-opacity="0" />
+    </linearGradient>
+    <clipPath id="mix-clip">
+      <rect x="44" y="120" width="912" height="22" rx="11" />
+    </clipPath>
     <style>
+      .display { font-family: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif; letter-spacing: 1px; }
+      .ui { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
       .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
-      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }
     </style>
   </defs>
-  <rect width="1000" height="228" fill="#04060b" />
-  <rect x="24" y="18" width="952" height="192" rx="16" fill="#0b1119" stroke="#273246" />
-  <text x="44" y="48" class="mono" fill="#f4d35e" font-size="14">language.mix</text>
-  <text x="44" y="76" class="ui" fill="#f3f6fb" font-size="28" font-weight="700">public repo language spread</text>
-  <text x="44" y="98" class="ui" fill="#7f8aa3" font-size="15">aggregated from owned public repositories</text>
-  <rect x="44" y="118" width="912" height="18" rx="9" fill="#101827" />
-  <rect x="44" y="118" width="912" height="18" rx="9" fill="#f4d35e" />
-  <circle cx="52" cy="159" r="6" fill="#f4d35e" />
-  <text x="68" y="164" class="ui" fill="#f3f6fb" font-size="18">Python</text>
-  <text x="948" y="164" text-anchor="end" class="mono" fill="#aeb8ca" font-size="15">100.0%</text>
-  <text x="948" y="98" text-anchor="end" class="mono" fill="#7f8aa3" font-size="12">public orgs: hidden or none</text>
+  <rect width="1000" height="244" fill="#000000" />
+  <rect x="24" y="18" width="952" height="208" rx="18" fill="url(#panel-grad)" stroke="#212735" />
+  <text x="44" y="50" class="mono" fill="#f5d25f" font-size="14">language.mix</text>
+  <text x="44" y="82" class="display" fill="#f6f9ff" font-size="34">public repo language spread</text>
+  <text x="44" y="106" class="ui" fill="#b7c0d2" font-size="15">weighted by owned public repositories and rendered as a live signal bar.</text>
+  <text x="952" y="50" text-anchor="end" class="mono" fill="#707b92" font-size="12">owned public repos</text>
+  <rect x="44" y="120" width="912" height="22" rx="11" fill="#0a0d14" />
+  <rect x="44" y="120" width="912" height="22" rx="11" fill="#f5d25f" />
+  <g clip-path="url(#mix-clip)">
+    <rect x="-120" y="120" width="120" height="22" fill="url(#bar-sweep)" opacity="0.42">
+      <animate attributeName="x" values="-120;1020" dur="4.4s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  <circle cx="54" cy="169" r="6" fill="#f5d25f">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite" />
+  </circle>
+  <text x="70" y="174" class="ui" fill="#f6f9ff" font-size="18">Python</text>
+  <text x="948" y="174" text-anchor="end" class="mono" fill="#b7c0d2" font-size="15">100.0%</text>
+  <text x="948" y="106" text-anchor="end" class="mono" fill="#707b92" font-size="12">public orgs hidden or none</text>
 </svg>

@@ -13,7 +13,8 @@
 </p>
 
 <p align="center">
-  Building useful software with a night-shift mindset: sharp interfaces, calm backends, and automations that remove friction.
+  <strong>Midnight builds. Deep black UI. Systems that stay sharp under load.</strong><br/>
+  Gotham-inspired motion scene for <code>{{DISPLAY_NAME}}</code>, generated from local SVGs and live public GitHub signals.
 </p>
 
 <div align="center">

@@ -5,7 +5,6 @@ import re
 from datetime import date, datetime, timedelta
 from html import escape
 from pathlib import Path
-from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 
@@ -51,6 +50,19 @@ def fetch_all_json(url):
             break
         page += 1
     return items
+
+
+def fetch_json_status(url):
+    request = Request(url, headers=github_headers(), method="GET")
+    try:
+        with urlopen(request) as response:
+            response.read()
+            return response.status
+    except Exception as exc:
+        status = getattr(exc, "code", None)
+        if status is not None:
+            return status
+        raise
 
 
 def parse_public_activity(username):
@@ -120,12 +132,7 @@ def fetch_public_stats(username):
     language_rows = []
     for language, amount in top_languages:
         percent = 0 if total_language_bytes == 0 else (amount / total_language_bytes) * 100
-        language_rows.append(
-            {
-                "name": language,
-                "percent": percent,
-            }
-        )
+        language_rows.append({"name": language, "percent": percent})
 
     return {
         "followers": user.get("followers", 0),
@@ -146,6 +153,7 @@ def fetch_org_spotlights(config):
         repos = fetch_all_json(
             f"https://api.github.com/orgs/{login}/repos?type=public&sort=updated"
         )
+        top_repo = max(repos, key=lambda item: item.get("stargazers_count", 0), default=None)
         public_member_status = fetch_json_status(
             f"https://api.github.com/orgs/{login}/public_members/{config['username']}"
         )
@@ -159,25 +167,28 @@ def fetch_org_spotlights(config):
                 "public_repos": org_data.get("public_repos", len(repos)),
                 "followers": org_data.get("followers", 0),
                 "public_membership": public_member_status == 204,
-                "top_repo_name": repos[0]["name"] if repos else "",
-                "top_repo_url": repos[0]["html_url"] if repos else "",
-                "top_repo_desc": repos[0].get("description") or "" if repos else "",
+                "top_repo_name": top_repo["name"] if top_repo else "",
+                "top_repo_url": top_repo["html_url"] if top_repo else "",
+                "top_repo_desc": top_repo.get("description") or "" if top_repo else "",
+                "top_repo_stars": top_repo.get("stargazers_count", 0) if top_repo else 0,
             }
         )
     return orgs
 
 
-def fetch_json_status(url):
-    request = Request(url, headers=github_headers(), method="GET")
-    try:
-        with urlopen(request) as response:
-            response.read()
-            return response.status
-    except Exception as exc:
-        status = getattr(exc, "code", None)
-        if status is not None:
-            return status
-        raise
+def empty_stats():
+    return {
+        "followers": 0,
+        "following": 0,
+        "public_repos": 0,
+        "public_orgs": 0,
+        "total_stars": 0,
+        "languages": [],
+        "total_contributions": 0,
+        "active_days": 0,
+        "current_streak": 0,
+        "best_streak": 0,
+    }
 
 
 def build_context(config, stats):
@@ -199,8 +210,7 @@ def build_context(config, stats):
     context.update(config["theme"])
 
     for key in ("mission", "toolbelt", "focus", "tags"):
-        values = config[key]
-        for index, value in enumerate(values, start=1):
+        for index, value in enumerate(config[key], start=1):
             context[f"{key.upper()}_{index}"] = value
 
     repo = config["repo"]
@@ -229,13 +239,23 @@ def write_text_file(path, content):
     print(f"generated {path.relative_to(SCRIPT_DIR.parent)}")
 
 
+def svg_style_block():
+    return [
+        "    <style>",
+        '      .display { font-family: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif; letter-spacing: 1px; }',
+        '      .ui { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }',
+        '      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }',
+        "    </style>",
+    ]
+
+
 def write_activity_svg(config, stats):
     theme = config["theme"]
     tiles = [
         ("Public Contributions", stats["total_contributions"], "last 12 months"),
-        ("Active Days", stats["active_days"], "days with visible activity"),
+        ("Active Days", stats["active_days"], "days with visible commits"),
         ("Current Streak", stats["current_streak"], "consecutive active days"),
-        ("Best Streak", stats["best_streak"], "longest run so far"),
+        ("Best Streak", stats["best_streak"], "strongest visible run"),
     ]
     chips = [
         f"public repos {stats['public_repos']}",
@@ -243,43 +263,63 @@ def write_activity_svg(config, stats):
         f"followers {stats['followers']}",
         f"following {stats['following']}",
     ]
-
     tile_width = 214
     tile_gap = 18
     tile_xs = [42 + index * (tile_width + tile_gap) for index in range(4)]
 
     svg = [
-        '<svg viewBox="0 0 1000 254" xmlns="http://www.w3.org/2000/svg" width="1000" height="254" role="img" aria-label="Public activity summary for lohith">',
+        f'<svg viewBox="0 0 1000 288" xmlns="http://www.w3.org/2000/svg" width="1000" height="288" role="img" aria-label="Public activity summary for {escape(config["display_name"])}">',
         "  <defs>",
-        "    <style>",
-        '      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }',
-        '      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }',
-        "    </style>",
+        '    <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">',
+        f'      <stop offset="0%" stop-color="#{theme["PANEL_SOFT"]}" />',
+        f'      <stop offset="100%" stop-color="#{theme["PANEL"]}" />',
+        "    </linearGradient>",
+        '    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">',
+        f'      <stop offset="0%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
+        f'      <stop offset="50%" stop-color="#{theme["ACCENT"]}" stop-opacity="0.34" />',
+        f'      <stop offset="100%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
+        "    </linearGradient>",
+        '    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">',
+        f'      <path d="M28 0H0V28" fill="none" stroke="#{theme["EDGE_SOFT"]}" stroke-width="1" opacity="0.24" />',
+        "    </pattern>",
+        *svg_style_block(),
         "  </defs>",
-        f'  <rect width="1000" height="254" fill="#{theme["BG"]}" />',
-        f'  <rect x="24" y="20" width="952" height="210" rx="16" fill="#{theme["PANEL"]}" stroke="#{theme["EDGE"]}" />',
-        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="14">public.signal</text>',
-        f'  <text x="44" y="78" class="ui" fill="#{theme["TEXT"]}" font-size="28" font-weight="700">visible GitHub activity</text>',
-        f'  <text x="44" y="100" class="ui" fill="#{theme["MUTED"]}" font-size="15">public profile data only. org or private work appears here only when GitHub exposes it publicly.</text>',
+        f'  <rect width="1000" height="288" fill="#{theme["BG"]}" />',
+        f'  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" />',
+        '  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#grid)" opacity="0.22" />',
+        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="14">city.telemetry</text>',
+        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">visible GitHub activity</text>',
+        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="15">public profile, repo, and contribution data rendered in a darker Gotham-style deck.</text>',
+        f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">public only</text>',
+        f'  <rect x="-120" y="118" width="120" height="124" fill="url(#sweep)" opacity="0.38">',
+        '    <animate attributeName="x" values="-120;1040" dur="5.6s" repeatCount="indefinite" />',
+        "  </rect>",
     ]
 
-    for x, (label, value, hint) in zip(tile_xs, tiles):
+    for index, (x, (label, value, hint)) in enumerate(zip(tile_xs, tiles)):
+        bar_width = 70 + (index * 12)
         svg.extend(
             [
-                f'  <rect x="{x}" y="122" width="{tile_width}" height="76" rx="12" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
-                f'  <text x="{x + 18}" y="152" class="ui" fill="#{theme["TEXT"]}" font-size="30" font-weight="700">{escape(str(value))}</text>',
-                f'  <text x="{x + 18}" y="174" class="ui" fill="#{theme["ACCENT"]}" font-size="15">{escape(label)}</text>',
-                f'  <text x="{x + 18}" y="191" class="mono" fill="#{theme["MUTED"]}" font-size="11">{escape(hint)}</text>',
+                f'  <rect x="{x}" y="128" width="{tile_width}" height="82" rx="14" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
+                f'  <rect x="{x + 18}" y="142" width="{bar_width}" height="4" rx="2" fill="#{theme["ACCENT"]}">',
+                f'    <animate attributeName="width" values="{max(48, bar_width - 18)};{bar_width + 18};{bar_width}" dur="{3.5 + index * 0.4:.1f}s" repeatCount="indefinite" />',
+                "  </rect>",
+                f'  <circle cx="{x + tile_width - 26}" cy="146" r="5" fill="#{theme["ACCENT"]}">',
+                f'    <animate attributeName="opacity" values="0.2;1;0.2" dur="{1.8 + index * 0.25:.1f}s" repeatCount="indefinite" />',
+                "  </circle>",
+                f'  <text x="{x + 18}" y="178" class="display" fill="#{theme["TEXT"]}" font-size="38">{escape(str(value))}</text>',
+                f'  <text x="{x + 18}" y="198" class="ui" fill="#{theme["ACCENT"]}" font-size="15">{escape(label)}</text>',
+                f'  <text x="{x + 18}" y="216" class="mono" fill="#{theme["MUTED"]}" font-size="11">{escape(hint)}</text>',
             ]
         )
 
     chip_x = 44
-    for chip in chips:
-        width = max(108, len(chip) * 7 + 24)
+    chip_widths = [134, 108, 124, 122]
+    for chip, width in zip(chips, chip_widths):
         svg.extend(
             [
-                f'  <rect x="{chip_x}" y="212" width="{width}" height="24" rx="12" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
-                f'  <text x="{chip_x + width / 2}" y="228" text-anchor="middle" class="mono" fill="#{theme["STEEL"]}" font-size="12">{escape(chip)}</text>',
+                f'  <rect x="{chip_x}" y="228" width="{width}" height="24" rx="12" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
+                f'  <text x="{chip_x + width / 2}" y="244" text-anchor="middle" class="mono" fill="#{theme["STEEL"]}" font-size="11">{escape(chip)}</text>',
             ]
         )
         chip_x += width + 10
@@ -290,54 +330,79 @@ def write_activity_svg(config, stats):
 
 def write_languages_svg(config, stats):
     theme = config["theme"]
-    colors = ["f4d35e", "86a8ff", "5dd39e", "f28482", "cdb4db"]
+    colors = [
+        theme["ACCENT"],
+        theme["ACCENT_2"],
+        "74d3ae",
+        "f28f79",
+        "b997ff",
+    ]
     rows = stats["languages"] or [{"name": "No public code yet", "percent": 100.0}]
 
     svg = [
-        '<svg viewBox="0 0 1000 228" xmlns="http://www.w3.org/2000/svg" width="1000" height="228" role="img" aria-label="Language mix for lohith">',
+        f'<svg viewBox="0 0 1000 244" xmlns="http://www.w3.org/2000/svg" width="1000" height="244" role="img" aria-label="Language mix for {escape(config["display_name"])}">',
         "  <defs>",
-        "    <style>",
-        '      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }',
-        '      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }',
-        "    </style>",
+        '    <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">',
+        f'      <stop offset="0%" stop-color="#{theme["PANEL_SOFT"]}" />',
+        f'      <stop offset="100%" stop-color="#{theme["PANEL"]}" />',
+        "    </linearGradient>",
+        '    <linearGradient id="bar-sweep" x1="0" y1="0" x2="1" y2="0">',
+        f'      <stop offset="0%" stop-color="#{theme["TEXT"]}" stop-opacity="0" />',
+        f'      <stop offset="50%" stop-color="#{theme["TEXT"]}" stop-opacity="0.24" />',
+        f'      <stop offset="100%" stop-color="#{theme["TEXT"]}" stop-opacity="0" />',
+        "    </linearGradient>",
+        '    <clipPath id="mix-clip">',
+        '      <rect x="44" y="120" width="912" height="22" rx="11" />',
+        "    </clipPath>",
+        *svg_style_block(),
         "  </defs>",
-        f'  <rect width="1000" height="228" fill="#{theme["BG"]}" />',
-        f'  <rect x="24" y="18" width="952" height="192" rx="16" fill="#{theme["PANEL"]}" stroke="#{theme["EDGE"]}" />',
-        f'  <text x="44" y="48" class="mono" fill="#{theme["ACCENT"]}" font-size="14">language.mix</text>',
-        f'  <text x="44" y="76" class="ui" fill="#{theme["TEXT"]}" font-size="28" font-weight="700">public repo language spread</text>',
-        f'  <text x="44" y="98" class="ui" fill="#{theme["MUTED"]}" font-size="15">aggregated from owned public repositories</text>',
-        f'  <rect x="44" y="118" width="912" height="18" rx="9" fill="#{theme["PANEL_ALT"]}" />',
+        f'  <rect width="1000" height="244" fill="#{theme["BG"]}" />',
+        f'  <rect x="24" y="18" width="952" height="208" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" />',
+        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="14">language.mix</text>',
+        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">public repo language spread</text>',
+        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="15">weighted by owned public repositories and rendered as a live signal bar.</text>',
+        f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">owned public repos</text>',
+        f'  <rect x="44" y="120" width="912" height="22" rx="11" fill="#{theme["PANEL_ALT"]}" />',
     ]
 
     current_x = 44
-    total_width = 912
+    remaining_width = 912
     for index, row in enumerate(rows):
-        width = total_width if index == len(rows) - 1 else round(total_width * (row["percent"] / 100.0))
-        total_width -= width
+        width = remaining_width if index == len(rows) - 1 else round(912 * (row["percent"] / 100.0))
+        remaining_width -= width
         color = colors[index % len(colors)]
         svg.append(
-            f'  <rect x="{current_x}" y="118" width="{max(width, 0)}" height="18" rx="9" fill="#{color}" />'
+            f'  <rect x="{current_x}" y="120" width="{max(width, 0)}" height="22" rx="11" fill="#{color}" />'
         )
         current_x += width
 
-    start_y = 164
+    svg.extend(
+        [
+            '  <g clip-path="url(#mix-clip)">',
+            '    <rect x="-120" y="120" width="120" height="22" fill="url(#bar-sweep)" opacity="0.42">',
+            '      <animate attributeName="x" values="-120;1020" dur="4.4s" repeatCount="indefinite" />',
+            "    </rect>",
+            "  </g>",
+        ]
+    )
+
+    start_y = 174
     for index, row in enumerate(rows[:5]):
         color = colors[index % len(colors)]
         y = start_y + index * 22
         svg.extend(
             [
-                f'  <circle cx="52" cy="{y - 5}" r="6" fill="#{color}" />',
-                f'  <text x="68" y="{y}" class="ui" fill="#{theme["TEXT"]}" font-size="18">{escape(row["name"])}</text>',
+                f'  <circle cx="54" cy="{y - 5}" r="6" fill="#{color}">',
+                f'    <animate attributeName="opacity" values="0.4;1;0.4" dur="{2.2 + index * 0.3:.1f}s" repeatCount="indefinite" />',
+                "  </circle>",
+                f'  <text x="70" y="{y}" class="ui" fill="#{theme["TEXT"]}" font-size="18">{escape(row["name"])}</text>',
                 f'  <text x="948" y="{y}" text-anchor="end" class="mono" fill="#{theme["STEEL"]}" font-size="15">{row["percent"]:.1f}%</text>',
             ]
         )
 
-    if stats["public_orgs"] == 0:
-        note = "public orgs: hidden or none"
-    else:
-        note = f"public orgs: {stats['public_orgs']}"
+    note = "public orgs hidden or none" if stats["public_orgs"] == 0 else f"public orgs {stats['public_orgs']}"
     svg.append(
-        f'  <text x="948" y="98" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">{escape(note)}</text>'
+        f'  <text x="948" y="106" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">{escape(note)}</text>'
     )
     svg.append("</svg>")
     write_text_file(SCRIPT_DIR / "generated" / "languages.svg", "\n".join(svg))
@@ -345,43 +410,85 @@ def write_languages_svg(config, stats):
 
 def write_orgs_svg(config, orgs):
     theme = config["theme"]
+    display_orgs = orgs[:2]
+    if not display_orgs:
+        display_orgs = [
+            {
+                "label": "No public org spotlight yet",
+                "headline": "Add an organization in config to feature team work here.",
+                "website": "",
+                "location": "",
+                "public_repos": 0,
+                "followers": 0,
+                "public_membership": False,
+                "top_repo_name": "",
+                "top_repo_desc": "",
+                "top_repo_stars": 0,
+            }
+        ]
+
+    card_gap = 18
+    card_width = 912 if len(display_orgs) == 1 else 447
+    positions = [44 + index * (card_width + card_gap) for index in range(len(display_orgs))]
+
     svg = [
-        '<svg viewBox="0 0 1000 240" xmlns="http://www.w3.org/2000/svg" width="1000" height="240" role="img" aria-label="Organization spotlight for lohith">',
+        f'<svg viewBox="0 0 1000 274" xmlns="http://www.w3.org/2000/svg" width="1000" height="274" role="img" aria-label="Organization spotlight for {escape(config["display_name"])}">',
         "  <defs>",
-        "    <style>",
-        '      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }',
-        '      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }',
-        "    </style>",
+        '    <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">',
+        f'      <stop offset="0%" stop-color="#{theme["PANEL_SOFT"]}" />',
+        f'      <stop offset="100%" stop-color="#{theme["PANEL"]}" />',
+        "    </linearGradient>",
+        '    <linearGradient id="card-sweep" x1="0" y1="0" x2="1" y2="0">',
+        f'      <stop offset="0%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
+        f'      <stop offset="50%" stop-color="#{theme["ACCENT"]}" stop-opacity="0.32" />',
+        f'      <stop offset="100%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
+        "    </linearGradient>",
+        *svg_style_block(),
         "  </defs>",
-        f'  <rect width="1000" height="240" fill="#{theme["BG"]}" />',
-        f'  <rect x="24" y="18" width="952" height="204" rx="16" fill="#{theme["PANEL"]}" stroke="#{theme["EDGE"]}" />',
-        f'  <text x="44" y="48" class="mono" fill="#{theme["ACCENT"]}" font-size="14">org.spotlight</text>',
-        f'  <text x="44" y="76" class="ui" fill="#{theme["TEXT"]}" font-size="28" font-weight="700">work beyond personal repos</text>',
-        f'  <text x="44" y="98" class="ui" fill="#{theme["MUTED"]}" font-size="15">organization work can be featured here even when GitHub keeps the actual contribution counts private.</text>',
+        f'  <rect width="1000" height="274" fill="#{theme["BG"]}" />',
+        f'  <rect x="24" y="18" width="952" height="238" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" />',
+        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="14">org.spotlight</text>',
+        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">work beyond personal repos</text>',
+        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="15">organization work can stay private on GitHub while the team itself still gets a dedicated profile spotlight.</text>',
     ]
 
-    for index, org in enumerate(orgs[:2]):
-        x = 44 + index * 462
+    for index, (x, org) in enumerate(zip(positions, display_orgs)):
+        beacon_color = theme["ACCENT"] if org.get("public_membership") else theme["ACCENT_2"]
+        member_text = "membership public" if org.get("public_membership") else "membership hidden"
+        top_repo_name = org.get("top_repo_name") or "repo signal unavailable"
+        top_repo_desc = org.get("top_repo_desc") or "public repo details not exposed here yet"
+
         svg.extend(
             [
-                f'  <rect x="{x}" y="120" width="432" height="82" rx="14" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
-                f'  <text x="{x + 18}" y="148" class="ui" fill="#{theme["TEXT"]}" font-size="24" font-weight="700">{escape(org["label"])}</text>',
-                f'  <text x="{x + 18}" y="170" class="ui" fill="#{theme["ACCENT"]}" font-size="15">{escape(org["headline"])}</text>',
+                f'  <rect x="{x}" y="126" width="{card_width}" height="104" rx="16" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
+                f'  <rect x="{x - 120}" y="126" width="120" height="104" fill="url(#card-sweep)" opacity="0.26">',
+                f'    <animate attributeName="x" values="{x - 120};{x + card_width};{x - 120}" dur="{5.8 + index * 0.6:.1f}s" repeatCount="indefinite" />',
+                "  </rect>",
+                f'  <text x="{x + 18}" y="154" class="display" fill="#{theme["TEXT"]}" font-size="28">{escape(org["label"])}</text>',
+                f'  <text x="{x + 18}" y="176" class="ui" fill="#{theme["ACCENT"]}" font-size="15">{escape(org["headline"])}</text>',
+                f'  <circle cx="{x + card_width - 22}" cy="150" r="5" fill="#{beacon_color}">',
+                f'    <animate attributeName="opacity" values="0.24;1;0.24" dur="{1.9 + index * 0.4:.1f}s" repeatCount="indefinite" />',
+                "  </circle>",
+                f'  <text x="{x + card_width - 36}" y="154" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="11">{escape(member_text)}</text>',
+                f'  <text x="{x + 18}" y="198" class="mono" fill="#{theme["STEEL"]}" font-size="12">top repo: {escape(top_repo_name)}</text>',
+                f'  <text x="{x + 18}" y="216" class="ui" fill="#{theme["MUTED"]}" font-size="13">{escape(top_repo_desc[:58])}</text>',
             ]
         )
-        meta = [
-            f'public repos {org["public_repos"]}',
+
+        chips = [
+            f'repos {org["public_repos"]}',
             f'followers {org["followers"]}',
             f'location {org["location"] or "n/a"}',
         ]
-        member_text = "membership public" if org["public_membership"] else "membership hidden on GitHub"
-        if org["website"]:
-            meta.append(org["website"].replace("https://", ""))
+        if org.get("top_repo_stars"):
+            chips.append(f'stars {org["top_repo_stars"]}')
+        if org.get("website"):
+            chips.append(org["website"].replace("https://", ""))
 
         chip_x = x + 18
-        chip_y = 182
-        for item in meta[:3]:
-            width = max(104, len(item) * 7 + 24)
+        chip_y = 232
+        for item in chips[:4]:
+            width = max(102, min(184, len(item) * 7 + 24))
             svg.extend(
                 [
                     f'  <rect x="{chip_x}" y="{chip_y}" width="{width}" height="22" rx="11" fill="#{theme["PANEL"]}" stroke="#{theme["EDGE"]}" />',
@@ -389,10 +496,6 @@ def write_orgs_svg(config, orgs):
                 ]
             )
             chip_x += width + 8
-
-        svg.append(
-            f'  <text x="{x + 414}" y="148" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">{escape(member_text)}</text>'
-        )
 
     svg.append("</svg>")
     write_text_file(SCRIPT_DIR / "generated" / "orgs.svg", "\n".join(svg))
@@ -405,18 +508,7 @@ def main():
         org_spotlights = fetch_org_spotlights(config)
     except Exception as exc:
         print(f"warning: failed to fetch GitHub data: {exc}")
-        stats = {
-            "followers": 0,
-            "following": 0,
-            "public_repos": 0,
-            "public_orgs": 0,
-            "total_stars": 0,
-            "languages": [],
-            "total_contributions": 0,
-            "active_days": 0,
-            "current_streak": 0,
-            "best_streak": 0,
-        }
+        stats = empty_stats()
         org_spotlights = []
 
     context = build_context(config, stats)

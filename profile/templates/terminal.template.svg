@@ -1,8 +1,25 @@
-<svg viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg" width="1000" height="460" role="img" aria-label="Terminal dashboard for {{DISPLAY_NAME}}">
+<svg viewBox="0 0 1000 508" xmlns="http://www.w3.org/2000/svg" width="1000" height="508" role="img" aria-label="Terminal dashboard for {{DISPLAY_NAME}}">
   <defs>
+    <linearGradient id="console-shell" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#{{PANEL_SOFT}}" />
+      <stop offset="100%" stop-color="#{{PANEL}}" />
+    </linearGradient>
+    <linearGradient id="console-sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#{{ACCENT}}" stop-opacity="0" />
+      <stop offset="50%" stop-color="#{{ACCENT}}" stop-opacity="0.42" />
+      <stop offset="100%" stop-color="#{{ACCENT}}" stop-opacity="0" />
+    </linearGradient>
     <pattern id="scanlines" width="6" height="6" patternUnits="userSpaceOnUse">
       <rect width="6" height="6" fill="transparent" />
-      <rect width="6" height="1" fill="#ffffff" opacity="0.025" />
+      <rect width="6" height="1" fill="#ffffff" opacity="0.028" />
+    </pattern>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#{{EDGE_SOFT}}" stroke-width="1" opacity="0.24" />
     </pattern>
     <filter id="soft-glow">
       <feGaussianBlur stdDeviation="4" result="blur" />
@@ -12,83 +29,115 @@
       </feMerge>
     </filter>
     <style>
-      .display { font-family: "Avenir Next Condensed", "Arial Narrow", "Trebuchet MS", sans-serif; }
+      .display { font-family: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif; letter-spacing: 1px; }
       .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
-      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }
+      .ui { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
     </style>
   </defs>
 
-  <rect width="1000" height="460" fill="#{{BG}}" />
-  <rect x="24" y="24" width="952" height="412" rx="16" fill="#{{PANEL}}" stroke="#{{EDGE}}" />
-  <rect x="24" y="24" width="952" height="38" rx="16" fill="#{{PANEL_ALT}}" />
-  <rect x="24" y="46" width="952" height="390" rx="0" fill="#{{PANEL}}" />
-  <rect x="24" y="62" width="952" height="374" rx="0" fill="url(#scanlines)" />
+  <rect width="1000" height="508" fill="#{{BG}}" />
+  <rect x="24" y="24" width="952" height="460" rx="18" fill="url(#console-shell)" stroke="#{{EDGE}}" />
+  <rect x="24" y="24" width="952" height="40" rx="18" fill="#0d1118" />
+  <rect x="24" y="48" width="952" height="436" fill="#{{PANEL}}" />
+  <rect x="24" y="64" width="952" height="420" fill="url(#scanlines)" opacity="0.82" />
+  <rect x="24" y="64" width="952" height="420" fill="url(#grid)" opacity="0.32" />
+  <rect x="-180" y="24" width="200" height="460" fill="url(#console-sheen)" opacity="0.24">
+    <animate attributeName="x" values="-180;1120" dur="7.2s" repeatCount="indefinite" />
+  </rect>
 
-  <circle cx="48" cy="43" r="6" fill="#ff5f57" />
-  <circle cx="68" cy="43" r="6" fill="#febc2e" />
-  <circle cx="88" cy="43" r="6" fill="#28c840" />
-  <text x="500" y="47" text-anchor="middle" class="mono" fill="#{{MUTED}}" font-size="13">night-console // mission-control</text>
+  <circle cx="48" cy="44" r="6" fill="#ff5f57" />
+  <circle cx="68" cy="44" r="6" fill="#febc2e" />
+  <circle cx="88" cy="44" r="6" fill="#28c840" />
+  <text x="500" y="49" text-anchor="middle" class="mono" fill="#{{MUTED}}" font-size="13">midnight-console // case-file // city-grid</text>
 
-  <line x1="680" y1="78" x2="680" y2="408" stroke="#{{EDGE}}" />
+  <line x1="688" y1="84" x2="688" y2="466" stroke="#{{EDGE}}" />
 
-  <g transform="translate(52 82)">
-    <text class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">❯</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> ./</tspan><tspan>whoami</tspan></text>
-    <text y="40" class="display" fill="#{{TEXT}}" font-size="42" font-weight="700">{{DISPLAY_NAME}}</text>
+  <g transform="translate(52 86)">
+    <rect width="602" height="388" rx="16" fill="#020407" stroke="#{{EDGE_SOFT}}" />
+    <rect x="0" y="0" width="602" height="388" rx="16" fill="url(#grid)" opacity="0.22" />
 
-    <text y="84" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">❯</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> cat</tspan><tspan xml:space="preserve"> mission.md</tspan></text>
-    <text y="116" class="ui" fill="#{{STEEL}}" font-size="20">01. {{MISSION_1}}</text>
-    <text y="144" class="ui" fill="#{{STEEL}}" font-size="20">02. {{MISSION_2}}</text>
-    <text y="172" class="ui" fill="#{{STEEL}}" font-size="20">03. {{MISSION_3}}</text>
+    <text x="22" y="34" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">$</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> ./signal</tspan><tspan xml:space="preserve"> --identify</tspan></text>
+    <text x="22" y="84" class="display" fill="#{{TEXT}}" font-size="50">{{DISPLAY_NAME}}</text>
 
-    <text y="220" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">❯</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> ls</tspan><tspan xml:space="preserve"> toolbelt/</tspan></text>
-    <text y="252" class="ui" fill="#{{TEXT}}" font-size="18">{{TOOLBELT_1}}  •  {{TOOLBELT_2}}  •  {{TOOLBELT_3}}</text>
-    <text y="280" class="ui" fill="#{{TEXT}}" font-size="18">{{TOOLBELT_4}}  •  {{TOOLBELT_5}}  •  {{TOOLBELT_6}}</text>
+    <text x="22" y="126" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">$</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> cat</tspan><tspan xml:space="preserve"> casefile.md</tspan></text>
+    <text x="22" y="158" class="ui" fill="#{{STEEL}}" font-size="20">01. {{MISSION_1}}</text>
+    <text x="22" y="186" class="ui" fill="#{{STEEL}}" font-size="20">02. {{MISSION_2}}</text>
+    <text x="22" y="214" class="ui" fill="#{{STEEL}}" font-size="20">03. {{MISSION_3}}</text>
 
-    <text y="308" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">❯</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> echo</tspan><tspan xml:space="preserve"> $FOCUS</tspan></text>
-    <text y="340" class="ui" fill="#{{ACCENT}}" font-size="20">{{FOCUS_1}} // {{FOCUS_2}} // {{FOCUS_3}}</text>
+    <text x="22" y="258" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">$</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> ls</tspan><tspan xml:space="preserve"> stack/</tspan></text>
+    <text x="22" y="290" class="ui" fill="#{{TEXT}}" font-size="18">{{TOOLBELT_1}}  •  {{TOOLBELT_2}}  •  {{TOOLBELT_3}}</text>
+    <text x="22" y="318" class="ui" fill="#{{TEXT}}" font-size="18">{{TOOLBELT_4}}  •  {{TOOLBELT_5}}  •  {{TOOLBELT_6}}</text>
+
+    <text x="22" y="350" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">$</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> tail -f</tspan><tspan xml:space="preserve"> status.log</tspan></text>
+    <text x="22" y="378" class="ui" fill="#{{ACCENT}}" font-size="19">scanning requests // hardening APIs // automating friction</text>
   </g>
 
-  <g transform="translate(714 88)">
+  <g transform="translate(718 88)">
     <text class="mono" fill="#{{ACCENT}}" font-size="14">watchtower.scan</text>
-    <rect y="18" width="228" height="184" rx="14" fill="#0d1520" stroke="#{{EDGE}}" />
+    <rect y="18" width="224" height="204" rx="16" fill="#020407" stroke="#{{EDGE}}" />
+    <rect y="18" width="224" height="204" rx="16" fill="url(#grid)" opacity="0.18" />
 
-    <g transform="translate(114 110)">
-      <circle r="58" fill="none" stroke="#{{EDGE}}" />
-      <circle r="38" fill="none" stroke="#{{EDGE}}" stroke-opacity="0.75" />
-      <circle r="18" fill="none" stroke="#{{EDGE}}" stroke-opacity="0.55" />
-      <line x1="-62" y1="0" x2="62" y2="0" stroke="#{{EDGE}}" stroke-opacity="0.35" />
-      <line x1="0" y1="-62" x2="0" y2="62" stroke="#{{EDGE}}" stroke-opacity="0.35" />
+    <g transform="translate(112 118)">
+      <circle r="66" fill="none" stroke="#{{EDGE}}" />
+      <circle r="44" fill="none" stroke="#{{EDGE}}" stroke-opacity="0.8" />
+      <circle r="22" fill="none" stroke="#{{EDGE}}" stroke-opacity="0.65" />
+      <line x1="-70" y1="0" x2="70" y2="0" stroke="#{{EDGE}}" stroke-opacity="0.35" />
+      <line x1="0" y1="-70" x2="0" y2="70" stroke="#{{EDGE}}" stroke-opacity="0.35" />
 
-      <g filter="url(#soft-glow)">
-        <line x1="0" y1="0" x2="0" y2="-58" stroke="#{{ACCENT}}" stroke-width="2.5" stroke-linecap="round">
-          <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="5.5s" repeatCount="indefinite" />
-        </line>
-      </g>
+      <path d="M0 0 L0 -68 A68 68 0 0 1 44 -52 Z" fill="#{{ACCENT}}" opacity="0.18" filter="url(#soft-glow)">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="4.8s" repeatCount="indefinite" />
+      </path>
+      <line x1="0" y1="0" x2="0" y2="-68" stroke="#{{ACCENT}}" stroke-width="2.8" stroke-linecap="round" filter="url(#soft-glow)">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="4.8s" repeatCount="indefinite" />
+      </line>
 
-      <circle cx="-22" cy="-28" r="4" fill="#{{ACCENT}}">
-        <animate attributeName="opacity" values="0.25;1;0.25" dur="2.2s" repeatCount="indefinite" />
+      <circle cx="-26" cy="-24" r="4" fill="#{{ACCENT}}">
+        <animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" />
       </circle>
-      <circle cx="26" cy="-12" r="4" fill="#{{ACCENT_2}}">
-        <animate attributeName="opacity" values="1;0.2;1" dur="2.8s" repeatCount="indefinite" />
+      <circle cx="24" cy="-8" r="4" fill="#{{ACCENT_2}}">
+        <animate attributeName="opacity" values="1;0.2;1" dur="2.4s" repeatCount="indefinite" />
       </circle>
-      <circle cx="10" cy="34" r="4" fill="#{{TEXT}}">
-        <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.4s" repeatCount="indefinite" />
+      <circle cx="8" cy="38" r="4" fill="#{{TEXT}}">
+        <animate attributeName="opacity" values="0.16;0.95;0.16" dur="2.9s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#{{ACCENT}}" stroke-opacity="0.26">
+        <animate attributeName="r" values="6;22;6" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="stroke-opacity" values="0.3;0;0.3" dur="2.2s" repeatCount="indefinite" />
       </circle>
     </g>
 
-    <text x="38" y="68" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_1}}</text>
-    <text x="158" y="108" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_2}}</text>
-    <text x="126" y="170" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_3}}</text>
+    <text x="36" y="74" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_1}}</text>
+    <text x="158" y="112" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_2}}</text>
+    <text x="120" y="182" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_3}}</text>
   </g>
 
-  <g transform="translate(714 300)">
-    <text class="mono" fill="#{{ACCENT}}" font-size="14">toolbelt.json</text>
-    <rect y="18" width="228" height="108" rx="14" fill="#0d1520" stroke="#{{EDGE}}" />
-    <text x="18" y="46" class="mono" fill="#{{MUTED}}" font-size="13">01  core     "{{TOOLBELT_1}}"</text>
-    <text x="18" y="66" class="mono" fill="#{{MUTED}}" font-size="13">02  web      "{{TOOLBELT_2}} / {{TOOLBELT_3}}"</text>
-    <text x="18" y="86" class="mono" fill="#{{MUTED}}" font-size="13">03  api      "{{TOOLBELT_4}}"</text>
-    <text x="18" y="106" class="mono" fill="#{{MUTED}}" font-size="13">04  cloud    "{{TOOLBELT_5}} / {{TOOLBELT_6}}"</text>
+  <g transform="translate(718 310)">
+    <text class="mono" fill="#{{ACCENT}}" font-size="14">threat-matrix.json</text>
+    <rect y="18" width="224" height="144" rx="16" fill="#020407" stroke="#{{EDGE}}" />
+    <rect y="18" width="224" height="144" rx="16" fill="url(#grid)" opacity="0.18" />
+
+    <text x="18" y="44" class="mono" fill="#{{MUTED}}" font-size="12">load.ai</text>
+    <rect x="18" y="54" width="188" height="8" rx="4" fill="#{{EDGE_SOFT}}" />
+    <rect x="18" y="54" width="132" height="8" rx="4" fill="#{{ACCENT}}">
+      <animate attributeName="width" values="120;172;138;120" dur="4.4s" repeatCount="indefinite" />
+    </rect>
+
+    <text x="18" y="82" class="mono" fill="#{{MUTED}}" font-size="12">api.guard</text>
+    <rect x="18" y="92" width="188" height="8" rx="4" fill="#{{EDGE_SOFT}}" />
+    <rect x="18" y="92" width="158" height="8" rx="4" fill="#{{ACCENT_2}}">
+      <animate attributeName="width" values="142;184;156;142" dur="3.8s" repeatCount="indefinite" />
+    </rect>
+
+    <text x="18" y="120" class="mono" fill="#{{MUTED}}" font-size="12">ship.rate</text>
+    <rect x="18" y="130" width="188" height="8" rx="4" fill="#{{EDGE_SOFT}}" />
+    <rect x="18" y="130" width="148" height="8" rx="4" fill="#{{TEXT}}">
+      <animate attributeName="width" values="122;174;148;122" dur="4.9s" repeatCount="indefinite" />
+    </rect>
+
+    <rect x="-80" y="18" width="80" height="144" fill="url(#sweep)" opacity="0.32">
+      <animate attributeName="x" values="-80;260" dur="4.8s" repeatCount="indefinite" />
+    </rect>
   </g>
 
-  <text x="52" y="440" class="mono" fill="#{{ACCENT}}" font-size="17">night_shift=enabled <tspan fill="#{{TEXT}}">█</tspan><tspan fill="#{{TEXT}}"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" /></tspan></text>
+  <text x="52" y="500" class="mono" fill="#{{ACCENT}}" font-size="16">night_shift=enabled <tspan fill="#{{TEXT}}">█</tspan><tspan fill="#{{TEXT}}"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" /></tspan></text>
 </svg>
