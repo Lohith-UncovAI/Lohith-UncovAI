@@ -28,6 +28,14 @@
     "Automation",
     "Dark UI"
   ],
+  "org_spotlight": [
+    {
+      "login": "UncovAI",
+      "label": "UncovAI",
+      "headline": "Building AI products with the UncovAI team",
+      "website": "https://uncovai.com/"
+    }
+  ],
   "templates": {
     "README.template.md": "../README.md",
     "hero.template.svg": "generated/hero.svg",

@@ -19,6 +19,7 @@
 <div align="center">
   <img src="./profile/generated/activity.svg" alt="Public GitHub activity for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
   <img src="./profile/generated/languages.svg" alt="Language mix for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
+  <img src="./profile/generated/orgs.svg" alt="Organization work for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
 </div>
 
 <div align="center">

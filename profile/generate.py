@@ -138,6 +138,48 @@ def fetch_public_stats(username):
     }
 
 
+def fetch_org_spotlights(config):
+    orgs = []
+    for org in config.get("org_spotlight", []):
+        login = org["login"]
+        org_data = fetch_json(f"https://api.github.com/orgs/{login}")
+        repos = fetch_all_json(
+            f"https://api.github.com/orgs/{login}/repos?type=public&sort=updated"
+        )
+        public_member_status = fetch_json_status(
+            f"https://api.github.com/orgs/{login}/public_members/{config['username']}"
+        )
+        orgs.append(
+            {
+                "login": login,
+                "label": org.get("label", login),
+                "headline": org.get("headline", ""),
+                "website": org.get("website") or org_data.get("blog") or "",
+                "location": org_data.get("location") or "",
+                "public_repos": org_data.get("public_repos", len(repos)),
+                "followers": org_data.get("followers", 0),
+                "public_membership": public_member_status == 204,
+                "top_repo_name": repos[0]["name"] if repos else "",
+                "top_repo_url": repos[0]["html_url"] if repos else "",
+                "top_repo_desc": repos[0].get("description") or "" if repos else "",
+            }
+        )
+    return orgs
+
+
+def fetch_json_status(url):
+    request = Request(url, headers=github_headers(), method="GET")
+    try:
+        with urlopen(request) as response:
+            response.read()
+            return response.status
+    except Exception as exc:
+        status = getattr(exc, "code", None)
+        if status is not None:
+            return status
+        raise
+
+
 def build_context(config, stats):
     context = {
         "USERNAME": config["username"],
@@ -301,10 +343,66 @@ def write_languages_svg(config, stats):
     write_text_file(SCRIPT_DIR / "generated" / "languages.svg", "\n".join(svg))
 
 
+def write_orgs_svg(config, orgs):
+    theme = config["theme"]
+    svg = [
+        '<svg viewBox="0 0 1000 240" xmlns="http://www.w3.org/2000/svg" width="1000" height="240" role="img" aria-label="Organization spotlight for lohith">',
+        "  <defs>",
+        "    <style>",
+        '      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }',
+        '      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }',
+        "    </style>",
+        "  </defs>",
+        f'  <rect width="1000" height="240" fill="#{theme["BG"]}" />',
+        f'  <rect x="24" y="18" width="952" height="204" rx="16" fill="#{theme["PANEL"]}" stroke="#{theme["EDGE"]}" />',
+        f'  <text x="44" y="48" class="mono" fill="#{theme["ACCENT"]}" font-size="14">org.spotlight</text>',
+        f'  <text x="44" y="76" class="ui" fill="#{theme["TEXT"]}" font-size="28" font-weight="700">work beyond personal repos</text>',
+        f'  <text x="44" y="98" class="ui" fill="#{theme["MUTED"]}" font-size="15">organization work can be featured here even when GitHub keeps the actual contribution counts private.</text>',
+    ]
+
+    for index, org in enumerate(orgs[:2]):
+        x = 44 + index * 462
+        svg.extend(
+            [
+                f'  <rect x="{x}" y="120" width="432" height="82" rx="14" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
+                f'  <text x="{x + 18}" y="148" class="ui" fill="#{theme["TEXT"]}" font-size="24" font-weight="700">{escape(org["label"])}</text>',
+                f'  <text x="{x + 18}" y="170" class="ui" fill="#{theme["ACCENT"]}" font-size="15">{escape(org["headline"])}</text>',
+            ]
+        )
+        meta = [
+            f'public repos {org["public_repos"]}',
+            f'followers {org["followers"]}',
+            f'location {org["location"] or "n/a"}',
+        ]
+        member_text = "membership public" if org["public_membership"] else "membership hidden on GitHub"
+        if org["website"]:
+            meta.append(org["website"].replace("https://", ""))
+
+        chip_x = x + 18
+        chip_y = 182
+        for item in meta[:3]:
+            width = max(104, len(item) * 7 + 24)
+            svg.extend(
+                [
+                    f'  <rect x="{chip_x}" y="{chip_y}" width="{width}" height="22" rx="11" fill="#{theme["PANEL"]}" stroke="#{theme["EDGE"]}" />',
+                    f'  <text x="{chip_x + width / 2}" y="{chip_y + 15}" text-anchor="middle" class="mono" fill="#{theme["STEEL"]}" font-size="11">{escape(item)}</text>',
+                ]
+            )
+            chip_x += width + 8
+
+        svg.append(
+            f'  <text x="{x + 414}" y="148" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">{escape(member_text)}</text>'
+        )
+
+    svg.append("</svg>")
+    write_text_file(SCRIPT_DIR / "generated" / "orgs.svg", "\n".join(svg))
+
+
 def main():
     config = load_config()
     try:
         stats = fetch_public_stats(config["username"])
+        org_spotlights = fetch_org_spotlights(config)
     except Exception as exc:
         print(f"warning: failed to fetch GitHub data: {exc}")
         stats = {
@@ -319,6 +417,7 @@ def main():
             "current_streak": 0,
             "best_streak": 0,
         }
+        org_spotlights = []
 
     context = build_context(config, stats)
 
@@ -331,6 +430,7 @@ def main():
 
     write_activity_svg(config, stats)
     write_languages_svg(config, stats)
+    write_orgs_svg(config, org_spotlights)
 
 
 if __name__ == "__main__":
