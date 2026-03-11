@@ -1,0 +1,94 @@
+<svg viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg" width="1000" height="460" role="img" aria-label="Terminal dashboard for lohith">
+  <defs>
+    <pattern id="scanlines" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="transparent" />
+      <rect width="6" height="1" fill="#ffffff" opacity="0.025" />
+    </pattern>
+    <filter id="soft-glow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      .display { font-family: "Avenir Next Condensed", "Arial Narrow", "Trebuchet MS", sans-serif; }
+      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
+      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="460" fill="#04060b" />
+  <rect x="24" y="24" width="952" height="412" rx="16" fill="#0b1119" stroke="#273246" />
+  <rect x="24" y="24" width="952" height="38" rx="16" fill="#101827" />
+  <rect x="24" y="46" width="952" height="390" rx="0" fill="#0b1119" />
+  <rect x="24" y="62" width="952" height="374" rx="0" fill="url(#scanlines)" />
+
+  <circle cx="48" cy="43" r="6" fill="#ff5f57" />
+  <circle cx="68" cy="43" r="6" fill="#febc2e" />
+  <circle cx="88" cy="43" r="6" fill="#28c840" />
+  <text x="500" y="47" text-anchor="middle" class="mono" fill="#7f8aa3" font-size="13">night-console // mission-control</text>
+
+  <line x1="680" y1="78" x2="680" y2="408" stroke="#273246" />
+
+  <g transform="translate(52 82)">
+    <text class="mono" fill="#f3f6fb" font-size="18"><tspan fill="#f4d35e">❯</tspan><tspan fill="#86a8ff" xml:space="preserve"> ./</tspan><tspan>whoami</tspan></text>
+    <text y="40" class="display" fill="#f3f6fb" font-size="42" font-weight="700">lohith</text>
+
+    <text y="84" class="mono" fill="#f3f6fb" font-size="18"><tspan fill="#f4d35e">❯</tspan><tspan fill="#86a8ff" xml:space="preserve"> cat</tspan><tspan xml:space="preserve"> mission.md</tspan></text>
+    <text y="116" class="ui" fill="#aeb8ca" font-size="20">01. build useful AI products</text>
+    <text y="144" class="ui" fill="#aeb8ca" font-size="20">02. ship backends that stay readable</text>
+    <text y="172" class="ui" fill="#aeb8ca" font-size="20">03. automate the boring parts</text>
+
+    <text y="220" class="mono" fill="#f3f6fb" font-size="18"><tspan fill="#f4d35e">❯</tspan><tspan fill="#86a8ff" xml:space="preserve"> ls</tspan><tspan xml:space="preserve"> toolbelt/</tspan></text>
+    <text y="252" class="ui" fill="#f3f6fb" font-size="18">Python  •  TypeScript  •  React</text>
+    <text y="280" class="ui" fill="#f3f6fb" font-size="18">FastAPI  •  Azure  •  Docker</text>
+
+    <text y="308" class="mono" fill="#f3f6fb" font-size="18"><tspan fill="#f4d35e">❯</tspan><tspan fill="#86a8ff" xml:space="preserve"> echo</tspan><tspan xml:space="preserve"> $FOCUS</tspan></text>
+    <text y="340" class="ui" fill="#f4d35e" font-size="20">AI // APIs // Automation</text>
+  </g>
+
+  <g transform="translate(714 88)">
+    <text class="mono" fill="#f4d35e" font-size="14">watchtower.scan</text>
+    <rect y="18" width="228" height="184" rx="14" fill="#0d1520" stroke="#273246" />
+
+    <g transform="translate(114 110)">
+      <circle r="58" fill="none" stroke="#273246" />
+      <circle r="38" fill="none" stroke="#273246" stroke-opacity="0.75" />
+      <circle r="18" fill="none" stroke="#273246" stroke-opacity="0.55" />
+      <line x1="-62" y1="0" x2="62" y2="0" stroke="#273246" stroke-opacity="0.35" />
+      <line x1="0" y1="-62" x2="0" y2="62" stroke="#273246" stroke-opacity="0.35" />
+
+      <g filter="url(#soft-glow)">
+        <line x1="0" y1="0" x2="0" y2="-58" stroke="#f4d35e" stroke-width="2.5" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="5.5s" repeatCount="indefinite" />
+        </line>
+      </g>
+
+      <circle cx="-22" cy="-28" r="4" fill="#f4d35e">
+        <animate attributeName="opacity" values="0.25;1;0.25" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="26" cy="-12" r="4" fill="#86a8ff">
+        <animate attributeName="opacity" values="1;0.2;1" dur="2.8s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="10" cy="34" r="4" fill="#f3f6fb">
+        <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.4s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <text x="38" y="68" class="mono" fill="#aeb8ca" font-size="12">AI</text>
+    <text x="158" y="108" class="mono" fill="#aeb8ca" font-size="12">APIs</text>
+    <text x="126" y="170" class="mono" fill="#aeb8ca" font-size="12">Automation</text>
+  </g>
+
+  <g transform="translate(714 300)">
+    <text class="mono" fill="#f4d35e" font-size="14">toolbelt.json</text>
+    <rect y="18" width="228" height="108" rx="14" fill="#0d1520" stroke="#273246" />
+    <text x="18" y="46" class="mono" fill="#7f8aa3" font-size="13">01  core     "Python"</text>
+    <text x="18" y="66" class="mono" fill="#7f8aa3" font-size="13">02  web      "TypeScript / React"</text>
+    <text x="18" y="86" class="mono" fill="#7f8aa3" font-size="13">03  api      "FastAPI"</text>
+    <text x="18" y="106" class="mono" fill="#7f8aa3" font-size="13">04  cloud    "Azure / Docker"</text>
+  </g>
+
+  <text x="52" y="440" class="mono" fill="#f4d35e" font-size="17">night_shift=enabled <tspan fill="#f3f6fb">█</tspan><tspan fill="#f3f6fb"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" /></tspan></text>
+</svg>

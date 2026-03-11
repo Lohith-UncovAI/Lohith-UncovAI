@@ -1,0 +1,54 @@
+{
+  "username": "Lohith-UncovAI",
+  "repo": "Lohith-UncovAI/Lohith-UncovAI",
+  "display_name": "lohith",
+  "tagline": "AI systems, backend flows, and developer tools after dark",
+  "timezone": "Europe/Paris",
+  "mission": [
+    "build useful AI products",
+    "ship backends that stay readable",
+    "automate the boring parts"
+  ],
+  "toolbelt": [
+    "Python",
+    "TypeScript",
+    "React",
+    "FastAPI",
+    "Azure",
+    "Docker"
+  ],
+  "focus": [
+    "AI",
+    "APIs",
+    "Automation"
+  ],
+  "tags": [
+    "AI Systems",
+    "Backend",
+    "Automation",
+    "Dark UI"
+  ],
+  "templates": {
+    "README.template.md": "../README.md",
+    "hero.template.svg": "generated/hero.svg",
+    "terminal.template.svg": "generated/terminal.svg",
+    "footer.template.svg": "generated/footer.svg"
+  },
+  "theme": {
+    "BG": "04060b",
+    "SKY_TOP": "07111d",
+    "SKY_BOTTOM": "0b1625",
+    "PANEL": "0b1119",
+    "PANEL_ALT": "101827",
+    "EDGE": "273246",
+    "TEXT": "f3f6fb",
+    "MUTED": "7f8aa3",
+    "ACCENT": "f4d35e",
+    "ACCENT_SOFT": "c5a64d",
+    "ACCENT_2": "86a8ff",
+    "STEEL": "aeb8ca",
+    "FOG": "8fa1c2",
+    "WINDOW": "ffd86f",
+    "DANGER": "ff7b72"
+  }
+}

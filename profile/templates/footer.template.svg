@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1000 140" xmlns="http://www.w3.org/2000/svg" width="1000" height="140" role="img" aria-label="Footer banner for {{DISPLAY_NAME}}">
+  <defs>
+    <linearGradient id="footer-glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#{{ACCENT}}" stop-opacity="0" />
+      <stop offset="50%" stop-color="#{{ACCENT}}" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#{{ACCENT}}" stop-opacity="0" />
+    </linearGradient>
+    <style>
+      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
+      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="140" fill="#{{BG}}" />
+  <path d="M0 118 L0 94 L24 94 L24 68 L50 68 L50 118 Z" fill="#0b1119" />
+  <path d="M40 118 L40 84 L72 84 L72 58 L96 58 L96 118 Z" fill="#101827" />
+  <path d="M92 118 L92 92 L120 92 L120 48 L146 48 L146 118 Z" fill="#0d1520" />
+  <path d="M848 118 L848 86 L880 86 L880 56 L908 56 L908 118 Z" fill="#101827" />
+  <path d="M892 118 L892 90 L918 90 L918 48 L948 48 L948 118 Z" fill="#0d1520" />
+  <path d="M936 118 L936 78 L964 78 L964 62 L986 62 L986 118 Z" fill="#101827" />
+
+  <text x="50" y="48" class="mono" fill="#{{ACCENT}}" font-size="14">signal.lock</text>
+  <text x="50" y="76" class="ui" fill="#{{TEXT}}" font-size="24">tracking {{DISPLAY_NAME}} across the city grid</text>
+  <text x="50" y="102" class="mono" fill="#{{MUTED}}" font-size="15">live stats • contribution snake • gotham-inspired motion • {{YEAR}}</text>
+
+  <line x1="50" y1="118" x2="950" y2="118" stroke="#{{EDGE}}" stroke-width="1" />
+  <rect x="50" y="116" width="120" height="3" fill="url(#footer-glow)">
+    <animate attributeName="x" values="50;830;50" dur="6s" repeatCount="indefinite" />
+  </rect>
+  <text x="886" y="48" class="mono" fill="#{{ACCENT_2}}" font-size="14">exit 0 <tspan fill="#{{TEXT}}">█</tspan><tspan fill="#{{TEXT}}"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" /></tspan></text>
+</svg>

@@ -1,0 +1,94 @@
+<svg viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg" width="1000" height="460" role="img" aria-label="Terminal dashboard for {{DISPLAY_NAME}}">
+  <defs>
+    <pattern id="scanlines" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="transparent" />
+      <rect width="6" height="1" fill="#ffffff" opacity="0.025" />
+    </pattern>
+    <filter id="soft-glow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <style>
+      .display { font-family: "Avenir Next Condensed", "Arial Narrow", "Trebuchet MS", sans-serif; }
+      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
+      .ui { font-family: "Trebuchet MS", "Verdana", sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="460" fill="#{{BG}}" />
+  <rect x="24" y="24" width="952" height="412" rx="16" fill="#{{PANEL}}" stroke="#{{EDGE}}" />
+  <rect x="24" y="24" width="952" height="38" rx="16" fill="#{{PANEL_ALT}}" />
+  <rect x="24" y="46" width="952" height="390" rx="0" fill="#{{PANEL}}" />
+  <rect x="24" y="62" width="952" height="374" rx="0" fill="url(#scanlines)" />
+
+  <circle cx="48" cy="43" r="6" fill="#ff5f57" />
+  <circle cx="68" cy="43" r="6" fill="#febc2e" />
+  <circle cx="88" cy="43" r="6" fill="#28c840" />
+  <text x="500" y="47" text-anchor="middle" class="mono" fill="#{{MUTED}}" font-size="13">night-console // mission-control</text>
+
+  <line x1="680" y1="78" x2="680" y2="408" stroke="#{{EDGE}}" />
+
+  <g transform="translate(52 82)">
+    <text class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">❯</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> ./</tspan><tspan>whoami</tspan></text>
+    <text y="40" class="display" fill="#{{TEXT}}" font-size="42" font-weight="700">{{DISPLAY_NAME}}</text>
+
+    <text y="84" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">❯</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> cat</tspan><tspan xml:space="preserve"> mission.md</tspan></text>
+    <text y="116" class="ui" fill="#{{STEEL}}" font-size="20">01. {{MISSION_1}}</text>
+    <text y="144" class="ui" fill="#{{STEEL}}" font-size="20">02. {{MISSION_2}}</text>
+    <text y="172" class="ui" fill="#{{STEEL}}" font-size="20">03. {{MISSION_3}}</text>
+
+    <text y="220" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">❯</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> ls</tspan><tspan xml:space="preserve"> toolbelt/</tspan></text>
+    <text y="252" class="ui" fill="#{{TEXT}}" font-size="18">{{TOOLBELT_1}}  •  {{TOOLBELT_2}}  •  {{TOOLBELT_3}}</text>
+    <text y="280" class="ui" fill="#{{TEXT}}" font-size="18">{{TOOLBELT_4}}  •  {{TOOLBELT_5}}  •  {{TOOLBELT_6}}</text>
+
+    <text y="308" class="mono" fill="#{{TEXT}}" font-size="18"><tspan fill="#{{ACCENT}}">❯</tspan><tspan fill="#{{ACCENT_2}}" xml:space="preserve"> echo</tspan><tspan xml:space="preserve"> $FOCUS</tspan></text>
+    <text y="340" class="ui" fill="#{{ACCENT}}" font-size="20">{{FOCUS_1}} // {{FOCUS_2}} // {{FOCUS_3}}</text>
+  </g>
+
+  <g transform="translate(714 88)">
+    <text class="mono" fill="#{{ACCENT}}" font-size="14">watchtower.scan</text>
+    <rect y="18" width="228" height="184" rx="14" fill="#0d1520" stroke="#{{EDGE}}" />
+
+    <g transform="translate(114 110)">
+      <circle r="58" fill="none" stroke="#{{EDGE}}" />
+      <circle r="38" fill="none" stroke="#{{EDGE}}" stroke-opacity="0.75" />
+      <circle r="18" fill="none" stroke="#{{EDGE}}" stroke-opacity="0.55" />
+      <line x1="-62" y1="0" x2="62" y2="0" stroke="#{{EDGE}}" stroke-opacity="0.35" />
+      <line x1="0" y1="-62" x2="0" y2="62" stroke="#{{EDGE}}" stroke-opacity="0.35" />
+
+      <g filter="url(#soft-glow)">
+        <line x1="0" y1="0" x2="0" y2="-58" stroke="#{{ACCENT}}" stroke-width="2.5" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="5.5s" repeatCount="indefinite" />
+        </line>
+      </g>
+
+      <circle cx="-22" cy="-28" r="4" fill="#{{ACCENT}}">
+        <animate attributeName="opacity" values="0.25;1;0.25" dur="2.2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="26" cy="-12" r="4" fill="#{{ACCENT_2}}">
+        <animate attributeName="opacity" values="1;0.2;1" dur="2.8s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="10" cy="34" r="4" fill="#{{TEXT}}">
+        <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.4s" repeatCount="indefinite" />
+      </circle>
+    </g>
+
+    <text x="38" y="68" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_1}}</text>
+    <text x="158" y="108" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_2}}</text>
+    <text x="126" y="170" class="mono" fill="#{{STEEL}}" font-size="12">{{FOCUS_3}}</text>
+  </g>
+
+  <g transform="translate(714 300)">
+    <text class="mono" fill="#{{ACCENT}}" font-size="14">toolbelt.json</text>
+    <rect y="18" width="228" height="108" rx="14" fill="#0d1520" stroke="#{{EDGE}}" />
+    <text x="18" y="46" class="mono" fill="#{{MUTED}}" font-size="13">01  core     "{{TOOLBELT_1}}"</text>
+    <text x="18" y="66" class="mono" fill="#{{MUTED}}" font-size="13">02  web      "{{TOOLBELT_2}} / {{TOOLBELT_3}}"</text>
+    <text x="18" y="86" class="mono" fill="#{{MUTED}}" font-size="13">03  api      "{{TOOLBELT_4}}"</text>
+    <text x="18" y="106" class="mono" fill="#{{MUTED}}" font-size="13">04  cloud    "{{TOOLBELT_5}} / {{TOOLBELT_6}}"</text>
+  </g>
+
+  <text x="52" y="440" class="mono" fill="#{{ACCENT}}" font-size="17">night_shift=enabled <tspan fill="#{{TEXT}}">█</tspan><tspan fill="#{{TEXT}}"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" /></tspan></text>
+</svg>
