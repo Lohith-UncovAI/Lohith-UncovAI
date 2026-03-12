@@ -1,8 +1,8 @@
 <svg viewBox="0 0 1000 288" xmlns="http://www.w3.org/2000/svg" width="1000" height="288" role="img" aria-label="Public activity summary for lohith">
   <defs>
     <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#10141d" />
-      <stop offset="100%" stop-color="#04060a" />
+      <stop offset="0%" stop-color="#0b1018" />
+      <stop offset="100%" stop-color="#03050a" />
     </linearGradient>
     <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#f5d25f" stop-opacity="0" />
@@ -10,25 +10,25 @@
       <stop offset="100%" stop-color="#f5d25f" stop-opacity="0" />
     </linearGradient>
     <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M28 0H0V28" fill="none" stroke="#111722" stroke-width="1" opacity="0.24" />
+      <path d="M28 0H0V28" fill="none" stroke="#0f1520" stroke-width="1" opacity="0.24" />
     </pattern>
     <style>
-      .display { font-family: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif; letter-spacing: 1px; }
-      .ui { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
-      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
+      .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.4px; font-weight: 700; }
+      .ui { font-family: "Ubuntu", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+      .mono { font-family: "Ubuntu Mono", "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
     </style>
   </defs>
   <rect width="1000" height="288" fill="#000000" />
-  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#212735" />
+  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#1d2330" />
   <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#grid)" opacity="0.22" />
   <text x="44" y="50" class="mono" fill="#f5d25f" font-size="14">city.telemetry</text>
   <text x="44" y="82" class="display" fill="#f6f9ff" font-size="34">visible GitHub activity</text>
-  <text x="44" y="106" class="ui" fill="#b7c0d2" font-size="15">public profile, repo, and contribution data rendered in a darker Gotham-style deck.</text>
-  <text x="952" y="50" text-anchor="end" class="mono" fill="#707b92" font-size="12">public only</text>
+  <text x="44" y="106" class="ui" fill="#b9c2d8" font-size="15">public profile, repo, and contribution data rendered in a darker Gotham-style deck.</text>
+  <text x="952" y="50" text-anchor="end" class="mono" fill="#73819d" font-size="12">public only</text>
   <rect x="-120" y="118" width="120" height="124" fill="url(#sweep)" opacity="0.38">
     <animate attributeName="x" values="-120;1040" dur="5.6s" repeatCount="indefinite" />
   </rect>
-  <rect x="42" y="128" width="214" height="82" rx="14" fill="#0a0d14" stroke="#212735" />
+  <rect x="42" y="128" width="214" height="82" rx="14" fill="#090d15" stroke="#1d2330" />
   <rect x="60" y="142" width="70" height="4" rx="2" fill="#f5d25f">
     <animate attributeName="width" values="52;88;70" dur="3.5s" repeatCount="indefinite" />
   </rect>
@@ -37,8 +37,8 @@
   </circle>
   <text x="60" y="178" class="display" fill="#f6f9ff" font-size="38">27</text>
   <text x="60" y="198" class="ui" fill="#f5d25f" font-size="15">Public Contributions</text>
-  <text x="60" y="216" class="mono" fill="#707b92" font-size="11">last 12 months</text>
-  <rect x="274" y="128" width="214" height="82" rx="14" fill="#0a0d14" stroke="#212735" />
+  <text x="60" y="216" class="mono" fill="#73819d" font-size="11">last 12 months</text>
+  <rect x="274" y="128" width="214" height="82" rx="14" fill="#090d15" stroke="#1d2330" />
   <rect x="292" y="142" width="82" height="4" rx="2" fill="#f5d25f">
     <animate attributeName="width" values="64;100;82" dur="3.9s" repeatCount="indefinite" />
   </rect>
@@ -47,8 +47,8 @@
   </circle>
   <text x="292" y="178" class="display" fill="#f6f9ff" font-size="38">14</text>
   <text x="292" y="198" class="ui" fill="#f5d25f" font-size="15">Active Days</text>
-  <text x="292" y="216" class="mono" fill="#707b92" font-size="11">days with visible commits</text>
-  <rect x="506" y="128" width="214" height="82" rx="14" fill="#0a0d14" stroke="#212735" />
+  <text x="292" y="216" class="mono" fill="#73819d" font-size="11">days with visible commits</text>
+  <rect x="506" y="128" width="214" height="82" rx="14" fill="#090d15" stroke="#1d2330" />
   <rect x="524" y="142" width="94" height="4" rx="2" fill="#f5d25f">
     <animate attributeName="width" values="76;112;94" dur="4.3s" repeatCount="indefinite" />
   </rect>
@@ -57,8 +57,8 @@
   </circle>
   <text x="524" y="178" class="display" fill="#f6f9ff" font-size="38">1</text>
   <text x="524" y="198" class="ui" fill="#f5d25f" font-size="15">Current Streak</text>
-  <text x="524" y="216" class="mono" fill="#707b92" font-size="11">consecutive active days</text>
-  <rect x="738" y="128" width="214" height="82" rx="14" fill="#0a0d14" stroke="#212735" />
+  <text x="524" y="216" class="mono" fill="#73819d" font-size="11">consecutive active days</text>
+  <rect x="738" y="128" width="214" height="82" rx="14" fill="#090d15" stroke="#1d2330" />
   <rect x="756" y="142" width="106" height="4" rx="2" fill="#f5d25f">
     <animate attributeName="width" values="88;124;106" dur="4.7s" repeatCount="indefinite" />
   </rect>
@@ -67,13 +67,13 @@
   </circle>
   <text x="756" y="178" class="display" fill="#f6f9ff" font-size="38">2</text>
   <text x="756" y="198" class="ui" fill="#f5d25f" font-size="15">Best Streak</text>
-  <text x="756" y="216" class="mono" fill="#707b92" font-size="11">strongest visible run</text>
-  <rect x="44" y="228" width="134" height="24" rx="12" fill="#0a0d14" stroke="#212735" />
-  <text x="111.0" y="244" text-anchor="middle" class="mono" fill="#b7c0d2" font-size="11">public repos 1</text>
-  <rect x="188" y="228" width="108" height="24" rx="12" fill="#0a0d14" stroke="#212735" />
-  <text x="242.0" y="244" text-anchor="middle" class="mono" fill="#b7c0d2" font-size="11">stars 0</text>
-  <rect x="306" y="228" width="124" height="24" rx="12" fill="#0a0d14" stroke="#212735" />
-  <text x="368.0" y="244" text-anchor="middle" class="mono" fill="#b7c0d2" font-size="11">followers 0</text>
-  <rect x="440" y="228" width="122" height="24" rx="12" fill="#0a0d14" stroke="#212735" />
-  <text x="501.0" y="244" text-anchor="middle" class="mono" fill="#b7c0d2" font-size="11">following 1</text>
+  <text x="756" y="216" class="mono" fill="#73819d" font-size="11">strongest visible run</text>
+  <rect x="44" y="228" width="134" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+  <text x="111.0" y="244" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">public repos 1</text>
+  <rect x="188" y="228" width="108" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+  <text x="242.0" y="244" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">stars 0</text>
+  <rect x="306" y="228" width="124" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+  <text x="368.0" y="244" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">followers 0</text>
+  <rect x="440" y="228" width="122" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+  <text x="501.0" y="244" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">following 1</text>
 </svg>

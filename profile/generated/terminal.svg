@@ -1,25 +1,30 @@
-<svg viewBox="0 0 1000 508" xmlns="http://www.w3.org/2000/svg" width="1000" height="508" role="img" aria-label="Terminal dashboard for lohith">
+<svg viewBox="0 0 1000 516" xmlns="http://www.w3.org/2000/svg" width="1000" height="516" role="img" aria-label="Terminal dashboard for lohith">
   <defs>
     <linearGradient id="console-shell" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#10141d" />
-      <stop offset="100%" stop-color="#04060a" />
+      <stop offset="0%" stop-color="#0b1018" />
+      <stop offset="100%" stop-color="#03050a" />
     </linearGradient>
     <linearGradient id="console-sheen" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
-    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="scan-glow" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#f5d25f" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5d25f" stop-opacity="0.42" />
+      <stop offset="50%" stop-color="#f5d25f" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#f5d25f" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="status-sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5d25f" stop-opacity="0" />
+      <stop offset="50%" stop-color="#f5d25f" stop-opacity="0.3" />
       <stop offset="100%" stop-color="#f5d25f" stop-opacity="0" />
     </linearGradient>
     <pattern id="scanlines" width="6" height="6" patternUnits="userSpaceOnUse">
       <rect width="6" height="6" fill="transparent" />
-      <rect width="6" height="1" fill="#ffffff" opacity="0.028" />
+      <rect width="6" height="1" fill="#ffffff" opacity="0.02" />
     </pattern>
     <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M28 0H0V28" fill="none" stroke="#111722" stroke-width="1" opacity="0.24" />
+      <path d="M28 0H0V28" fill="none" stroke="#0f1520" stroke-width="1" opacity="0.2" />
     </pattern>
     <filter id="soft-glow">
       <feGaussianBlur stdDeviation="4" result="blur" />
@@ -28,116 +33,136 @@
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
+    <clipPath id="main-console-clip">
+      <rect x="0" y="0" width="602" height="372" rx="18" />
+    </clipPath>
     <style>
-      .display { font-family: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif; letter-spacing: 1px; }
-      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
-      .ui { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+      .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.5px; font-weight: 700; }
+      .mono { font-family: "Ubuntu Mono", "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
+      .ui { font-family: "Ubuntu", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
     </style>
   </defs>
 
-  <rect width="1000" height="508" fill="#000000" />
-  <rect x="24" y="24" width="952" height="460" rx="18" fill="url(#console-shell)" stroke="#212735" />
-  <rect x="24" y="24" width="952" height="40" rx="18" fill="#0d1118" />
-  <rect x="24" y="48" width="952" height="436" fill="#04060a" />
-  <rect x="24" y="64" width="952" height="420" fill="url(#scanlines)" opacity="0.82" />
-  <rect x="24" y="64" width="952" height="420" fill="url(#grid)" opacity="0.32" />
-  <rect x="-180" y="24" width="200" height="460" fill="url(#console-sheen)" opacity="0.24">
-    <animate attributeName="x" values="-180;1120" dur="7.2s" repeatCount="indefinite" />
+  <rect width="1000" height="516" fill="#000000" />
+  <rect x="24" y="24" width="952" height="468" rx="18" fill="url(#console-shell)" stroke="#1d2330" />
+  <rect x="24" y="24" width="952" height="40" rx="18" fill="#0a0f16" />
+  <rect x="24" y="48" width="952" height="444" fill="#03050a" />
+  <rect x="24" y="64" width="952" height="428" fill="url(#scanlines)" opacity="0.78" />
+  <rect x="24" y="64" width="952" height="428" fill="url(#grid)" opacity="0.26" />
+  <rect x="-180" y="24" width="220" height="468" fill="url(#console-sheen)" opacity="0.22">
+    <animate attributeName="x" values="-180;1120" dur="7.8s" repeatCount="indefinite" />
   </rect>
 
   <circle cx="48" cy="44" r="6" fill="#ff5f57" />
   <circle cx="68" cy="44" r="6" fill="#febc2e" />
   <circle cx="88" cy="44" r="6" fill="#28c840" />
-  <text x="500" y="49" text-anchor="middle" class="mono" fill="#707b92" font-size="13">midnight-console // case-file // city-grid</text>
+  <text x="500" y="49" text-anchor="middle" class="mono" fill="#73819d" font-size="13">midnight-console // bat-signal ops // city-grid</text>
 
-  <line x1="688" y1="84" x2="688" y2="466" stroke="#212735" />
+  <line x1="688" y1="84" x2="688" y2="476" stroke="#1d2330" />
 
   <g transform="translate(52 86)">
-    <rect width="602" height="388" rx="16" fill="#020407" stroke="#111722" />
-    <rect x="0" y="0" width="602" height="388" rx="16" fill="url(#grid)" opacity="0.22" />
+    <rect width="602" height="372" rx="18" fill="#020407" stroke="#0f1520" />
+    <rect x="0" y="0" width="602" height="372" rx="18" fill="url(#grid)" opacity="0.18" />
+    <g clip-path="url(#main-console-clip)">
+      <rect x="0" y="-28" width="602" height="28" fill="url(#scan-glow)" opacity="0.16">
+        <animate attributeName="y" values="-28;372;-28" dur="6.4s" repeatCount="indefinite" />
+      </rect>
 
-    <text x="22" y="34" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#8fb6ff" xml:space="preserve"> ./signal</tspan><tspan xml:space="preserve"> --identify</tspan></text>
-    <text x="22" y="84" class="display" fill="#f6f9ff" font-size="50">lohith</text>
+      <text x="22" y="34" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> ./signal</tspan><tspan xml:space="preserve"> --identify</tspan></text>
+      <text x="22" y="86" class="display" fill="#f6f9ff" font-size="52">lohith</text>
 
-    <text x="22" y="126" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#8fb6ff" xml:space="preserve"> cat</tspan><tspan xml:space="preserve"> casefile.md</tspan></text>
-    <text x="22" y="158" class="ui" fill="#b7c0d2" font-size="20">01. build useful AI products</text>
-    <text x="22" y="186" class="ui" fill="#b7c0d2" font-size="20">02. ship backends that stay readable</text>
-    <text x="22" y="214" class="ui" fill="#b7c0d2" font-size="20">03. automate the boring parts</text>
+      <text x="22" y="128" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> cat</tspan><tspan xml:space="preserve"> casefile.md</tspan></text>
+      <text x="22" y="160" class="ui" fill="#b9c2d8" font-size="20">01. build useful AI products</text>
+      <text x="22" y="188" class="ui" fill="#b9c2d8" font-size="20">02. ship backends that stay readable</text>
+      <text x="22" y="216" class="ui" fill="#b9c2d8" font-size="20">03. automate the boring parts</text>
 
-    <text x="22" y="258" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#8fb6ff" xml:space="preserve"> ls</tspan><tspan xml:space="preserve"> stack/</tspan></text>
-    <text x="22" y="290" class="ui" fill="#f6f9ff" font-size="18">Python  •  TypeScript  •  React</text>
-    <text x="22" y="318" class="ui" fill="#f6f9ff" font-size="18">FastAPI  •  Azure  •  Docker</text>
+      <text x="22" y="258" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> ls</tspan><tspan xml:space="preserve"> stack/</tspan></text>
+      <text x="22" y="290" class="ui" fill="#f6f9ff" font-size="18">Python  •  TypeScript  •  React</text>
+      <text x="22" y="318" class="ui" fill="#f6f9ff" font-size="18">FastAPI  •  Azure  •  Docker</text>
 
-    <text x="22" y="350" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#8fb6ff" xml:space="preserve"> tail -f</tspan><tspan xml:space="preserve"> status.log</tspan></text>
-    <text x="22" y="378" class="ui" fill="#f5d25f" font-size="19">scanning requests // hardening APIs // automating friction</text>
+      <text x="22" y="330" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> tail -f</tspan><tspan xml:space="preserve"> status.log</tspan></text>
+      <text x="22" y="356" class="ui" fill="#f5d25f" font-size="20">scanning requests // hardening APIs // automating friction</text>
+    </g>
   </g>
 
   <g transform="translate(718 88)">
     <text class="mono" fill="#f5d25f" font-size="14">watchtower.scan</text>
-    <rect y="18" width="224" height="204" rx="16" fill="#020407" stroke="#212735" />
-    <rect y="18" width="224" height="204" rx="16" fill="url(#grid)" opacity="0.18" />
+    <rect y="18" width="224" height="208" rx="16" fill="#020407" stroke="#1d2330" />
+    <rect y="18" width="224" height="208" rx="16" fill="url(#grid)" opacity="0.18" />
 
-    <g transform="translate(112 118)">
-      <circle r="66" fill="none" stroke="#212735" />
-      <circle r="44" fill="none" stroke="#212735" stroke-opacity="0.8" />
-      <circle r="22" fill="none" stroke="#212735" stroke-opacity="0.65" />
-      <line x1="-70" y1="0" x2="70" y2="0" stroke="#212735" stroke-opacity="0.35" />
-      <line x1="0" y1="-70" x2="0" y2="70" stroke="#212735" stroke-opacity="0.35" />
+    <g transform="translate(112 122)">
+      <circle r="66" fill="none" stroke="#1d2330" />
+      <circle r="44" fill="none" stroke="#1d2330" stroke-opacity="0.82" />
+      <circle r="22" fill="none" stroke="#1d2330" stroke-opacity="0.62" />
+      <line x1="-70" y1="0" x2="70" y2="0" stroke="#1d2330" stroke-opacity="0.35" />
+      <line x1="0" y1="-70" x2="0" y2="70" stroke="#1d2330" stroke-opacity="0.35" />
 
-      <path d="M0 0 L0 -68 A68 68 0 0 1 44 -52 Z" fill="#f5d25f" opacity="0.18" filter="url(#soft-glow)">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="4.8s" repeatCount="indefinite" />
+      <path d="M0 0 L0 -68 A68 68 0 0 1 46 -50 Z" fill="#f5d25f" opacity="0.16" filter="url(#soft-glow)">
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="4.4s" repeatCount="indefinite" />
       </path>
       <line x1="0" y1="0" x2="0" y2="-68" stroke="#f5d25f" stroke-width="2.8" stroke-linecap="round" filter="url(#soft-glow)">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="4.8s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="4.4s" repeatCount="indefinite" />
       </line>
 
-      <circle cx="-26" cy="-24" r="4" fill="#f5d25f">
-        <animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" />
+      <circle cx="-26" cy="-22" r="4" fill="#f5d25f">
+        <animate attributeName="opacity" values="0.24;1;0.24" dur="2s" repeatCount="indefinite" />
       </circle>
-      <circle cx="24" cy="-8" r="4" fill="#8fb6ff">
-        <animate attributeName="opacity" values="1;0.2;1" dur="2.4s" repeatCount="indefinite" />
+      <circle cx="24" cy="-6" r="4" fill="#96b8ff">
+        <animate attributeName="opacity" values="1;0.2;1" dur="2.6s" repeatCount="indefinite" />
       </circle>
-      <circle cx="8" cy="38" r="4" fill="#f6f9ff">
-        <animate attributeName="opacity" values="0.16;0.95;0.16" dur="2.9s" repeatCount="indefinite" />
+      <circle cx="10" cy="40" r="4" fill="#f6f9ff">
+        <animate attributeName="opacity" values="0.16;0.9;0.16" dur="3s" repeatCount="indefinite" />
       </circle>
-      <circle cx="0" cy="0" r="10" fill="none" stroke="#f5d25f" stroke-opacity="0.26">
-        <animate attributeName="r" values="6;22;6" dur="2.2s" repeatCount="indefinite" />
-        <animate attributeName="stroke-opacity" values="0.3;0;0.3" dur="2.2s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="10" fill="none" stroke="#f5d25f" stroke-opacity="0.24">
+        <animate attributeName="r" values="8;22;8" dur="2.2s" repeatCount="indefinite" />
+        <animate attributeName="stroke-opacity" values="0.28;0;0.28" dur="2.2s" repeatCount="indefinite" />
       </circle>
     </g>
 
-    <text x="36" y="74" class="mono" fill="#b7c0d2" font-size="12">AI</text>
-    <text x="158" y="112" class="mono" fill="#b7c0d2" font-size="12">APIs</text>
-    <text x="120" y="182" class="mono" fill="#b7c0d2" font-size="12">Automation</text>
+    <text x="36" y="76" class="mono" fill="#b9c2d8" font-size="12">AI</text>
+    <text x="160" y="116" class="mono" fill="#b9c2d8" font-size="12">APIs</text>
+    <text x="118" y="188" class="mono" fill="#b9c2d8" font-size="12">Automation</text>
   </g>
 
-  <g transform="translate(718 310)">
+  <g transform="translate(718 316)">
     <text class="mono" fill="#f5d25f" font-size="14">threat-matrix.json</text>
-    <rect y="18" width="224" height="144" rx="16" fill="#020407" stroke="#212735" />
-    <rect y="18" width="224" height="144" rx="16" fill="url(#grid)" opacity="0.18" />
+    <rect y="18" width="224" height="146" rx="16" fill="#020407" stroke="#1d2330" />
+    <rect y="18" width="224" height="146" rx="16" fill="url(#grid)" opacity="0.18" />
 
-    <text x="18" y="44" class="mono" fill="#707b92" font-size="12">load.ai</text>
-    <rect x="18" y="54" width="188" height="8" rx="4" fill="#111722" />
-    <rect x="18" y="54" width="132" height="8" rx="4" fill="#f5d25f">
-      <animate attributeName="width" values="120;172;138;120" dur="4.4s" repeatCount="indefinite" />
+    <text x="18" y="44" class="mono" fill="#73819d" font-size="12">load.ai</text>
+    <rect x="18" y="54" width="188" height="8" rx="4" fill="#0f1520" />
+    <rect x="18" y="54" width="134" height="8" rx="4" fill="#f5d25f">
+      <animate attributeName="width" values="118;176;140;118" dur="4.4s" repeatCount="indefinite" />
     </rect>
 
-    <text x="18" y="82" class="mono" fill="#707b92" font-size="12">api.guard</text>
-    <rect x="18" y="92" width="188" height="8" rx="4" fill="#111722" />
-    <rect x="18" y="92" width="158" height="8" rx="4" fill="#8fb6ff">
-      <animate attributeName="width" values="142;184;156;142" dur="3.8s" repeatCount="indefinite" />
+    <text x="18" y="82" class="mono" fill="#73819d" font-size="12">api.guard</text>
+    <rect x="18" y="92" width="188" height="8" rx="4" fill="#0f1520" />
+    <rect x="18" y="92" width="158" height="8" rx="4" fill="#96b8ff">
+      <animate attributeName="width" values="142;186;156;142" dur="3.8s" repeatCount="indefinite" />
     </rect>
 
-    <text x="18" y="120" class="mono" fill="#707b92" font-size="12">ship.rate</text>
-    <rect x="18" y="130" width="188" height="8" rx="4" fill="#111722" />
-    <rect x="18" y="130" width="148" height="8" rx="4" fill="#f6f9ff">
-      <animate attributeName="width" values="122;174;148;122" dur="4.9s" repeatCount="indefinite" />
-    </rect>
-
-    <rect x="-80" y="18" width="80" height="144" fill="url(#sweep)" opacity="0.32">
-      <animate attributeName="x" values="-80;260" dur="4.8s" repeatCount="indefinite" />
+    <text x="18" y="120" class="mono" fill="#73819d" font-size="12">ship.rate</text>
+    <rect x="18" y="130" width="188" height="8" rx="4" fill="#0f1520" />
+    <rect x="18" y="130" width="150" height="8" rx="4" fill="#f6f9ff">
+      <animate attributeName="width" values="126;176;148;126" dur="4.8s" repeatCount="indefinite" />
     </rect>
   </g>
 
-  <text x="52" y="500" class="mono" fill="#f5d25f" font-size="16">night_shift=enabled <tspan fill="#f6f9ff">█</tspan><tspan fill="#f6f9ff"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite" /></tspan></text>
+  <g transform="translate(52 460)">
+    <rect width="890" height="24" rx="12" fill="#04080e" stroke="#1d2330" />
+    <rect x="-110" y="0" width="110" height="24" fill="url(#status-sweep)" opacity="0.28">
+      <animate attributeName="x" values="-110;940;-110" dur="4.2s" repeatCount="indefinite" />
+    </rect>
+    <text x="16" y="16" class="mono" fill="#f5d25f" font-size="14">night_shift=enabled</text>
+    <text x="720" y="16" class="mono" fill="#73819d" font-size="12">requests stable // skyline live</text>
+    <rect x="816" y="8" width="6" height="8" rx="2" fill="#f5d25f">
+      <animate attributeName="opacity" values="0.22;1;0.22" dur="1.6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="830" y="8" width="6" height="8" rx="2" fill="#96b8ff">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite" />
+    </rect>
+    <rect x="844" y="8" width="6" height="8" rx="2" fill="#f6f9ff">
+      <animate attributeName="opacity" values="0.18;0.92;0.18" dur="2.4s" repeatCount="indefinite" />
+    </rect>
+  </g>
 </svg>

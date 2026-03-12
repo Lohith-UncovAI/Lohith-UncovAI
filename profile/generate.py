@@ -242,9 +242,9 @@ def write_text_file(path, content):
 def svg_style_block():
     return [
         "    <style>",
-        '      .display { font-family: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif; letter-spacing: 1px; }',
-        '      .ui { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; }',
-        '      .mono { font-family: "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }',
+        '      .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.4px; font-weight: 700; }',
+        '      .ui { font-family: "Ubuntu", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }',
+        '      .mono { font-family: "Ubuntu Mono", "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }',
         "    </style>",
     ]
 
