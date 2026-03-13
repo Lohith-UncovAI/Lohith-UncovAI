@@ -313,8 +313,9 @@ def write_activity_svg(config, stats):
             ]
         )
 
-    chip_x = 44
-    chip_widths = [134, 108, 124, 122]
+    chip_gap = 12
+    chip_widths = [128, 128, 128, 128]
+    chip_x = (1000 - (sum(chip_widths) + chip_gap * (len(chip_widths) - 1))) / 2
     for chip, width in zip(chips, chip_widths):
         svg.extend(
             [
@@ -322,7 +323,7 @@ def write_activity_svg(config, stats):
                 f'  <text x="{chip_x + width / 2}" y="244" text-anchor="middle" class="mono" fill="#{theme["STEEL"]}" font-size="11">{escape(chip)}</text>',
             ]
         )
-        chip_x += width + 10
+        chip_x += width + chip_gap
 
     svg.append("</svg>")
     write_text_file(SCRIPT_DIR / "generated" / "activity.svg", "\n".join(svg))
@@ -485,10 +486,11 @@ def write_orgs_svg(config, orgs):
         if org.get("website"):
             chips.append(org["website"].replace("https://", ""))
 
-        chip_x = x + 18
+        chip_widths = [max(102, min(184, len(item) * 7 + 24)) for item in chips[:4]]
+        chip_total = sum(chip_widths) + 8 * max(0, len(chip_widths) - 1)
+        chip_x = x + max(18, (card_width - chip_total) / 2)
         chip_y = 232
-        for item in chips[:4]:
-            width = max(102, min(184, len(item) * 7 + 24))
+        for item, width in zip(chips[:4], chip_widths):
             svg.extend(
                 [
                     f'  <rect x="{chip_x}" y="{chip_y}" width="{width}" height="22" rx="11" fill="#{theme["PANEL"]}" stroke="#{theme["EDGE"]}" />',

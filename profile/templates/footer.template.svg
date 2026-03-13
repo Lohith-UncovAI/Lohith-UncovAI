@@ -43,13 +43,26 @@
     <text class="mono" fill="#{{ACCENT}}" font-size="14">signal.lock</text>
     <text y="40" class="display" fill="#{{TEXT}}" font-size="30">tracking {{DISPLAY_NAME}} across the city grid</text>
     <text y="70" class="mono" fill="#{{MUTED}}" font-size="15">live stats • contribution snake • snow layer • gotham-inspired motion • {{YEAR}}</text>
+  </g>
 
-    <rect y="88" width="190" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="95" y="104" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="12">dark_mode active</text>
-    <rect x="204" y="88" width="188" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="298" y="104" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="12">signal sweep live</text>
-    <rect x="406" y="88" width="202" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="507" y="104" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="12">snake + skyline synced</text>
+  <g transform="translate(199 132)">
+    <rect width="190" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <rect x="12" y="10" width="6" height="6" rx="3" fill="#{{ACCENT}}">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" repeatCount="indefinite" />
+    </rect>
+    <text x="102" y="16" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="12">dark_mode active</text>
+
+    <rect x="206" width="190" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <rect x="218" y="10" width="6" height="6" rx="3" fill="#{{ACCENT_2}}">
+      <animate attributeName="opacity" values="1;0.24;1" dur="1.9s" repeatCount="indefinite" />
+    </rect>
+    <text x="301" y="16" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="12">signal sweep live</text>
+
+    <rect x="412" width="190" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <rect x="424" y="10" width="6" height="6" rx="3" fill="#{{TEXT}}">
+      <animate attributeName="opacity" values="0.24;0.92;0.24" dur="2.2s" repeatCount="indefinite" />
+    </rect>
+    <text x="500" y="16" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="12">snake + skyline synced</text>
   </g>
 
   <line x1="50" y1="152" x2="950" y2="152" stroke="#{{EDGE}}" stroke-width="1" />

@@ -34,7 +34,7 @@
       </feMerge>
     </filter>
     <clipPath id="main-console-clip">
-      <rect x="0" y="0" width="602" height="372" rx="18" />
+      <rect x="0" y="0" width="602" height="384" rx="18" />
     </clipPath>
     <style>
       .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.5px; font-weight: 700; }
@@ -58,14 +58,14 @@
   <circle cx="88" cy="44" r="6" fill="#28c840" />
   <text x="500" y="49" text-anchor="middle" class="mono" fill="#73819d" font-size="13">midnight-console // bat-signal ops // city-grid</text>
 
-  <line x1="688" y1="84" x2="688" y2="476" stroke="#1d2330" />
+  <line x1="688" y1="84" x2="688" y2="482" stroke="#1d2330" />
 
   <g transform="translate(52 86)">
-    <rect width="602" height="372" rx="18" fill="#020407" stroke="#0f1520" />
-    <rect x="0" y="0" width="602" height="372" rx="18" fill="url(#grid)" opacity="0.18" />
+    <rect width="602" height="384" rx="18" fill="#020407" stroke="#0f1520" />
+    <rect x="0" y="0" width="602" height="384" rx="18" fill="url(#grid)" opacity="0.18" />
     <g clip-path="url(#main-console-clip)">
       <rect x="0" y="-28" width="602" height="28" fill="url(#scan-glow)" opacity="0.16">
-        <animate attributeName="y" values="-28;372;-28" dur="6.4s" repeatCount="indefinite" />
+        <animate attributeName="y" values="-28;384;-28" dur="6.4s" repeatCount="indefinite" />
       </rect>
 
       <text x="22" y="34" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> ./signal</tspan><tspan xml:space="preserve"> --identify</tspan></text>
@@ -80,8 +80,8 @@
       <text x="22" y="290" class="ui" fill="#f6f9ff" font-size="18">Python  •  TypeScript  •  React</text>
       <text x="22" y="318" class="ui" fill="#f6f9ff" font-size="18">FastAPI  •  Azure  •  Docker</text>
 
-      <text x="22" y="330" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> tail -f</tspan><tspan xml:space="preserve"> status.log</tspan></text>
-      <text x="22" y="356" class="ui" fill="#f5d25f" font-size="20">scanning requests // hardening APIs // automating friction</text>
+      <text x="22" y="346" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> tail -f</tspan><tspan xml:space="preserve"> status.log</tspan></text>
+      <text x="22" y="372" class="ui" fill="#f5d25f" font-size="20">scanning requests // hardening APIs // automating friction</text>
     </g>
   </g>
 
@@ -148,13 +148,25 @@
     </rect>
   </g>
 
-  <g transform="translate(52 460)">
+  <g transform="translate(52 466)">
     <rect width="890" height="24" rx="12" fill="#04080e" stroke="#1d2330" />
     <rect x="-110" y="0" width="110" height="24" fill="url(#status-sweep)" opacity="0.28">
       <animate attributeName="x" values="-110;940;-110" dur="4.2s" repeatCount="indefinite" />
     </rect>
     <text x="16" y="16" class="mono" fill="#f5d25f" font-size="14">night_shift=enabled</text>
-    <text x="720" y="16" class="mono" fill="#73819d" font-size="12">requests stable // skyline live</text>
+    <rect x="432" y="9" width="4" height="6" rx="2" fill="#f5d25f">
+      <animate attributeName="height" values="6;10;6" dur="1.6s" repeatCount="indefinite" />
+      <animate attributeName="y" values="9;7;9" dur="1.6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="442" y="7" width="4" height="10" rx="2" fill="#96b8ff">
+      <animate attributeName="height" values="10;6;10" dur="1.9s" repeatCount="indefinite" />
+      <animate attributeName="y" values="7;9;7" dur="1.9s" repeatCount="indefinite" />
+    </rect>
+    <rect x="452" y="8" width="4" height="8" rx="2" fill="#f6f9ff">
+      <animate attributeName="height" values="8;12;8" dur="2.2s" repeatCount="indefinite" />
+      <animate attributeName="y" values="8;6;8" dur="2.2s" repeatCount="indefinite" />
+    </rect>
+    <text x="804" y="16" text-anchor="end" class="mono" fill="#73819d" font-size="12">requests stable // skyline live</text>
     <rect x="816" y="8" width="6" height="8" rx="2" fill="#f5d25f">
       <animate attributeName="opacity" values="0.22;1;0.22" dur="1.6s" repeatCount="indefinite" />
     </rect>
