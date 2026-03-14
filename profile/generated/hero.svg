@@ -28,6 +28,14 @@
       <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
+    <linearGradient id="name-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#cfd8e8" />
+    </linearGradient>
+    <linearGradient id="chip-active" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a4510" />
+      <stop offset="100%" stop-color="#2b2108" />
+    </linearGradient>
     <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
       <path d="M56 0H0V56" fill="none" stroke="#0f1520" stroke-width="1" opacity="0.16" />
     </pattern>
@@ -53,6 +61,15 @@
     <circle cx="458" cy="84" r="1.2" fill="#ffffff"><animate attributeName="opacity" values="0.14;0.72;0.14" dur="4.7s" repeatCount="indefinite" /></circle>
     <circle cx="730" cy="60" r="1.3" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.82;0.1" dur="5s" repeatCount="indefinite" /></circle>
     <circle cx="926" cy="46" r="1.5" fill="#ffffff"><animate attributeName="opacity" values="0.12;0.88;0.12" dur="5.8s" repeatCount="indefinite" /></circle>
+  </g>
+
+  <g filter="url(#soft-blur)" opacity="0.1">
+    <ellipse cx="270" cy="176" rx="230" ry="28" fill="#2d394c">
+      <animateTransform attributeName="transform" type="translate" values="-14 0;10 0;-14 0" dur="13s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="782" cy="168" rx="190" ry="24" fill="#2d394c">
+      <animateTransform attributeName="transform" type="translate" values="12 0;-12 0;12 0" dur="12s" repeatCount="indefinite" />
+    </ellipse>
   </g>
 
   <circle cx="820" cy="84" r="58" fill="#f5d25f" opacity="0.08" filter="url(#soft-blur)" />
@@ -106,13 +123,15 @@
 
   <g transform="translate(48 44)">
     <rect width="904" height="178" rx="26" fill="url(#panel-grad)" stroke="#1d2330" opacity="0.98" />
+    <rect x="12" y="12" width="880" height="154" rx="20" fill="none" stroke="#0f1520" opacity="0.9" />
     <rect x="-160" y="0" width="160" height="178" fill="url(#panel-sheen)" opacity="0.16">
       <animate attributeName="x" values="-160;944;-160" dur="6.4s" repeatCount="indefinite" />
     </rect>
-    <line x1="618" y1="28" x2="618" y2="150" stroke="#1d2330" />
+    <path d="M28 24 H92" stroke="#f5d25f" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+    <path d="M812 154 H876" stroke="#f5d25f" stroke-width="2" stroke-linecap="round" opacity="0.42" />
 
     <text x="34" y="34" class="mono" fill="#f5d25f" font-size="13">lohith // ai/ml engineer</text>
-    <text x="34" y="104" class="display" fill="#f6f9ff" font-size="92">lohith</text>
+    <text x="34" y="104" class="display" fill="url(#name-grad)" font-size="92">lohith</text>
     <text x="36" y="136" class="ui" fill="#b9c2d8" font-size="21">AI / ML engineer shipping GenAI,</text>
     <text x="36" y="160" class="ui" fill="#b9c2d8" font-size="21">MLOps, and hybrid cloud systems</text>
 
@@ -121,18 +140,20 @@
       <animate attributeName="width" values="96;188;126;96" dur="4.6s" repeatCount="indefinite" />
     </rect>
 
-    <text x="656" y="42" class="mono" fill="#f5d25f" font-size="13">now shipping</text>
-    <circle cx="872" cy="38" r="5" fill="#f5d25f">
+    <rect x="640" y="22" width="234" height="132" rx="18" fill="#05080d" stroke="#0f1520" />
+    <rect x="652" y="34" width="88" height="22" rx="11" fill="url(#chip-active)" stroke="#a98a2d" />
+    <text x="696" y="49" text-anchor="middle" class="mono" fill="#f5d25f" font-size="11">current arc</text>
+    <circle cx="852" cy="42" r="5" fill="#f5d25f">
       <animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" repeatCount="indefinite" />
     </circle>
-    <text x="656" y="88" class="display" fill="#f6f9ff" font-size="36">UncovAI</text>
-    <text x="656" y="112" class="ui" fill="#b9c2d8" font-size="18">Data Scientist</text>
-    <text x="656" y="136" class="mono" fill="#96b8ff" font-size="13">Dec 2025 - Present</text>
-    <text x="656" y="158" class="ui" fill="#73819d" font-size="14">previously: Ansys and Amadeus</text>
+    <text x="660" y="88" class="display" fill="#f6f9ff" font-size="36">UncovAI</text>
+    <text x="660" y="112" class="ui" fill="#b9c2d8" font-size="18">Data Scientist</text>
+    <text x="660" y="136" class="mono" fill="#96b8ff" font-size="13">Dec 2025 - Present</text>
+    <text x="660" y="156" class="ui" fill="#73819d" font-size="14">previously: Ansys and Amadeus</text>
   </g>
 
   <g transform="translate(112 320)">
-    <rect width="128" height="32" rx="16" fill="#090d15" stroke="#1d2330" />
+    <rect width="128" height="32" rx="16" fill="url(#chip-active)" stroke="#a98a2d" />
     <text x="64" y="21" text-anchor="middle" class="ui" fill="#f5d25f" font-size="14">GenAI</text>
     <rect x="146" width="128" height="32" rx="16" fill="#090d15" stroke="#1d2330" />
     <text x="210" y="21" text-anchor="middle" class="ui" fill="#f6f9ff" font-size="14">MLOps</text>

@@ -14,6 +14,10 @@
       <stop offset="50%" stop-color="#{{ACCENT}}" stop-opacity="0.3" />
       <stop offset="100%" stop-color="#{{ACCENT}}" stop-opacity="0" />
     </linearGradient>
+    <linearGradient id="chip-active" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a4510" />
+      <stop offset="100%" stop-color="#2b2108" />
+    </linearGradient>
     <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
       <path d="M28 0H0V28" fill="none" stroke="#{{EDGE_SOFT}}" stroke-width="1" opacity="0.18" />
     </pattern>
@@ -39,24 +43,34 @@
     <rect x="-80" y="0" width="80" height="64" fill="url(#accent-bar)" opacity="0.18">
       <animate attributeName="x" values="-80;292;-80" dur="4.8s" repeatCount="indefinite" />
     </rect>
+    <rect x="18" y="14" width="66" height="3" rx="1.5" fill="#{{ACCENT}}" />
+    <circle cx="188" cy="18" r="4" fill="#{{ACCENT}}">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" />
+    </circle>
     <text x="18" y="24" class="mono" fill="#{{MUTED}}" font-size="11">public contributions</text>
     <text x="18" y="52" class="display" fill="#{{TEXT}}" font-size="34">{{PUBLIC_CONTRIBUTIONS}}</text>
   </g>
 
   <g transform="translate(274 68)">
     <rect width="212" height="64" rx="18" fill="#05080d" stroke="#{{EDGE}}" />
+    <rect x="18" y="14" width="52" height="3" rx="1.5" fill="#{{ACCENT_2}}" />
+    <circle cx="188" cy="18" r="4" fill="#{{ACCENT_2}}">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.1s" repeatCount="indefinite" />
+    </circle>
     <text x="18" y="24" class="mono" fill="#{{MUTED}}" font-size="11">active days</text>
     <text x="18" y="52" class="display" fill="#{{TEXT}}" font-size="34">{{ACTIVE_DAYS}}</text>
   </g>
 
   <g transform="translate(502 68)">
     <rect width="212" height="64" rx="18" fill="#05080d" stroke="#{{EDGE}}" />
+    <rect x="18" y="14" width="48" height="3" rx="1.5" fill="#{{ACCENT}}" />
     <text x="18" y="24" class="mono" fill="#{{MUTED}}" font-size="11">public repos</text>
     <text x="18" y="52" class="display" fill="#{{TEXT}}" font-size="34">{{PUBLIC_REPOS}}</text>
   </g>
 
   <g transform="translate(730 68)">
     <rect width="212" height="64" rx="18" fill="#05080d" stroke="#{{EDGE}}" />
+    <rect x="18" y="14" width="42" height="3" rx="1.5" fill="#{{ACCENT_2}}" />
     <text x="18" y="24" class="mono" fill="#{{MUTED}}" font-size="11">followers</text>
     <text x="18" y="52" class="display" fill="#{{TEXT}}" font-size="34">{{FOLLOWERS}}</text>
   </g>
@@ -65,6 +79,7 @@
     <rect width="548" height="248" rx="22" fill="#020407" stroke="#{{EDGE_SOFT}}" />
     <rect x="0" y="0" width="548" height="248" rx="22" fill="url(#grid)" opacity="0.1" />
     <text x="24" y="34" class="mono" fill="#{{ACCENT}}" font-size="13">about</text>
+    <rect x="24" y="40" width="82" height="3" rx="1.5" fill="#{{ACCENT}}" />
     <text x="24" y="58" class="ui" fill="#{{STEEL}}" font-size="15">what I build and how I ship it</text>
 
     <circle cx="30" cy="86" r="4" fill="#{{ACCENT}}" />
@@ -75,6 +90,7 @@
     <text x="44" y="148" class="ui" fill="#{{TEXT}}" font-size="16">{{MISSION_3}}</text>
 
     <text x="24" y="168" class="mono" fill="#{{ACCENT}}" font-size="13">recent path</text>
+    <rect x="20" y="176" width="508" height="72" rx="16" fill="#05080d" stroke="#{{EDGE}}" />
 
     <text x="24" y="192" class="display" fill="#{{TEXT}}" font-size="22">{{EXPERIENCE_1_COMPANY}}</text>
     <text x="168" y="192" class="ui" fill="#{{STEEL}}" font-size="14">{{EXPERIENCE_1_ROLE}}</text>
@@ -94,7 +110,7 @@
     <rect x="0" y="0" width="324" height="108" rx="22" fill="url(#grid)" opacity="0.1" />
     <text x="20" y="32" class="mono" fill="#{{ACCENT}}" font-size="13">stack</text>
 
-    <rect x="20" y="48" width="90" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <rect x="20" y="48" width="90" height="24" rx="12" fill="url(#chip-active)" stroke="#{{ACCENT_SOFT}}" />
     <text x="65" y="64" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="12">{{TOOLBELT_1}}</text>
     <rect x="118" y="48" width="90" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
     <text x="163" y="64" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="12">{{TOOLBELT_2}}</text>
@@ -112,13 +128,17 @@
   <g transform="translate(618 280)">
     <rect width="324" height="122" rx="22" fill="#020407" stroke="#{{EDGE_SOFT}}" />
     <rect x="0" y="0" width="324" height="122" rx="22" fill="url(#grid)" opacity="0.1" />
+    <rect x="-80" y="0" width="80" height="122" fill="url(#accent-bar)" opacity="0.18">
+      <animate attributeName="x" values="-80;404;-80" dur="5.2s" repeatCount="indefinite" />
+    </rect>
     <text x="20" y="32" class="mono" fill="#{{ACCENT}}" font-size="13">org spotlight</text>
     <circle cx="292" cy="28" r="5" fill="#{{ACCENT}}">
       <animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" repeatCount="indefinite" />
     </circle>
     <text x="20" y="62" class="display" fill="#{{TEXT}}" font-size="30">{{ORG_1_LABEL}}</text>
     <text x="20" y="82" class="ui" fill="#{{STEEL}}" font-size="14">production GenAI and evaluation workflows</text>
-    <text x="20" y="102" class="mono" fill="#{{MUTED}}" font-size="11">{{ORG_1_WEBSITE}}</text>
+    <rect x="20" y="90" width="92" height="20" rx="10" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="66" y="104" text-anchor="middle" class="mono" fill="#{{MUTED}}" font-size="11">{{ORG_1_WEBSITE}}</text>
   </g>
 
   <g transform="translate(46 420)">
@@ -127,5 +147,14 @@
       <animate attributeName="x" values="-110;936;-110" dur="4.8s" repeatCount="indefinite" />
     </rect>
     <text x="14" y="12" class="mono" fill="#{{ACCENT}}" font-size="11">production systems • evaluation-first delivery • stakeholder communication</text>
+    <circle cx="860" cy="9" r="2" fill="#{{ACCENT}}">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="872" cy="9" r="2" fill="#{{ACCENT_2}}">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="884" cy="9" r="2" fill="#{{TEXT}}">
+      <animate attributeName="opacity" values="0.24;0.92;0.24" dur="2.4s" repeatCount="indefinite" />
+    </circle>
   </g>
 </svg>
