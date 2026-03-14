@@ -191,6 +191,15 @@ def empty_stats():
     }
 
 
+def parse_experience_row(row):
+    company, role, period = (item.strip() for item in (row.split("//", 2) + ["", "", ""])[:3])
+    return {
+        "company": company,
+        "role": role,
+        "period": period,
+    }
+
+
 def build_context(config, stats):
     context = {
         "USERNAME": config["username"],
@@ -209,9 +218,17 @@ def build_context(config, stats):
     }
     context.update(config["theme"])
 
-    for key in ("mission", "toolbelt", "focus", "tags"):
-        for index, value in enumerate(config[key], start=1):
+    for key, values in config.items():
+        if not isinstance(values, list) or not all(isinstance(item, str) for item in values):
+            continue
+        for index, value in enumerate(values, start=1):
             context[f"{key.upper()}_{index}"] = value
+
+    for index, row in enumerate(config.get("experience", []), start=1):
+        parsed = parse_experience_row(row)
+        context[f"EXPERIENCE_{index}_COMPANY"] = parsed["company"]
+        context[f"EXPERIENCE_{index}_ROLE"] = parsed["role"]
+        context[f"EXPERIENCE_{index}_PERIOD"] = parsed["period"]
 
     repo = config["repo"]
     context["SNAKE_LIGHT_URL"] = (
@@ -225,7 +242,8 @@ def build_context(config, stats):
 
 def render_template(template_path, destination_path, context):
     content = template_path.read_text()
-    for key, value in context.items():
+    for key in sorted(context, key=len, reverse=True):
+        value = context[key]
         content = content.replace(f"{{{{{key}}}}}", value)
 
     destination_path.parent.mkdir(parents=True, exist_ok=True)
@@ -339,9 +357,14 @@ def write_languages_svg(config, stats):
         "b997ff",
     ]
     rows = stats["languages"] or [{"name": "No public code yet", "percent": 100.0}]
+    chips = [
+        f"top {rows[0]['name']}" if rows else "top language n/a",
+        f"repos {stats['public_repos']}",
+        "public repos only",
+    ]
 
     svg = [
-        f'<svg viewBox="0 0 1000 244" xmlns="http://www.w3.org/2000/svg" width="1000" height="244" role="img" aria-label="Language mix for {escape(config["display_name"])}">',
+        f'<svg viewBox="0 0 1000 288" xmlns="http://www.w3.org/2000/svg" width="1000" height="288" role="img" aria-label="Language mix for {escape(config["display_name"])}">',
         "  <defs>",
         '    <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">',
         f'      <stop offset="0%" stop-color="#{theme["PANEL_SOFT"]}" />',
@@ -357,11 +380,11 @@ def write_languages_svg(config, stats):
         "    </clipPath>",
         *svg_style_block(),
         "  </defs>",
-        f'  <rect width="1000" height="244" fill="#{theme["BG"]}" />',
-        f'  <rect x="24" y="18" width="952" height="208" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" />',
+        f'  <rect width="1000" height="288" fill="#{theme["BG"]}" />',
+        f'  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" />',
         f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="14">language.mix</text>',
         f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">public repo language spread</text>',
-        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="15">weighted by owned public repositories and rendered as a live signal bar.</text>',
+        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="15">weighted by owned public repositories and rendered as a cleaner signal bar.</text>',
         f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">owned public repos</text>',
         f'  <rect x="44" y="120" width="912" height="22" rx="11" fill="#{theme["PANEL_ALT"]}" />',
     ]
@@ -405,6 +428,20 @@ def write_languages_svg(config, stats):
     svg.append(
         f'  <text x="948" y="106" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">{escape(note)}</text>'
     )
+
+    chip_gap = 12
+    chip_widths = [max(132, min(184, len(item) * 7 + 28)) for item in chips]
+    chip_total = sum(chip_widths) + chip_gap * max(0, len(chip_widths) - 1)
+    chip_x = (1000 - chip_total) / 2
+    for item, width in zip(chips, chip_widths):
+        svg.extend(
+            [
+                f'  <rect x="{chip_x}" y="234" width="{width}" height="24" rx="12" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
+                f'  <text x="{chip_x + width / 2}" y="250" text-anchor="middle" class="mono" fill="#{theme["STEEL"]}" font-size="11">{escape(item)}</text>',
+            ]
+        )
+        chip_x += width + chip_gap
+
     svg.append("</svg>")
     write_text_file(SCRIPT_DIR / "generated" / "languages.svg", "\n".join(svg))
 

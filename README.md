@@ -6,20 +6,16 @@
 </div>
 
 <p align="center">
-  <code>AI Systems</code>
-  <code>Backend</code>
-  <code>Automation</code>
-  <code>Dark UI</code>
+  <strong>AI / ML engineer focused on production GenAI, MLOps, and hybrid cloud delivery.</strong><br/>
+  Building across AWS, Kubernetes, evaluation pipelines, and stakeholder-facing execution.
 </p>
 
 <p align="center">
-  <strong>Midnight builds. Deep black UI. Systems that stay sharp under load.</strong><br/>
-  Gotham-inspired motion scene for <code>lohith</code>, generated from local SVGs and live public GitHub signals.
+  <img src="./profile/generated/activity.svg" alt="Public GitHub activity for lohith" width="49.2%" />
+  <img src="./profile/generated/languages.svg" alt="Language mix for lohith" width="49.2%" />
 </p>
 
 <div align="center">
-  <img src="./profile/generated/activity.svg" alt="Public GitHub activity for lohith" style="display: block; width: 100%; max-width: 1000px;" />
-  <img src="./profile/generated/languages.svg" alt="Language mix for lohith" style="display: block; width: 100%; max-width: 1000px;" />
   <img src="./profile/generated/orgs.svg" alt="Organization work for lohith" style="display: block; width: 100%; max-width: 1000px;" />
 </div>
 

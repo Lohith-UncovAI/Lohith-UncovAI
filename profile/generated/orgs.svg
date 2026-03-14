@@ -25,7 +25,7 @@
     <animate attributeName="x" values="-76;956;-76" dur="5.8s" repeatCount="indefinite" />
   </rect>
   <text x="62" y="154" class="display" fill="#f6f9ff" font-size="28">UncovAI</text>
-  <text x="62" y="176" class="ui" fill="#f5d25f" font-size="15">Building AI products with the UncovAI team</text>
+  <text x="62" y="176" class="ui" fill="#f5d25f" font-size="15">Building production GenAI and evaluation workflows with the UncovAI team</text>
   <circle cx="934" cy="150" r="5" fill="#96b8ff">
     <animate attributeName="opacity" values="0.24;1;0.24" dur="1.9s" repeatCount="indefinite" />
   </circle>

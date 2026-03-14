@@ -1,22 +1,26 @@
-<svg viewBox="0 0 1000 516" xmlns="http://www.w3.org/2000/svg" width="1000" height="516" role="img" aria-label="Terminal dashboard for lohith">
+<svg viewBox="0 0 1000 516" xmlns="http://www.w3.org/2000/svg" width="1000" height="516" role="img" aria-label="Profile control deck for lohith">
   <defs>
     <linearGradient id="console-shell" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0b1018" />
       <stop offset="100%" stop-color="#03050a" />
     </linearGradient>
-    <linearGradient id="console-sheen" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
       <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
     <linearGradient id="scan-glow" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#f5d25f" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5d25f" stop-opacity="0.22" />
+      <stop offset="50%" stop-color="#f5d25f" stop-opacity="0.18" />
       <stop offset="100%" stop-color="#f5d25f" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="bar-fill" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#96b8ff" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#f5d25f" stop-opacity="0.9" />
     </linearGradient>
     <linearGradient id="status-sweep" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#f5d25f" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5d25f" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#f5d25f" stop-opacity="0.28" />
       <stop offset="100%" stop-color="#f5d25f" stop-opacity="0" />
     </linearGradient>
     <pattern id="scanlines" width="6" height="6" patternUnits="userSpaceOnUse">
@@ -26,15 +30,8 @@
     <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
       <path d="M28 0H0V28" fill="none" stroke="#0f1520" stroke-width="1" opacity="0.2" />
     </pattern>
-    <filter id="soft-glow">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-    <clipPath id="main-console-clip">
-      <rect x="0" y="0" width="602" height="384" rx="18" />
+    <clipPath id="shell-clip">
+      <rect x="24" y="24" width="952" height="468" rx="18" />
     </clipPath>
     <style>
       .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.5px; font-weight: 700; }
@@ -47,133 +44,171 @@
   <rect x="24" y="24" width="952" height="468" rx="18" fill="url(#console-shell)" stroke="#1d2330" />
   <rect x="24" y="24" width="952" height="40" rx="18" fill="#0a0f16" />
   <rect x="24" y="48" width="952" height="444" fill="#03050a" />
-  <rect x="24" y="64" width="952" height="428" fill="url(#scanlines)" opacity="0.78" />
-  <rect x="24" y="64" width="952" height="428" fill="url(#grid)" opacity="0.26" />
-  <rect x="-180" y="24" width="220" height="468" fill="url(#console-sheen)" opacity="0.22">
-    <animate attributeName="x" values="-180;1120" dur="7.8s" repeatCount="indefinite" />
-  </rect>
+  <g clip-path="url(#shell-clip)">
+    <rect x="24" y="64" width="952" height="428" fill="url(#scanlines)" opacity="0.78" />
+    <rect x="24" y="64" width="952" height="428" fill="url(#grid)" opacity="0.22" />
+    <rect x="-180" y="24" width="220" height="468" fill="url(#sheen)" opacity="0.18">
+      <animate attributeName="x" values="-180;1120" dur="7.6s" repeatCount="indefinite" />
+    </rect>
+  </g>
 
   <circle cx="48" cy="44" r="6" fill="#ff5f57" />
   <circle cx="68" cy="44" r="6" fill="#febc2e" />
   <circle cx="88" cy="44" r="6" fill="#28c840" />
-  <text x="500" y="49" text-anchor="middle" class="mono" fill="#73819d" font-size="13">midnight-console // bat-signal ops // city-grid</text>
+  <text x="500" y="49" text-anchor="middle" class="mono" fill="#73819d" font-size="13">career-console // structured profile deck // production ML</text>
 
-  <line x1="688" y1="84" x2="688" y2="482" stroke="#1d2330" />
+  <g transform="translate(52 84)">
+    <rect width="372" height="350" rx="20" fill="#020407" stroke="#0f1520" />
+    <rect x="0" y="0" width="372" height="350" rx="20" fill="url(#grid)" opacity="0.14" />
+    <rect x="0" y="-34" width="372" height="34" fill="url(#scan-glow)" opacity="0.14">
+      <animate attributeName="y" values="-34;350;-34" dur="6.2s" repeatCount="indefinite" />
+    </rect>
+    <text x="22" y="32" class="mono" fill="#f5d25f" font-size="14">profile.core</text>
+    <circle cx="340" cy="28" r="5" fill="#f5d25f">
+      <animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" repeatCount="indefinite" />
+    </circle>
 
-  <g transform="translate(52 86)">
-    <rect width="602" height="384" rx="18" fill="#020407" stroke="#0f1520" />
-    <rect x="0" y="0" width="602" height="384" rx="18" fill="url(#grid)" opacity="0.18" />
-    <g clip-path="url(#main-console-clip)">
-      <rect x="0" y="-28" width="602" height="28" fill="url(#scan-glow)" opacity="0.16">
-        <animate attributeName="y" values="-28;384;-28" dur="6.4s" repeatCount="indefinite" />
-      </rect>
+    <text x="22" y="86" class="display" fill="#f6f9ff" font-size="62">lohith</text>
+    <text x="22" y="118" class="ui" fill="#b9c2d8" font-size="18">AI / ML engineer building GenAI, MLOps,</text>
+    <text x="22" y="140" class="ui" fill="#b9c2d8" font-size="18">and hybrid cloud systems</text>
 
-      <text x="22" y="34" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> ./signal</tspan><tspan xml:space="preserve"> --identify</tspan></text>
-      <text x="22" y="86" class="display" fill="#f6f9ff" font-size="52">lohith</text>
+    <rect x="22" y="162" width="96" height="26" rx="13" fill="#090d15" stroke="#1d2330" />
+    <text x="70" y="179" text-anchor="middle" class="mono" fill="#f5d25f" font-size="12">GenAI</text>
+    <rect x="136" y="162" width="96" height="26" rx="13" fill="#090d15" stroke="#1d2330" />
+    <text x="184" y="179" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">MLOps</text>
+    <rect x="250" y="162" width="100" height="26" rx="13" fill="#090d15" stroke="#1d2330" />
+    <text x="300" y="179" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">Hybrid Cloud</text>
 
-      <text x="22" y="128" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> cat</tspan><tspan xml:space="preserve"> casefile.md</tspan></text>
-      <text x="22" y="160" class="ui" fill="#b9c2d8" font-size="20">01. build useful AI products</text>
-      <text x="22" y="188" class="ui" fill="#b9c2d8" font-size="20">02. ship backends that stay readable</text>
-      <text x="22" y="216" class="ui" fill="#b9c2d8" font-size="20">03. automate the boring parts</text>
+    <text x="22" y="220" class="mono" fill="#96b8ff" font-size="13">about.signal</text>
+    <circle cx="30" cy="244" r="4" fill="#f5d25f" />
+    <text x="44" y="250" class="ui" fill="#f6f9ff" font-size="17">build GenAI systems on AWS + Kubernetes</text>
+    <circle cx="30" cy="274" r="4" fill="#96b8ff" />
+    <text x="44" y="280" class="ui" fill="#f6f9ff" font-size="17">automate training, evaluation, and release</text>
+    <circle cx="30" cy="304" r="4" fill="#f6f9ff" />
+    <text x="44" y="310" class="ui" fill="#f6f9ff" font-size="17">align delivery with stakeholder needs</text>
 
-      <text x="22" y="258" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> ls</tspan><tspan xml:space="preserve"> stack/</tspan></text>
-      <text x="22" y="290" class="ui" fill="#f6f9ff" font-size="18">Python  •  TypeScript  •  React</text>
-      <text x="22" y="318" class="ui" fill="#f6f9ff" font-size="18">FastAPI  •  Azure  •  Docker</text>
-
-      <text x="22" y="346" class="mono" fill="#f6f9ff" font-size="18"><tspan fill="#f5d25f">$</tspan><tspan fill="#96b8ff" xml:space="preserve"> tail -f</tspan><tspan xml:space="preserve"> status.log</tspan></text>
-      <text x="22" y="372" class="ui" fill="#f5d25f" font-size="20">scanning requests // hardening APIs // automating friction</text>
-    </g>
+    <text x="22" y="338" class="mono" fill="#73819d" font-size="12">aws // kubernetes // eval-first delivery // stakeholder-facing execution</text>
   </g>
 
-  <g transform="translate(718 88)">
-    <text class="mono" fill="#f5d25f" font-size="14">watchtower.scan</text>
-    <rect y="18" width="224" height="208" rx="16" fill="#020407" stroke="#1d2330" />
-    <rect y="18" width="224" height="208" rx="16" fill="url(#grid)" opacity="0.18" />
+  <g transform="translate(446 84)">
+    <rect width="498" height="192" rx="20" fill="#020407" stroke="#0f1520" />
+    <rect x="0" y="0" width="498" height="192" rx="20" fill="url(#grid)" opacity="0.12" />
+    <rect x="-110" y="0" width="110" height="192" fill="url(#sheen)" opacity="0.12">
+      <animate attributeName="x" values="-110;540;-110" dur="5.4s" repeatCount="indefinite" />
+    </rect>
+    <text x="22" y="32" class="mono" fill="#f5d25f" font-size="14">career.timeline</text>
+    <text x="476" y="32" text-anchor="end" class="mono" fill="#73819d" font-size="12">recent path</text>
 
-    <g transform="translate(112 122)">
-      <circle r="66" fill="none" stroke="#1d2330" />
-      <circle r="44" fill="none" stroke="#1d2330" stroke-opacity="0.82" />
-      <circle r="22" fill="none" stroke="#1d2330" stroke-opacity="0.62" />
-      <line x1="-70" y1="0" x2="70" y2="0" stroke="#1d2330" stroke-opacity="0.35" />
-      <line x1="0" y1="-70" x2="0" y2="70" stroke="#1d2330" stroke-opacity="0.35" />
+    <rect x="20" y="50" width="458" height="40" rx="14" fill="#05080d" stroke="#1d2330" />
+    <circle cx="38" cy="70" r="5" fill="#f5d25f">
+      <animate attributeName="opacity" values="0.24;1;0.24" dur="1.6s" repeatCount="indefinite" />
+    </circle>
+    <text x="52" y="70" class="display" fill="#f6f9ff" font-size="24">UncovAI</text>
+    <text x="52" y="85" class="ui" fill="#b9c2d8" font-size="12">Data Scientist</text>
+    <text x="460" y="70" text-anchor="end" class="mono" fill="#f5d25f" font-size="12">Dec 2025 - Present</text>
 
-      <path d="M0 0 L0 -68 A68 68 0 0 1 46 -50 Z" fill="#f5d25f" opacity="0.16" filter="url(#soft-glow)">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="4.4s" repeatCount="indefinite" />
-      </path>
-      <line x1="0" y1="0" x2="0" y2="-68" stroke="#f5d25f" stroke-width="2.8" stroke-linecap="round" filter="url(#soft-glow)">
-        <animateTransform attributeName="transform" type="rotate" values="0 0 0;360 0 0" dur="4.4s" repeatCount="indefinite" />
-      </line>
+    <rect x="20" y="98" width="458" height="40" rx="14" fill="#05080d" stroke="#1d2330" />
+    <circle cx="38" cy="118" r="5" fill="#96b8ff">
+      <animate attributeName="opacity" values="0.24;1;0.24" dur="1.9s" repeatCount="indefinite" />
+    </circle>
+    <text x="52" y="118" class="display" fill="#f6f9ff" font-size="24">Ansys</text>
+    <text x="52" y="133" class="ui" fill="#b9c2d8" font-size="12">DevSecOps / MLOps Engineer</text>
+    <text x="460" y="118" text-anchor="end" class="mono" fill="#96b8ff" font-size="12">Mar 2025 - Oct 2025</text>
 
-      <circle cx="-26" cy="-22" r="4" fill="#f5d25f">
-        <animate attributeName="opacity" values="0.24;1;0.24" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="24" cy="-6" r="4" fill="#96b8ff">
-        <animate attributeName="opacity" values="1;0.2;1" dur="2.6s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="10" cy="40" r="4" fill="#f6f9ff">
-        <animate attributeName="opacity" values="0.16;0.9;0.16" dur="3s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="0" cy="0" r="10" fill="none" stroke="#f5d25f" stroke-opacity="0.24">
-        <animate attributeName="r" values="8;22;8" dur="2.2s" repeatCount="indefinite" />
-        <animate attributeName="stroke-opacity" values="0.28;0;0.28" dur="2.2s" repeatCount="indefinite" />
-      </circle>
-    </g>
-
-    <text x="36" y="76" class="mono" fill="#b9c2d8" font-size="12">AI</text>
-    <text x="160" y="116" class="mono" fill="#b9c2d8" font-size="12">APIs</text>
-    <text x="118" y="188" class="mono" fill="#b9c2d8" font-size="12">Automation</text>
+    <rect x="20" y="146" width="458" height="26" rx="13" fill="#05080d" stroke="#1d2330" />
+    <circle cx="38" cy="159" r="4" fill="#f6f9ff">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+    <text x="52" y="163" class="display" fill="#f6f9ff" font-size="18">Amadeus</text>
+    <text x="460" y="163" text-anchor="end" class="mono" fill="#b9c2d8" font-size="11">Summer 2024</text>
+    <text x="22" y="188" class="mono" fill="#73819d" font-size="12">end-to-end ML lifecycle across training, serving, monitoring, evaluation, and release.</text>
   </g>
 
-  <g transform="translate(718 316)">
-    <text class="mono" fill="#f5d25f" font-size="14">threat-matrix.json</text>
-    <rect y="18" width="224" height="146" rx="16" fill="#020407" stroke="#1d2330" />
-    <rect y="18" width="224" height="146" rx="16" fill="url(#grid)" opacity="0.18" />
+  <g transform="translate(446 298)">
+    <rect width="238" height="156" rx="18" fill="#020407" stroke="#0f1520" />
+    <rect x="0" y="0" width="238" height="156" rx="18" fill="url(#grid)" opacity="0.12" />
+    <text x="18" y="28" class="mono" fill="#f5d25f" font-size="13">system.loop</text>
+    <text x="18" y="46" class="ui" fill="#73819d" font-size="12">production stages I work across</text>
 
-    <text x="18" y="44" class="mono" fill="#73819d" font-size="12">load.ai</text>
-    <rect x="18" y="54" width="188" height="8" rx="4" fill="#0f1520" />
-    <rect x="18" y="54" width="134" height="8" rx="4" fill="#f5d25f">
-      <animate attributeName="width" values="118;176;140;118" dur="4.4s" repeatCount="indefinite" />
-    </rect>
+    <line x1="26" y1="108" x2="214" y2="108" stroke="#1d2330" />
 
-    <text x="18" y="82" class="mono" fill="#73819d" font-size="12">api.guard</text>
-    <rect x="18" y="92" width="188" height="8" rx="4" fill="#0f1520" />
-    <rect x="18" y="92" width="158" height="8" rx="4" fill="#96b8ff">
-      <animate attributeName="width" values="142;186;156;142" dur="3.8s" repeatCount="indefinite" />
+    <rect x="36" y="72" width="20" height="36" rx="10" fill="#090d15" stroke="#1d2330" />
+    <rect x="36" y="84" width="20" height="24" rx="10" fill="url(#bar-fill)">
+      <animate attributeName="y" values="84;72;84" dur="1.8s" repeatCount="indefinite" />
+      <animate attributeName="height" values="24;36;24" dur="1.8s" repeatCount="indefinite" />
     </rect>
+    <text x="46" y="124" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">train</text>
 
-    <text x="18" y="120" class="mono" fill="#73819d" font-size="12">ship.rate</text>
-    <rect x="18" y="130" width="188" height="8" rx="4" fill="#0f1520" />
-    <rect x="18" y="130" width="150" height="8" rx="4" fill="#f6f9ff">
-      <animate attributeName="width" values="126;176;148;126" dur="4.8s" repeatCount="indefinite" />
+    <rect x="84" y="72" width="20" height="36" rx="10" fill="#090d15" stroke="#1d2330" />
+    <rect x="84" y="78" width="20" height="30" rx="10" fill="url(#bar-fill)">
+      <animate attributeName="y" values="78;70;78" dur="2.1s" repeatCount="indefinite" />
+      <animate attributeName="height" values="30;38;30" dur="2.1s" repeatCount="indefinite" />
     </rect>
+    <text x="94" y="124" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">serve</text>
+
+    <rect x="132" y="72" width="20" height="36" rx="10" fill="#090d15" stroke="#1d2330" />
+    <rect x="132" y="80" width="20" height="28" rx="10" fill="url(#bar-fill)">
+      <animate attributeName="y" values="80;68;80" dur="2.3s" repeatCount="indefinite" />
+      <animate attributeName="height" values="28;40;28" dur="2.3s" repeatCount="indefinite" />
+    </rect>
+    <text x="142" y="124" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">eval</text>
+
+    <rect x="180" y="72" width="20" height="36" rx="10" fill="#090d15" stroke="#1d2330" />
+    <rect x="180" y="76" width="20" height="32" rx="10" fill="url(#bar-fill)">
+      <animate attributeName="y" values="76;66;76" dur="1.9s" repeatCount="indefinite" />
+      <animate attributeName="height" values="32;42;32" dur="1.9s" repeatCount="indefinite" />
+    </rect>
+    <text x="190" y="124" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">release</text>
   </g>
 
-  <g transform="translate(52 466)">
-    <rect width="890" height="24" rx="12" fill="#04080e" stroke="#1d2330" />
+  <g transform="translate(706 298)">
+    <rect width="238" height="156" rx="18" fill="#020407" stroke="#0f1520" />
+    <rect x="0" y="0" width="238" height="156" rx="18" fill="url(#grid)" opacity="0.12" />
+    <text x="18" y="28" class="mono" fill="#f5d25f" font-size="13">stack.deck</text>
+    <text x="18" y="46" class="ui" fill="#73819d" font-size="12">core tools and platforms</text>
+
+    <rect x="18" y="64" width="94" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+    <text x="65" y="80" text-anchor="middle" class="mono" fill="#f5d25f" font-size="12">Python</text>
+    <rect x="126" y="64" width="94" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+    <text x="173" y="80" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">AWS</text>
+
+    <rect x="18" y="94" width="94" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+    <text x="65" y="110" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">Kubernetes</text>
+    <rect x="126" y="94" width="94" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+    <text x="173" y="110" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">MLflow</text>
+
+    <rect x="18" y="124" width="94" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+    <text x="65" y="140" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">Kubeflow</text>
+    <rect x="126" y="124" width="94" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
+    <text x="173" y="140" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">LangChain</text>
+  </g>
+
+  <g transform="translate(52 456)">
+    <rect width="892" height="24" rx="12" fill="#04080e" stroke="#1d2330" />
     <rect x="-110" y="0" width="110" height="24" fill="url(#status-sweep)" opacity="0.28">
-      <animate attributeName="x" values="-110;940;-110" dur="4.2s" repeatCount="indefinite" />
+      <animate attributeName="x" values="-110;944;-110" dur="4.2s" repeatCount="indefinite" />
     </rect>
-    <text x="16" y="16" class="mono" fill="#f5d25f" font-size="14">night_shift=enabled</text>
-    <rect x="432" y="9" width="4" height="6" rx="2" fill="#f5d25f">
+    <text x="16" y="16" class="mono" fill="#f5d25f" font-size="14">production_ml=enabled</text>
+    <rect x="436" y="9" width="4" height="6" rx="2" fill="#f5d25f">
       <animate attributeName="height" values="6;10;6" dur="1.6s" repeatCount="indefinite" />
       <animate attributeName="y" values="9;7;9" dur="1.6s" repeatCount="indefinite" />
     </rect>
-    <rect x="442" y="7" width="4" height="10" rx="2" fill="#96b8ff">
+    <rect x="446" y="7" width="4" height="10" rx="2" fill="#96b8ff">
       <animate attributeName="height" values="10;6;10" dur="1.9s" repeatCount="indefinite" />
       <animate attributeName="y" values="7;9;7" dur="1.9s" repeatCount="indefinite" />
     </rect>
-    <rect x="452" y="8" width="4" height="8" rx="2" fill="#f6f9ff">
+    <rect x="456" y="8" width="4" height="8" rx="2" fill="#f6f9ff">
       <animate attributeName="height" values="8;12;8" dur="2.2s" repeatCount="indefinite" />
       <animate attributeName="y" values="8;6;8" dur="2.2s" repeatCount="indefinite" />
     </rect>
-    <text x="804" y="16" text-anchor="end" class="mono" fill="#73819d" font-size="12">requests stable // skyline live</text>
-    <rect x="816" y="8" width="6" height="8" rx="2" fill="#f5d25f">
+    <text x="814" y="16" text-anchor="end" class="mono" fill="#73819d" font-size="12">genai // mlops // aws // kubernetes</text>
+    <rect x="826" y="8" width="6" height="8" rx="2" fill="#f5d25f">
       <animate attributeName="opacity" values="0.22;1;0.22" dur="1.6s" repeatCount="indefinite" />
     </rect>
-    <rect x="830" y="8" width="6" height="8" rx="2" fill="#96b8ff">
+    <rect x="840" y="8" width="6" height="8" rx="2" fill="#96b8ff">
       <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite" />
     </rect>
-    <rect x="844" y="8" width="6" height="8" rx="2" fill="#f6f9ff">
+    <rect x="854" y="8" width="6" height="8" rx="2" fill="#f6f9ff">
       <animate attributeName="opacity" values="0.18;0.92;0.18" dur="2.4s" repeatCount="indefinite" />
     </rect>
   </g>

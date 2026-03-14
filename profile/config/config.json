@@ -2,37 +2,46 @@
   "username": "Lohith-UncovAI",
   "repo": "Lohith-UncovAI/Lohith-UncovAI",
   "display_name": "lohith",
-  "tagline": "AI systems, backend flows, and developer tools after dark",
+  "tagline": "AI / ML engineer building GenAI, MLOps, and hybrid cloud systems",
+  "tagline_lines": [
+    "AI / ML engineer building GenAI, MLOps,",
+    "and hybrid cloud systems"
+  ],
   "timezone": "Europe/Paris",
   "mission": [
-    "build useful AI products",
-    "ship backends that stay readable",
-    "automate the boring parts"
+    "build GenAI systems on AWS + Kubernetes",
+    "automate training, evaluation, and release",
+    "align delivery with stakeholder needs"
   ],
   "toolbelt": [
     "Python",
-    "TypeScript",
-    "React",
-    "FastAPI",
-    "Azure",
-    "Docker"
+    "AWS",
+    "Kubernetes",
+    "MLflow",
+    "Kubeflow",
+    "LangChain"
   ],
   "focus": [
-    "AI",
-    "APIs",
-    "Automation"
+    "GenAI",
+    "MLOps",
+    "Hybrid Cloud"
   ],
   "tags": [
-    "AI Systems",
-    "Backend",
-    "Automation",
-    "Dark UI"
+    "GenAI",
+    "MLOps",
+    "AWS",
+    "Kubernetes"
+  ],
+  "experience": [
+    "UncovAI // Data Scientist // Dec 2025 - Present",
+    "Ansys // DevSecOps / MLOps Engineer // Mar 2025 - Oct 2025",
+    "Amadeus // AI / ML Engineer // Summer 2024"
   ],
   "org_spotlight": [
     {
       "login": "UncovAI",
       "label": "UncovAI",
-      "headline": "Building AI products with the UncovAI team",
+      "headline": "Building production GenAI and evaluation workflows with the UncovAI team",
       "website": "https://uncovai.com/"
     }
   ],
