@@ -230,6 +230,11 @@ def build_context(config, stats):
         context[f"EXPERIENCE_{index}_ROLE"] = parsed["role"]
         context[f"EXPERIENCE_{index}_PERIOD"] = parsed["period"]
 
+    first_org = (config.get("org_spotlight") or [{}])[0]
+    context["ORG_1_LABEL"] = first_org.get("label", "")
+    context["ORG_1_HEADLINE"] = first_org.get("headline", "")
+    context["ORG_1_WEBSITE"] = first_org.get("website", "").replace("https://", "")
+
     repo = config["repo"]
     context["SNAKE_LIGHT_URL"] = (
         f"https://raw.githubusercontent.com/{repo}/output/github-contribution-grid-snake.svg"
