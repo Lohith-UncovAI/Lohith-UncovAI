@@ -28,8 +28,8 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           outputs: |
-            dist/github-contribution-grid-snake.svg?color_snake=%23f4d35e&color_dots=%2304060b,%23101827,%23273246,%237f8aa3,%23f4d35e
-            dist/github-contribution-grid-snake-dark.svg?color_snake=%23f4d35e&color_dots=%2304060b,%23101827,%23273246,%237f8aa3,%23f4d35e
+            dist/github-contribution-grid-snake.svg?color_snake=%23f5d25f&color_dots=%230e121a,%2318202e,%232b3850,%23697892,%23f5d25f
+            dist/github-contribution-grid-snake-dark.svg?color_snake=%23f5d25f&color_dots=%230e121a,%2318202e,%232b3850,%23697892,%23f5d25f
 
       - name: Add dark background to snake
         run: python3 profile/add_snake_bg.py dist 04060b
