@@ -122,25 +122,25 @@
   </g>
 
   <g transform="translate(48 44)">
-    <rect width="904" height="178" rx="26" fill="url(#panel-grad)" stroke="#{{EDGE}}" opacity="0.98" />
-    <rect x="12" y="12" width="880" height="154" rx="20" fill="none" stroke="#{{EDGE_SOFT}}" opacity="0.9" />
-    <rect x="-160" y="0" width="160" height="178" fill="url(#panel-sheen)" opacity="0.16">
+    <rect width="904" height="188" rx="26" fill="url(#panel-grad)" stroke="#{{EDGE}}" opacity="0.98" />
+    <rect x="12" y="12" width="880" height="164" rx="20" fill="none" stroke="#{{EDGE_SOFT}}" opacity="0.9" />
+    <rect x="-160" y="0" width="160" height="188" fill="url(#panel-sheen)" opacity="0.16">
       <animate attributeName="x" values="-160;944;-160" dur="6.4s" repeatCount="indefinite" />
     </rect>
     <path d="M28 24 H92" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.8" />
-    <path d="M812 154 H876" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.42" />
+    <path d="M812 164 H876" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.42" />
 
-    <text x="34" y="34" class="mono" fill="#{{ACCENT}}" font-size="13">lohith // ai/ml engineer</text>
-    <text x="34" y="104" class="display" fill="url(#name-grad)" font-size="92">{{DISPLAY_NAME}}</text>
-    <text x="36" y="136" class="ui" fill="#{{STEEL}}" font-size="21">{{TAGLINE_LINES_1}}</text>
-    <text x="36" y="160" class="ui" fill="#{{STEEL}}" font-size="21">{{TAGLINE_LINES_2}}</text>
+    <text x="34" y="36" class="mono" fill="#{{ACCENT}}" font-size="13">lohith // ai/ml engineer</text>
+    <text x="34" y="102" class="display" fill="url(#name-grad)" font-size="92">{{DISPLAY_NAME}}</text>
+    <text x="36" y="146" class="ui" fill="#{{STEEL}}" font-size="21">{{TAGLINE_LINES_1}}</text>
+    <text x="36" y="172" class="ui" fill="#{{STEEL}}" font-size="21">{{TAGLINE_LINES_2}}</text>
 
-    <rect x="36" y="120" width="220" height="4" rx="2" fill="#{{EDGE_SOFT}}" />
-    <rect x="36" y="120" width="126" height="4" rx="2" fill="#{{ACCENT}}">
+    <rect x="36" y="124" width="220" height="4" rx="2" fill="#{{EDGE_SOFT}}" />
+    <rect x="36" y="124" width="126" height="4" rx="2" fill="#{{ACCENT}}">
       <animate attributeName="width" values="96;188;126;96" dur="4.6s" repeatCount="indefinite" />
     </rect>
 
-    <rect x="640" y="22" width="234" height="132" rx="18" fill="#05080d" stroke="#{{EDGE_SOFT}}" />
+    <rect x="640" y="24" width="234" height="140" rx="18" fill="#05080d" stroke="#{{EDGE_SOFT}}" />
     <rect x="652" y="34" width="88" height="22" rx="11" fill="url(#chip-active)" stroke="#{{ACCENT_SOFT}}" />
     <text x="696" y="49" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="11">current arc</text>
     <circle cx="852" cy="42" r="5" fill="#{{ACCENT}}">
@@ -149,7 +149,7 @@
     <text x="660" y="88" class="display" fill="#{{TEXT}}" font-size="36">{{EXPERIENCE_1_COMPANY}}</text>
     <text x="660" y="112" class="ui" fill="#{{STEEL}}" font-size="18">{{EXPERIENCE_1_ROLE}}</text>
     <text x="660" y="136" class="mono" fill="#{{ACCENT_2}}" font-size="13">{{EXPERIENCE_1_PERIOD}}</text>
-    <text x="660" y="156" class="ui" fill="#{{MUTED}}" font-size="14">previously: {{EXPERIENCE_2_COMPANY}} and {{EXPERIENCE_3_COMPANY}}</text>
+    <text x="660" y="160" class="ui" fill="#{{MUTED}}" font-size="14">previously: {{EXPERIENCE_2_COMPANY}} and {{EXPERIENCE_3_COMPANY}}</text>
   </g>
 
   <g transform="translate(112 320)">

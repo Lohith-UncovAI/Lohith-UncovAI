@@ -122,25 +122,25 @@
   </g>
 
   <g transform="translate(48 44)">
-    <rect width="904" height="178" rx="26" fill="url(#panel-grad)" stroke="#1d2330" opacity="0.98" />
-    <rect x="12" y="12" width="880" height="154" rx="20" fill="none" stroke="#0f1520" opacity="0.9" />
-    <rect x="-160" y="0" width="160" height="178" fill="url(#panel-sheen)" opacity="0.16">
+    <rect width="904" height="188" rx="26" fill="url(#panel-grad)" stroke="#1d2330" opacity="0.98" />
+    <rect x="12" y="12" width="880" height="164" rx="20" fill="none" stroke="#0f1520" opacity="0.9" />
+    <rect x="-160" y="0" width="160" height="188" fill="url(#panel-sheen)" opacity="0.16">
       <animate attributeName="x" values="-160;944;-160" dur="6.4s" repeatCount="indefinite" />
     </rect>
     <path d="M28 24 H92" stroke="#f5d25f" stroke-width="2" stroke-linecap="round" opacity="0.8" />
-    <path d="M812 154 H876" stroke="#f5d25f" stroke-width="2" stroke-linecap="round" opacity="0.42" />
+    <path d="M812 164 H876" stroke="#f5d25f" stroke-width="2" stroke-linecap="round" opacity="0.42" />
 
-    <text x="34" y="34" class="mono" fill="#f5d25f" font-size="13">lohith // ai/ml engineer</text>
-    <text x="34" y="104" class="display" fill="url(#name-grad)" font-size="92">lohith</text>
-    <text x="36" y="136" class="ui" fill="#b9c2d8" font-size="21">AI / ML engineer shipping GenAI,</text>
-    <text x="36" y="160" class="ui" fill="#b9c2d8" font-size="21">MLOps, and hybrid cloud systems</text>
+    <text x="34" y="36" class="mono" fill="#f5d25f" font-size="13">lohith // ai/ml engineer</text>
+    <text x="34" y="102" class="display" fill="url(#name-grad)" font-size="92">lohith</text>
+    <text x="36" y="146" class="ui" fill="#b9c2d8" font-size="21">AI / ML engineer shipping GenAI,</text>
+    <text x="36" y="172" class="ui" fill="#b9c2d8" font-size="21">MLOps, and hybrid cloud systems</text>
 
-    <rect x="36" y="120" width="220" height="4" rx="2" fill="#0f1520" />
-    <rect x="36" y="120" width="126" height="4" rx="2" fill="#f5d25f">
+    <rect x="36" y="124" width="220" height="4" rx="2" fill="#0f1520" />
+    <rect x="36" y="124" width="126" height="4" rx="2" fill="#f5d25f">
       <animate attributeName="width" values="96;188;126;96" dur="4.6s" repeatCount="indefinite" />
     </rect>
 
-    <rect x="640" y="22" width="234" height="132" rx="18" fill="#05080d" stroke="#0f1520" />
+    <rect x="640" y="24" width="234" height="140" rx="18" fill="#05080d" stroke="#0f1520" />
     <rect x="652" y="34" width="88" height="22" rx="11" fill="url(#chip-active)" stroke="#a98a2d" />
     <text x="696" y="49" text-anchor="middle" class="mono" fill="#f5d25f" font-size="11">current arc</text>
     <circle cx="852" cy="42" r="5" fill="#f5d25f">
@@ -149,7 +149,7 @@
     <text x="660" y="88" class="display" fill="#f6f9ff" font-size="36">UncovAI</text>
     <text x="660" y="112" class="ui" fill="#b9c2d8" font-size="18">Data Scientist</text>
     <text x="660" y="136" class="mono" fill="#96b8ff" font-size="13">Dec 2025 - Present</text>
-    <text x="660" y="156" class="ui" fill="#73819d" font-size="14">previously: Ansys and Amadeus</text>
+    <text x="660" y="160" class="ui" fill="#73819d" font-size="14">previously: Ansys and Amadeus</text>
   </g>
 
   <g transform="translate(112 320)">
