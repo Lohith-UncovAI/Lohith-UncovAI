@@ -1,46 +1,46 @@
 <svg viewBox="0 0 1000 288" xmlns="http://www.w3.org/2000/svg" width="1000" height="288" role="img" aria-label="Language mix for lohith">
   <defs>
     <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1018" />
-      <stop offset="100%" stop-color="#03050a" />
+      <stop offset="0%" stop-color="#0b0b1e" />
+      <stop offset="100%" stop-color="#08081a" />
     </linearGradient>
     <linearGradient id="bar-sweep" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f6f9ff" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f6f9ff" stop-opacity="0.24" />
-      <stop offset="100%" stop-color="#f6f9ff" stop-opacity="0" />
+      <stop offset="0%" stop-color="#e8e8f0" stop-opacity="0" />
+      <stop offset="50%" stop-color="#e8e8f0" stop-opacity="0.24" />
+      <stop offset="100%" stop-color="#e8e8f0" stop-opacity="0" />
     </linearGradient>
     <clipPath id="mix-clip">
       <rect x="44" y="120" width="912" height="22" rx="11" />
     </clipPath>
     <style>
-      .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.4px; font-weight: 700; }
-      .ui { font-family: "Ubuntu", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
-      .mono { font-family: "Ubuntu Mono", "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
+      .display { font-family: "Bebas Neue", "Oswald", "Impact", "Ubuntu Condensed", sans-serif; letter-spacing: 2px; font-weight: 700; }
+      .ui { font-family: "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
+      .mono { font-family: "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.5px; }
     </style>
   </defs>
-  <rect width="1000" height="288" fill="#000000" />
-  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#1d2330" />
-  <text x="44" y="50" class="mono" fill="#f5d25f" font-size="14">language.mix</text>
-  <text x="44" y="82" class="display" fill="#f6f9ff" font-size="34">public repo language spread</text>
-  <text x="44" y="106" class="ui" fill="#b9c2d8" font-size="15">weighted by owned public repositories and rendered as a cleaner signal bar.</text>
-  <text x="952" y="50" text-anchor="end" class="mono" fill="#73819d" font-size="12">owned public repos</text>
-  <rect x="44" y="120" width="912" height="22" rx="11" fill="#090d15" />
-  <rect x="44" y="120" width="912" height="22" rx="11" fill="#f5d25f" />
+  <rect width="1000" height="288" fill="#05050a" />
+  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#1a1a3a" stroke-opacity="0.6" />
+  <text x="44" y="50" class="mono" fill="#f5c518" font-size="12">LANGUAGE.ANALYSIS</text>
+  <text x="44" y="82" class="display" fill="#e8e8f0" font-size="34">PUBLIC REPO LANGUAGE SPREAD</text>
+  <text x="44" y="106" class="ui" fill="#9898b8" font-size="14">weighted by owned public repos, rendered in the dark knight protocol.</text>
+  <text x="952" y="50" text-anchor="end" class="mono" fill="#6a6a8a" font-size="11">OWNED PUBLIC REPOS</text>
+  <rect x="44" y="120" width="912" height="22" rx="11" fill="#0e0e22" />
+  <rect x="44" y="120" width="912" height="22" rx="11" fill="#f5c518" />
   <g clip-path="url(#mix-clip)">
     <rect x="-120" y="120" width="120" height="22" fill="url(#bar-sweep)" opacity="0.42">
       <animate attributeName="x" values="-120;1020" dur="4.4s" repeatCount="indefinite" />
     </rect>
   </g>
-  <circle cx="54" cy="169" r="6" fill="#f5d25f">
+  <circle cx="54" cy="169" r="6" fill="#f5c518">
     <animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite" />
   </circle>
-  <text x="70" y="174" class="ui" fill="#f6f9ff" font-size="18">Python</text>
-  <text x="948" y="174" text-anchor="end" class="mono" fill="#b9c2d8" font-size="15">100.0%</text>
-  <text x="948" y="106" text-anchor="end" class="mono" fill="#73819d" font-size="12">public orgs hidden or none</text>
-  <rect x="282.5" y="234" width="132" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
-  <text x="348.5" y="250" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">top Python</text>
-  <rect x="426.5" y="234" width="132" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
-  <text x="492.5" y="250" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">repos 1</text>
-  <rect x="570.5" y="234" width="147" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
-  <text x="644.0" y="250" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="11">public repos only</text>
+  <text x="70" y="174" class="ui" fill="#e8e8f0" font-size="18">Python</text>
+  <text x="948" y="174" text-anchor="end" class="mono" fill="#9898b8" font-size="15">100.0%</text>
+  <text x="948" y="106" text-anchor="end" class="mono" fill="#6a6a8a" font-size="12">public orgs hidden or none</text>
+  <rect x="282.5" y="234" width="132" height="24" rx="12" fill="#0e0e22" stroke="#1a1a3a" />
+  <text x="348.5" y="250" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">top Python</text>
+  <rect x="426.5" y="234" width="132" height="24" rx="12" fill="#0e0e22" stroke="#1a1a3a" />
+  <text x="492.5" y="250" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">repos 1</text>
+  <rect x="570.5" y="234" width="147" height="24" rx="12" fill="#0e0e22" stroke="#1a1a3a" />
+  <text x="644.0" y="250" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">public repos only</text>
 </svg>

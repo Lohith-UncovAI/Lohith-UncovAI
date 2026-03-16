@@ -1,165 +1,275 @@
-<svg viewBox="0 0 1000 404" xmlns="http://www.w3.org/2000/svg" width="1000" height="404" role="img" aria-label="Gotham-inspired profile banner for {{DISPLAY_NAME}}">
+<svg viewBox="0 0 1000 440" xmlns="http://www.w3.org/2000/svg" width="1000" height="440" role="img" aria-label="Batman-inspired profile banner for {{DISPLAY_NAME}}">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#{{SKY_TOP}}" />
-      <stop offset="52%" stop-color="#{{SKY_MID}}" />
+      <stop offset="40%" stop-color="#{{SKY_MID}}" />
       <stop offset="100%" stop-color="#{{SKY_BOTTOM}}" />
     </linearGradient>
-    <radialGradient id="moon" cx="50%" cy="50%" r="60%">
-      <stop offset="0%" stop-color="#fff9d2" stop-opacity="1" />
-      <stop offset="72%" stop-color="#ffe187" stop-opacity="0.98" />
-      <stop offset="100%" stop-color="#{{ACCENT}}" stop-opacity="0.08" />
+    <radialGradient id="moon" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#fffbe6" stop-opacity="1" />
+      <stop offset="60%" stop-color="#{{ACCENT}}" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#{{ACCENT}}" stop-opacity="0.04" />
     </radialGradient>
-    <radialGradient id="vignette" cx="50%" cy="26%" r="92%">
+    <radialGradient id="moon-glow" cx="50%" cy="50%" r="100%">
+      <stop offset="0%" stop-color="#{{ACCENT}}" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#{{ACCENT}}" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="30%" r="88%">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.86" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.92" />
     </radialGradient>
     <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#{{ACCENT}}" stop-opacity="0.4" />
-      <stop offset="36%" stop-color="#{{ACCENT}}" stop-opacity="0.14" />
+      <stop offset="0%" stop-color="#{{ACCENT}}" stop-opacity="0.5" />
+      <stop offset="30%" stop-color="#{{ACCENT}}" stop-opacity="0.18" />
       <stop offset="100%" stop-color="#{{ACCENT}}" stop-opacity="0" />
     </linearGradient>
     <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#{{PANEL_SOFT}}" />
-      <stop offset="100%" stop-color="#{{PANEL}}" />
+      <stop offset="0%" stop-color="#{{PANEL_SOFT}}" stop-opacity="0.96" />
+      <stop offset="100%" stop-color="#{{PANEL}}" stop-opacity="0.96" />
     </linearGradient>
     <linearGradient id="panel-sheen" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="0%" stop-color="#{{ACCENT}}" stop-opacity="0" />
+      <stop offset="50%" stop-color="#{{ACCENT}}" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#{{ACCENT}}" stop-opacity="0" />
     </linearGradient>
     <linearGradient id="name-grad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#cfd8e8" />
+      <stop offset="0%" stop-color="#{{ACCENT}}" />
+      <stop offset="50%" stop-color="#fffbe6" />
+      <stop offset="100%" stop-color="#{{ACCENT}}" />
     </linearGradient>
     <linearGradient id="chip-active" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#5a4510" />
-      <stop offset="100%" stop-color="#2b2108" />
+      <stop offset="0%" stop-color="#3a2a06" />
+      <stop offset="100%" stop-color="#1a1400" />
     </linearGradient>
-    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
-      <path d="M56 0H0V56" fill="none" stroke="#{{EDGE_SOFT}}" stroke-width="1" opacity="0.16" />
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#{{EDGE_SOFT}}" stroke-width="0.8" opacity="0.12" />
+    </pattern>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000000" opacity="0.08" />
     </pattern>
     <filter id="soft-blur">
-      <feGaussianBlur stdDeviation="16" />
+      <feGaussianBlur stdDeviation="18" />
+    </filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
     <style>
-      .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.5px; font-weight: 700; }
-      .mono { font-family: "Ubuntu Mono", "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
-      .ui { font-family: "Ubuntu", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+      .display { font-family: "Bebas Neue", "Oswald", "Impact", "Ubuntu Condensed", sans-serif; letter-spacing: 2px; font-weight: 700; }
+      .mono { font-family: "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.5px; }
+      .ui { font-family: "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
     </style>
   </defs>
 
-  <rect width="1000" height="404" fill="#{{BG}}" />
-  <rect width="1000" height="286" fill="url(#sky)" />
-  <rect width="1000" height="286" fill="url(#grid)" opacity="0.22" />
-  <rect width="1000" height="404" fill="url(#vignette)" />
+  <!-- Base layers -->
+  <rect width="1000" height="440" fill="#{{BG}}" />
+  <rect width="1000" height="310" fill="url(#sky)" />
+  <rect width="1000" height="310" fill="url(#grid)" opacity="0.15" />
+  <rect width="1000" height="440" fill="url(#vignette)" />
+  <rect width="1000" height="440" fill="url(#scanlines)" opacity="0.35" />
 
-  <g opacity="0.62">
-    <circle cx="92" cy="42" r="1.4" fill="#ffffff"><animate attributeName="opacity" values="0.12;0.58;0.12" dur="4.2s" repeatCount="indefinite" /></circle>
-    <circle cx="176" cy="72" r="1.2" fill="#ffffff"><animate attributeName="opacity" values="0.16;0.76;0.16" dur="5.3s" repeatCount="indefinite" /></circle>
-    <circle cx="312" cy="46" r="1.1" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.54;0.1" dur="3.6s" repeatCount="indefinite" /></circle>
-    <circle cx="458" cy="84" r="1.2" fill="#ffffff"><animate attributeName="opacity" values="0.14;0.72;0.14" dur="4.7s" repeatCount="indefinite" /></circle>
-    <circle cx="730" cy="60" r="1.3" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.82;0.1" dur="5s" repeatCount="indefinite" /></circle>
-    <circle cx="926" cy="46" r="1.5" fill="#ffffff"><animate attributeName="opacity" values="0.12;0.88;0.12" dur="5.8s" repeatCount="indefinite" /></circle>
+  <!-- Stars -->
+  <g opacity="0.7">
+    <circle cx="52" cy="28" r="1.0" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.7;0.1" dur="3.2s" repeatCount="indefinite" /></circle>
+    <circle cx="134" cy="58" r="1.8" fill="#ffffff"><animate attributeName="opacity" values="0.15;0.9;0.15" dur="4.1s" repeatCount="indefinite" /></circle>
+    <circle cx="218" cy="22" r="0.8" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.8s" repeatCount="indefinite" /></circle>
+    <circle cx="288" cy="76" r="1.4" fill="#fffbe6"><animate attributeName="opacity" values="0.1;0.85;0.1" dur="5.2s" repeatCount="indefinite" /></circle>
+    <circle cx="396" cy="42" r="1.0" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.75;0.2" dur="3.8s" repeatCount="indefinite" /></circle>
+    <circle cx="462" cy="18" r="1.6" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.65;0.1" dur="4.5s" repeatCount="indefinite" /></circle>
+    <circle cx="558" cy="64" r="0.9" fill="#fffbe6"><animate attributeName="opacity" values="0.15;0.8;0.15" dur="3.4s" repeatCount="indefinite" /></circle>
+    <circle cx="612" cy="32" r="1.2" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.7;0.1" dur="5.6s" repeatCount="indefinite" /></circle>
+    <circle cx="688" cy="52" r="1.5" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="4.8s" repeatCount="indefinite" /></circle>
+    <circle cx="778" cy="28" r="0.7" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.5;0.1" dur="3.1s" repeatCount="indefinite" /></circle>
+    <circle cx="862" cy="68" r="1.3" fill="#fffbe6"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="5.9s" repeatCount="indefinite" /></circle>
+    <circle cx="942" cy="36" r="1.1" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="4.3s" repeatCount="indefinite" /></circle>
+    <circle cx="168" cy="94" r="0.6" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.55;0.1" dur="6.2s" repeatCount="indefinite" /></circle>
+    <circle cx="516" cy="88" r="1.0" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.75;0.2" dur="3.6s" repeatCount="indefinite" /></circle>
   </g>
 
+  <!-- Atmospheric fog -->
   <g filter="url(#soft-blur)" opacity="0.1">
-    <ellipse cx="270" cy="176" rx="230" ry="28" fill="#{{FOG}}">
-      <animateTransform attributeName="transform" type="translate" values="-14 0;10 0;-14 0" dur="13s" repeatCount="indefinite" />
+    <ellipse cx="240" cy="190" rx="260" ry="32" fill="#{{ACCENT}}">
+      <animateTransform attributeName="transform" type="translate" values="-18 0;16 0;-18 0" dur="14s" repeatCount="indefinite" />
     </ellipse>
-    <ellipse cx="782" cy="168" rx="190" ry="24" fill="#{{FOG}}">
-      <animateTransform attributeName="transform" type="translate" values="12 0;-12 0;12 0" dur="12s" repeatCount="indefinite" />
+    <ellipse cx="760" cy="180" rx="220" ry="28" fill="#{{GOTHAM_BLUE}}">
+      <animateTransform attributeName="transform" type="translate" values="14 0;-14 0;14 0" dur="11s" repeatCount="indefinite" />
+    </ellipse>
+    <ellipse cx="500" cy="200" rx="340" ry="20" fill="#{{FOG}}">
+      <animateTransform attributeName="transform" type="translate" values="-10 0;12 0;-10 0" dur="16s" repeatCount="indefinite" />
     </ellipse>
   </g>
 
-  <circle cx="820" cy="84" r="58" fill="#{{ACCENT}}" opacity="0.08" filter="url(#soft-blur)" />
-  <circle cx="820" cy="84" r="50" fill="url(#moon)" />
-  <circle cx="820" cy="84" r="68" fill="none" stroke="#{{ACCENT}}" stroke-opacity="0.1">
-    <animate attributeName="r" values="64;70;64" dur="4s" repeatCount="indefinite" />
-    <animate attributeName="stroke-opacity" values="0.08;0.18;0.08" dur="4s" repeatCount="indefinite" />
+  <!-- Moon with pulsing glow -->
+  <circle cx="830" cy="88" r="120" fill="url(#moon-glow)">
+    <animate attributeName="r" values="110;130;110" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="830" cy="88" r="52" fill="url(#moon)" />
+  <circle cx="830" cy="88" r="62" fill="none" stroke="#{{ACCENT}}" stroke-width="1.5" stroke-opacity="0.15">
+    <animate attributeName="r" values="58;68;58" dur="3.5s" repeatCount="indefinite" />
+    <animate attributeName="stroke-opacity" values="0.08;0.22;0.08" dur="3.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="830" cy="88" r="78" fill="none" stroke="#{{ACCENT}}" stroke-width="0.8" stroke-opacity="0.08">
+    <animate attributeName="r" values="74;86;74" dur="4.2s" repeatCount="indefinite" />
+    <animate attributeName="stroke-opacity" values="0.04;0.14;0.04" dur="4.2s" repeatCount="indefinite" />
   </circle>
 
-  <g transform="translate(748 78)" opacity="0.78">
-    <path d="M0,-8 C-8,-16 -18,-14 -24,-4 C-31,-5 -39,-11 -47,-22 C-49,-10 -44,-1 -34,7 C-27,12 -19,14 -10,10 C-8,18 -4,24 0,30 C4,24 8,18 10,10 C19,14 27,12 34,7 C44,-1 49,-10 47,-22 C39,-11 31,-5 24,-4 C18,-14 8,-16 0,-8 Z" fill="#0b0e14">
-      <animateTransform attributeName="transform" type="translate" values="0 0;22 -8;44 0" dur="9s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.62;0.9;0.62" dur="9s" repeatCount="indefinite" />
+  <!-- Bat signal on moon -->
+  <g transform="translate(830 88)" opacity="0.85">
+    <path d="M0,-18 C-8,-26 -20,-24 -28,-14 C-34,-16 -42,-22 -50,-32 C-52,-18 -48,-8 -38,2 C-30,8 -22,12 -14,8 C-10,18 -5,26 0,34 C5,26 10,18 14,8 C22,12 30,8 38,2 C48,-8 52,-18 50,-32 C42,-22 34,-16 28,-14 C20,-24 8,-26 0,-18 Z" fill="#08081a">
+      <animate attributeName="opacity" values="0.75;0.95;0.75" dur="6s" repeatCount="indefinite" />
     </path>
   </g>
 
-  <g transform="translate(698 258)">
-    <circle cx="0" cy="0" r="7" fill="#{{ACCENT}}" opacity="0.28" />
-    <circle cx="0" cy="0" r="18" fill="none" stroke="#{{ACCENT}}" stroke-opacity="0.18">
-      <animate attributeName="r" values="10;28;10" dur="2.8s" repeatCount="indefinite" />
-      <animate attributeName="stroke-opacity" values="0.22;0;0.22" dur="2.8s" repeatCount="indefinite" />
+  <!-- Flying bats -->
+  <g transform="translate(750 72)" opacity="0.6">
+    <path d="M0,-5 C-5,-10 -12,-9 -16,-3 C-20,-4 -26,-8 -32,-15 C-33,-7 -30,-1 -23,4 C-18,7 -13,9 -7,6 C-5,12 -3,16 0,20 C3,16 5,12 7,6 C13,9 18,7 23,4 C30,-1 33,-7 32,-15 C26,-8 20,-4 16,-3 C12,-9 5,-10 0,-5 Z" fill="#0a0a18">
+      <animateTransform attributeName="transform" type="translate" values="0 0;30 -12;60 -4;90 -14;120 0" dur="12s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.5;0.8;0.4;0.7;0.5" dur="12s" repeatCount="indefinite" />
+    </path>
+  </g>
+  <g transform="translate(680 56)" opacity="0.35">
+    <path d="M0,-3 C-3,-6 -7,-5 -10,-2 C-12,-2 -16,-5 -19,-9 C-20,-4 -18,0 -14,3 C-11,5 -8,5 -4,4 C-3,7 -2,10 0,12 C2,10 3,7 4,4 C8,5 11,5 14,3 C18,0 20,-4 19,-9 C16,-5 12,-2 10,-2 C7,-5 3,-6 0,-3 Z" fill="#0a0a18">
+      <animateTransform attributeName="transform" type="translate" values="0 0;-20 -6;-40 2;-60 -8;-80 0" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.3;0.6;0.25;0.55;0.3" dur="15s" repeatCount="indefinite" />
+    </path>
+  </g>
+
+  <!-- Bat signal beam from rooftop -->
+  <g transform="translate(700 278)">
+    <circle cx="0" cy="0" r="8" fill="#{{ACCENT}}" opacity="0.35">
+      <animate attributeName="opacity" values="0.2;0.45;0.2" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="0" cy="0" r="22" fill="none" stroke="#{{ACCENT}}" stroke-opacity="0.2">
+      <animate attributeName="r" values="12;32;12" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="stroke-opacity" values="0.25;0;0.25" dur="3s" repeatCount="indefinite" />
     </circle>
     <g>
-      <animateTransform attributeName="transform" type="rotate" values="-8 0 0;8 0 0;-8 0 0" dur="7.2s" repeatCount="indefinite" />
-      <polygon points="0,0 316,-184 394,-136 116,16" fill="url(#beam)" />
+      <animateTransform attributeName="transform" type="rotate" values="-6 0 0;6 0 0;-6 0 0" dur="8s" repeatCount="indefinite" />
+      <polygon points="0,0 320,-190 400,-140 120,18" fill="url(#beam)" opacity="0.45" />
     </g>
   </g>
 
-  <g transform="translate(0 284)">
-    <rect width="1000" height="120" fill="#{{BG}}" />
-    <path d="M0 120 L0 72 L30 72 L30 44 L60 44 L60 84 L92 84 L92 52 L120 52 L120 120 Z" fill="#06090f" />
-    <path d="M104 120 L104 56 L142 56 L142 20 L176 20 L176 120 Z" fill="#0a0f18" />
-    <path d="M166 120 L166 38 L204 38 L204 62 L236 62 L236 10 L268 10 L268 120 Z" fill="#0d121c" />
-    <path d="M248 120 L248 50 L284 50 L284 18 L318 18 L318 120 Z" fill="#06090f" />
-    <path d="M310 120 L310 24 L352 24 L352 -8 L384 -8 L384 120 Z" fill="#0d121c" />
-    <path d="M646 120 L646 50 L680 50 L680 10 L716 10 L716 120 Z" fill="#09101a" />
-    <path d="M702 120 L702 22 L738 22 L738 -18 L774 -18 L774 120 Z" fill="#0d121c" />
-    <path d="M770 120 L770 58 L802 58 L802 0 L838 0 L838 120 Z" fill="#06090f" />
-    <path d="M834 120 L834 40 L870 40 L870 -18 L908 -18 L908 120 Z" fill="#0d121c" />
-    <path d="M900 120 L900 24 L936 24 L936 58 L964 58 L964 -4 L996 -4 L996 120 Z" fill="#09101a" />
+  <!-- Rain -->
+  <g opacity="0.15" stroke="#{{SNOW}}" stroke-width="0.6">
+    <line x1="80" y1="-20" x2="76" y2="440"><animate attributeName="y1" values="-20;440" dur="1.8s" repeatCount="indefinite" /><animate attributeName="y2" values="0;460" dur="1.8s" repeatCount="indefinite" /></line>
+    <line x1="200" y1="-30" x2="196" y2="440"><animate attributeName="y1" values="-30;440" dur="2.1s" repeatCount="indefinite" begin="-0.4s"/><animate attributeName="y2" values="-10;460" dur="2.1s" repeatCount="indefinite" begin="-0.4s"/></line>
+    <line x1="340" y1="-10" x2="336" y2="440"><animate attributeName="y1" values="-10;440" dur="1.6s" repeatCount="indefinite" begin="-0.8s"/><animate attributeName="y2" values="10;460" dur="1.6s" repeatCount="indefinite" begin="-0.8s"/></line>
+    <line x1="480" y1="-40" x2="476" y2="440"><animate attributeName="y1" values="-40;440" dur="2.3s" repeatCount="indefinite" begin="-1.2s"/><animate attributeName="y2" values="-20;460" dur="2.3s" repeatCount="indefinite" begin="-1.2s"/></line>
+    <line x1="600" y1="-15" x2="596" y2="440"><animate attributeName="y1" values="-15;440" dur="1.9s" repeatCount="indefinite" begin="-0.6s"/><animate attributeName="y2" values="5;460" dur="1.9s" repeatCount="indefinite" begin="-0.6s"/></line>
+    <line x1="740" y1="-25" x2="736" y2="440"><animate attributeName="y1" values="-25;440" dur="2.0s" repeatCount="indefinite" begin="-1.0s"/><animate attributeName="y2" values="-5;460" dur="2.0s" repeatCount="indefinite" begin="-1.0s"/></line>
+    <line x1="900" y1="-35" x2="896" y2="440"><animate attributeName="y1" values="-35;440" dur="1.7s" repeatCount="indefinite" begin="-0.2s"/><animate attributeName="y2" values="-15;460" dur="1.7s" repeatCount="indefinite" begin="-0.2s"/></line>
+  </g>
 
-    <g fill="#{{WINDOW}}" opacity="0.84">
-      <rect x="116" y="84" width="6" height="8"><animate attributeName="opacity" values="0.18;0.88;0.18" dur="4.2s" repeatCount="indefinite" /></rect>
-      <rect x="178" y="92" width="6" height="8"><animate attributeName="opacity" values="0.82;0.16;0.82" dur="5.2s" repeatCount="indefinite" /></rect>
-      <rect x="318" y="68" width="6" height="8"><animate attributeName="opacity" values="0.74;0.14;0.74" dur="4.7s" repeatCount="indefinite" /></rect>
-      <rect x="716" y="48" width="6" height="8"><animate attributeName="opacity" values="0.16;0.92;0.16" dur="3.9s" repeatCount="indefinite" /></rect>
-      <rect x="848" y="78" width="6" height="8"><animate attributeName="opacity" values="0.18;0.94;0.18" dur="4.4s" repeatCount="indefinite" /></rect>
-      <rect x="938" y="90" width="6" height="8"><animate attributeName="opacity" values="0.86;0.2;0.86" dur="6s" repeatCount="indefinite" /></rect>
+  <!-- Gotham skyline -->
+  <g transform="translate(0 304)">
+    <rect width="1000" height="136" fill="#{{BG}}" />
+    <path d="M0 136 L0 78 L24 78 L24 52 L48 52 L48 88 L68 88 L68 46 L96 46 L96 136 Z" fill="#04040c" />
+    <path d="M84 136 L84 38 L118 38 L118 12 L150 12 L150 136 Z" fill="#06061a" />
+    <path d="M140 136 L140 28 L166 28 L166 56 L192 56 L192 6 L224 6 L224 136 Z" fill="#08081a" />
+    <path d="M210 136 L210 44 L244 44 L244 16 L278 16 L278 136 Z" fill="#04040c" />
+    <path d="M266 136 L266 22 L306 22 L306 -12 L338 -12 L338 136 Z" fill="#08081a" />
+    <path d="M328 136 L328 48 L358 48 L358 28 L388 28 L388 136 Z" fill="#0a0a20" />
+    <!-- Wayne Tower -->
+    <path d="M420 136 L420 -8 L438 -8 L438 -28 L448 -38 L458 -28 L458 -8 L476 -8 L476 136 Z" fill="#06061a" />
+    <rect x="443" y="-36" width="10" height="8" fill="#{{ACCENT}}" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
+    </rect>
+    <path d="M466 136 L466 32 L496 32 L496 8 L528 8 L528 136 Z" fill="#08081a" />
+    <path d="M520 136 L520 52 L552 52 L552 24 L584 24 L584 136 Z" fill="#04040c" />
+    <path d="M580 136 L580 44 L612 44 L612 18 L644 18 L644 136 Z" fill="#06061a" />
+    <path d="M636 136 L636 38 L668 38 L668 4 L698 4 L698 136 Z" fill="#08081a" />
+    <path d="M694 136 L694 28 L726 28 L726 -6 L758 -6 L758 136 Z" fill="#0a0a20" />
+    <path d="M752 136 L752 52 L782 52 L782 -2 L814 -2 L814 136 Z" fill="#04040c" />
+    <path d="M808 136 L808 34 L840 34 L840 -14 L872 -14 L872 136 Z" fill="#08081a" />
+    <path d="M864 136 L864 20 L900 20 L900 48 L928 48 L928 -8 L960 -8 L960 136 Z" fill="#06061a" />
+    <path d="M952 136 L952 36 L978 36 L978 12 L1000 12 L1000 136 Z" fill="#08081a" />
+
+    <!-- Building windows -->
+    <g fill="#{{WINDOW}}" opacity="0.9">
+      <rect x="92" y="78" width="4" height="6"><animate attributeName="opacity" values="0.15;0.95;0.15" dur="3.8s" repeatCount="indefinite" /></rect>
+      <rect x="126" y="52" width="4" height="6"><animate attributeName="opacity" values="0.9;0.12;0.9" dur="4.6s" repeatCount="indefinite" /></rect>
+      <rect x="160" y="68" width="4" height="6"><animate attributeName="opacity" values="0.2;0.85;0.2" dur="5.1s" repeatCount="indefinite" /></rect>
+      <rect x="248" y="56" width="4" height="6"><animate attributeName="opacity" values="0.8;0.1;0.8" dur="3.4s" repeatCount="indefinite" /></rect>
+      <rect x="306" y="32" width="4" height="6"><animate attributeName="opacity" values="0.15;0.92;0.15" dur="6.2s" repeatCount="indefinite" /></rect>
+      <rect x="350" y="62" width="4" height="6"><animate attributeName="opacity" values="0.85;0.18;0.85" dur="4.1s" repeatCount="indefinite" /></rect>
+      <rect x="440" y="18" width="4" height="6"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.8s" repeatCount="indefinite" /></rect>
+      <rect x="498" y="42" width="4" height="6"><animate attributeName="opacity" values="0.75;0.15;0.75" dur="5.5s" repeatCount="indefinite" /></rect>
+      <rect x="556" y="58" width="4" height="6"><animate attributeName="opacity" values="0.12;0.88;0.12" dur="3.2s" repeatCount="indefinite" /></rect>
+      <rect x="648" y="42" width="4" height="6"><animate attributeName="opacity" values="0.82;0.16;0.82" dur="4.8s" repeatCount="indefinite" /></rect>
+      <rect x="728" y="38" width="4" height="6"><animate attributeName="opacity" values="0.18;0.94;0.18" dur="3.6s" repeatCount="indefinite" /></rect>
+      <rect x="786" y="28" width="4" height="6"><animate attributeName="opacity" values="0.9;0.2;0.9" dur="5.8s" repeatCount="indefinite" /></rect>
+      <rect x="848" y="48" width="4" height="6"><animate attributeName="opacity" values="0.14;0.88;0.14" dur="4.4s" repeatCount="indefinite" /></rect>
+      <rect x="912" y="62" width="4" height="6"><animate attributeName="opacity" values="0.86;0.12;0.86" dur="6.4s" repeatCount="indefinite" /></rect>
+      <rect x="968" y="46" width="4" height="6"><animate attributeName="opacity" values="0.2;0.92;0.2" dur="3.9s" repeatCount="indefinite" /></rect>
     </g>
   </g>
 
-  <g transform="translate(48 44)">
-    <rect width="904" height="188" rx="26" fill="url(#panel-grad)" stroke="#{{EDGE}}" opacity="0.98" />
-    <rect x="12" y="12" width="880" height="164" rx="20" fill="none" stroke="#{{EDGE_SOFT}}" opacity="0.9" />
-    <rect x="-160" y="0" width="160" height="188" fill="url(#panel-sheen)" opacity="0.16">
-      <animate attributeName="x" values="-160;944;-160" dur="6.4s" repeatCount="indefinite" />
+  <!-- Main info panel -->
+  <g transform="translate(40 50)">
+    <rect width="560" height="200" rx="20" fill="url(#panel-grad)" stroke="#{{EDGE}}" stroke-opacity="0.6" />
+    <rect width="560" height="200" rx="20" fill="url(#scanlines)" opacity="0.25" />
+    <rect x="10" y="10" width="540" height="180" rx="16" fill="none" stroke="#{{EDGE_SOFT}}" stroke-opacity="0.4" />
+    <rect x="-180" y="0" width="180" height="200" fill="url(#panel-sheen)" opacity="0.3">
+      <animate attributeName="x" values="-180;600;-180" dur="5s" repeatCount="indefinite" />
     </rect>
-    <path d="M28 24 H92" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.8" />
-    <path d="M812 164 H876" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.42" />
+    <!-- Corner brackets -->
+    <path d="M24 24 H60" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.9" />
+    <path d="M24 24 V52" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.9" />
+    <path d="M500 176 H536" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+    <path d="M536 148 V176" stroke="#{{ACCENT}}" stroke-width="2" stroke-linecap="round" opacity="0.4" />
 
-    <text x="34" y="36" class="mono" fill="#{{ACCENT}}" font-size="13">lohith // ai/ml engineer</text>
-    <text x="34" y="102" class="display" fill="url(#name-grad)" font-size="92">{{DISPLAY_NAME}}</text>
-    <text x="36" y="146" class="ui" fill="#{{STEEL}}" font-size="21">{{TAGLINE_LINES_1}}</text>
-    <text x="36" y="172" class="ui" fill="#{{STEEL}}" font-size="21">{{TAGLINE_LINES_2}}</text>
+    <text x="30" y="40" class="mono" fill="#{{ACCENT}}" font-size="11">LOHITH // AI-ML ENGINEER // GOTHAM DIVISION</text>
+    <text x="30" y="110" class="display" fill="url(#name-grad)" font-size="88" filter="url(#glow)">{{DISPLAY_NAME}}</text>
 
-    <rect x="36" y="124" width="220" height="4" rx="2" fill="#{{EDGE_SOFT}}" />
-    <rect x="36" y="124" width="126" height="4" rx="2" fill="#{{ACCENT}}">
-      <animate attributeName="width" values="96;188;126;96" dur="4.6s" repeatCount="indefinite" />
+    <!-- Animated underline -->
+    <rect x="30" y="124" width="0" height="3" rx="1.5" fill="#{{ACCENT}}">
+      <animate attributeName="width" values="0;260;180;0" dur="5s" repeatCount="indefinite" />
     </rect>
 
-    <rect x="640" y="24" width="234" height="140" rx="18" fill="#05080d" stroke="#{{EDGE_SOFT}}" />
-    <rect x="652" y="34" width="88" height="22" rx="11" fill="url(#chip-active)" stroke="#{{ACCENT_SOFT}}" />
-    <text x="696" y="49" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="11">current arc</text>
-    <circle cx="852" cy="42" r="5" fill="#{{ACCENT}}">
-      <animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" repeatCount="indefinite" />
+    <text x="32" y="152" class="ui" fill="#{{STEEL}}" font-size="18">{{TAGLINE_LINES_1}}</text>
+    <text x="32" y="176" class="ui" fill="#{{STEEL}}" font-size="18">{{TAGLINE_LINES_2}}</text>
+  </g>
+
+  <!-- Current role card -->
+  <g transform="translate(630 50)">
+    <rect width="330" height="132" rx="18" fill="#0a0a18" stroke="#{{EDGE}}" stroke-opacity="0.5" />
+    <rect width="330" height="132" rx="18" fill="url(#scanlines)" opacity="0.25" />
+    <rect x="16" y="14" width="88" height="22" rx="11" fill="url(#chip-active)" stroke="#{{ACCENT_SOFT}}" />
+    <text x="60" y="29" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="10">ACTIVE ARC</text>
+    <circle cx="304" cy="24" r="5" fill="#{{ACCENT}}">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="1.5s" repeatCount="indefinite" />
     </circle>
-    <text x="660" y="88" class="display" fill="#{{TEXT}}" font-size="36">{{EXPERIENCE_1_COMPANY}}</text>
-    <text x="660" y="112" class="ui" fill="#{{STEEL}}" font-size="18">{{EXPERIENCE_1_ROLE}}</text>
-    <text x="660" y="136" class="mono" fill="#{{ACCENT_2}}" font-size="13">{{EXPERIENCE_1_PERIOD}}</text>
-    <text x="660" y="160" class="ui" fill="#{{MUTED}}" font-size="14">previously: {{EXPERIENCE_2_COMPANY}} and {{EXPERIENCE_3_COMPANY}}</text>
+    <circle cx="304" cy="24" r="10" fill="none" stroke="#{{ACCENT}}" stroke-opacity="0.3">
+      <animate attributeName="r" values="8;16;8" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-opacity" values="0.3;0;0.3" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="16" y="68" class="display" fill="#{{TEXT}}" font-size="34">{{EXPERIENCE_1_COMPANY}}</text>
+    <text x="16" y="90" class="ui" fill="#{{STEEL}}" font-size="15">{{EXPERIENCE_1_ROLE}}</text>
+    <text x="16" y="112" class="mono" fill="#{{ACCENT_2}}" font-size="12">{{EXPERIENCE_1_PERIOD}}</text>
+    <text x="16" y="128" class="ui" fill="#{{MUTED}}" font-size="12">prev: {{EXPERIENCE_2_COMPANY}} &amp; {{EXPERIENCE_3_COMPANY}}</text>
   </g>
 
-  <g transform="translate(112 320)">
-    <rect width="128" height="32" rx="16" fill="url(#chip-active)" stroke="#{{ACCENT_SOFT}}" />
-    <text x="64" y="21" text-anchor="middle" class="ui" fill="#{{ACCENT}}" font-size="14">{{TAGS_1}}</text>
-    <rect x="146" width="128" height="32" rx="16" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="210" y="21" text-anchor="middle" class="ui" fill="#{{TEXT}}" font-size="14">{{TAGS_2}}</text>
-    <rect x="292" width="128" height="32" rx="16" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="356" y="21" text-anchor="middle" class="ui" fill="#{{TEXT}}" font-size="14">{{TAGS_3}}</text>
-    <rect x="438" width="128" height="32" rx="16" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="502" y="21" text-anchor="middle" class="ui" fill="#{{TEXT}}" font-size="14">{{TAGS_4}}</text>
+  <!-- Tag chips -->
+  <g transform="translate(80 356)">
+    <rect width="130" height="32" rx="16" fill="url(#chip-active)" stroke="#{{ACCENT_SOFT}}" />
+    <text x="65" y="21" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="13">{{TAGS_1}}</text>
+    <rect x="148" width="130" height="32" rx="16" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="213" y="21" text-anchor="middle" class="mono" fill="#{{TEXT}}" font-size="13">{{TAGS_2}}</text>
+    <rect x="296" width="130" height="32" rx="16" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="361" y="21" text-anchor="middle" class="mono" fill="#{{TEXT}}" font-size="13">{{TAGS_3}}</text>
+    <rect x="444" width="130" height="32" rx="16" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="509" y="21" text-anchor="middle" class="mono" fill="#{{TEXT}}" font-size="13">{{TAGS_4}}</text>
+    <!-- Mini bat icon -->
+    <g transform="translate(620 16)" opacity="0.45">
+      <path d="M0,-4 C-3,-7 -8,-6 -10,-2 C-13,-3 -16,-5 -20,-9 C-20,-4 -18,0 -14,3 C-11,5 -8,5 -5,4 C-3,7 -2,9 0,12 C2,9 3,7 5,4 C8,5 11,5 14,3 C18,0 20,-4 20,-9 C16,-5 13,-3 10,-2 C8,-6 3,-7 0,-4 Z" fill="#{{ACCENT}}">
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" />
+      </path>
+    </g>
   </g>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="434" width="1000" height="2" fill="#{{ACCENT}}" opacity="0.12">
+    <animate attributeName="opacity" values="0.05;0.18;0.05" dur="3s" repeatCount="indefinite" />
+  </rect>
 </svg>

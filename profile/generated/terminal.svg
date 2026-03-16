@@ -1,160 +1,223 @@
-<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg" width="1000" height="500" role="img" aria-label="Profile overview board for lohith">
+<svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" width="1000" height="520" role="img" aria-label="Profile overview board for lohith">
   <defs>
     <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b1018" />
-      <stop offset="100%" stop-color="#03050a" />
+      <stop offset="0%" stop-color="#0b0b1e" />
+      <stop offset="100%" stop-color="#08081a" />
     </linearGradient>
     <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="0%" stop-color="#f5c518" stop-opacity="0" />
+      <stop offset="50%" stop-color="#f5c518" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
     </linearGradient>
     <linearGradient id="accent-bar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f5d25f" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5d25f" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#f5d25f" stop-opacity="0" />
+      <stop offset="0%" stop-color="#f5c518" stop-opacity="0" />
+      <stop offset="50%" stop-color="#f5c518" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
     </linearGradient>
     <linearGradient id="chip-active" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#5a4510" />
-      <stop offset="100%" stop-color="#2b2108" />
+      <stop offset="0%" stop-color="#3a2a06" />
+      <stop offset="100%" stop-color="#1a1400" />
+    </linearGradient>
+    <linearGradient id="card-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5c518" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
     </linearGradient>
     <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-      <path d="M28 0H0V28" fill="none" stroke="#0f1520" stroke-width="1" opacity="0.18" />
+      <path d="M28 0H0V28" fill="none" stroke="#12122a" stroke-width="0.6" opacity="0.14" />
     </pattern>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#000000" opacity="0.06" />
+    </pattern>
+    <filter id="glow-sm">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
     <style>
-      .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.45px; font-weight: 700; }
-      .mono { font-family: "Ubuntu Mono", "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }
-      .ui { font-family: "Ubuntu", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }
+      .display { font-family: "Bebas Neue", "Oswald", "Impact", "Ubuntu Condensed", sans-serif; letter-spacing: 2px; font-weight: 700; }
+      .mono { font-family: "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.5px; }
+      .ui { font-family: "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
     </style>
   </defs>
 
-  <rect width="1000" height="500" fill="#000000" />
-  <rect x="24" y="18" width="952" height="464" rx="24" fill="url(#panel-grad)" stroke="#1d2330" />
-  <rect x="24" y="18" width="952" height="464" rx="24" fill="url(#grid)" opacity="0.12" />
-  <rect x="-180" y="18" width="180" height="464" fill="url(#sheen)" opacity="0.18">
-    <animate attributeName="x" values="-180;1120;-180" dur="7.2s" repeatCount="indefinite" />
+  <!-- Base -->
+  <rect width="1000" height="520" fill="#05050a" />
+  <rect x="24" y="18" width="952" height="484" rx="24" fill="url(#panel-grad)" stroke="#1a1a3a" stroke-opacity="0.6" />
+  <rect x="24" y="18" width="952" height="484" rx="24" fill="url(#grid)" opacity="0.1" />
+  <rect x="24" y="18" width="952" height="484" rx="24" fill="url(#scanlines)" opacity="0.3" />
+  <!-- Moving sheen -->
+  <rect x="-200" y="18" width="200" height="484" fill="url(#sheen)" opacity="0.3">
+    <animate attributeName="x" values="-200;1100;-200" dur="6s" repeatCount="indefinite" />
   </rect>
+  <!-- Corner accents -->
+  <path d="M36 30 H64" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+  <path d="M36 30 V54" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+  <path d="M940 490 H964" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" opacity="0.3" />
+  <path d="M964 468 V490" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" opacity="0.3" />
 
-  <text x="46" y="48" class="mono" fill="#f5d25f" font-size="13">profile.overview</text>
-  <text x="954" y="48" text-anchor="end" class="mono" fill="#73819d" font-size="12">resume-driven layout</text>
+  <text x="46" y="48" class="mono" fill="#f5c518" font-size="12">BATCOMPUTER // PROFILE.OVERVIEW</text>
+  <text x="954" y="48" text-anchor="end" class="mono" fill="#6a6a8a" font-size="11">SECURE CHANNEL</text>
 
+  <!-- Stat cards row -->
   <g transform="translate(46 68)">
-    <rect width="212" height="64" rx="18" fill="#05080d" stroke="#1d2330" />
-    <rect x="-80" y="0" width="80" height="64" fill="url(#accent-bar)" opacity="0.18">
-      <animate attributeName="x" values="-80;292;-80" dur="4.8s" repeatCount="indefinite" />
+    <!-- Public Contributions -->
+    <rect width="212" height="68" rx="16" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.5" />
+    <rect width="212" height="68" rx="16" fill="url(#card-glow)" />
+    <rect x="-80" y="0" width="80" height="68" fill="url(#accent-bar)" opacity="0.2">
+      <animate attributeName="x" values="-80;292;-80" dur="4.2s" repeatCount="indefinite" />
     </rect>
-    <rect x="18" y="14" width="66" height="3" rx="1.5" fill="#f5d25f" />
-    <circle cx="188" cy="18" r="4" fill="#f5d25f">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" />
+    <rect x="16" y="14" width="66" height="3" rx="1.5" fill="#f5c518" />
+    <circle cx="188" cy="18" r="4" fill="#f5c518" filter="url(#glow-sm)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" repeatCount="indefinite" />
     </circle>
-    <text x="18" y="24" class="mono" fill="#73819d" font-size="11">public contributions</text>
-    <text x="18" y="52" class="display" fill="#f6f9ff" font-size="34">27</text>
+    <circle cx="188" cy="18" r="9" fill="none" stroke="#f5c518" stroke-opacity="0.2">
+      <animate attributeName="r" values="7;13;7" dur="1.6s" repeatCount="indefinite" />
+      <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.6s" repeatCount="indefinite" />
+    </circle>
+    <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">PUBLIC CONTRIBUTIONS</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">33</text>
   </g>
 
   <g transform="translate(274 68)">
-    <rect width="212" height="64" rx="18" fill="#05080d" stroke="#1d2330" />
-    <rect x="18" y="14" width="52" height="3" rx="1.5" fill="#96b8ff" />
-    <circle cx="188" cy="18" r="4" fill="#96b8ff">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.1s" repeatCount="indefinite" />
+    <!-- Active Days -->
+    <rect width="212" height="68" rx="16" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.5" />
+    <rect x="16" y="14" width="52" height="3" rx="1.5" fill="#4a7aff" />
+    <circle cx="188" cy="18" r="4" fill="#4a7aff" filter="url(#glow-sm)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" />
     </circle>
-    <text x="18" y="24" class="mono" fill="#73819d" font-size="11">active days</text>
-    <text x="18" y="52" class="display" fill="#f6f9ff" font-size="34">14</text>
+    <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">ACTIVE DAYS</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">15</text>
   </g>
 
   <g transform="translate(502 68)">
-    <rect width="212" height="64" rx="18" fill="#05080d" stroke="#1d2330" />
-    <rect x="18" y="14" width="48" height="3" rx="1.5" fill="#f5d25f" />
-    <text x="18" y="24" class="mono" fill="#73819d" font-size="11">public repos</text>
-    <text x="18" y="52" class="display" fill="#f6f9ff" font-size="34">1</text>
+    <!-- Public Repos -->
+    <rect width="212" height="68" rx="16" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.5" />
+    <rect x="16" y="14" width="48" height="3" rx="1.5" fill="#f5c518" />
+    <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">PUBLIC REPOS</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">1</text>
   </g>
 
   <g transform="translate(730 68)">
-    <rect width="212" height="64" rx="18" fill="#05080d" stroke="#1d2330" />
-    <rect x="18" y="14" width="42" height="3" rx="1.5" fill="#96b8ff" />
-    <text x="18" y="24" class="mono" fill="#73819d" font-size="11">followers</text>
-    <text x="18" y="52" class="display" fill="#f6f9ff" font-size="34">0</text>
+    <!-- Followers -->
+    <rect width="212" height="68" rx="16" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.5" />
+    <rect x="16" y="14" width="42" height="3" rx="1.5" fill="#4a7aff" />
+    <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">FOLLOWERS</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">0</text>
   </g>
 
-  <g transform="translate(46 154)">
-    <rect width="548" height="272" rx="22" fill="#020407" stroke="#0f1520" />
-    <rect x="0" y="0" width="548" height="272" rx="22" fill="url(#grid)" opacity="0.1" />
-    <text x="24" y="34" class="mono" fill="#f5d25f" font-size="13">about</text>
-    <rect x="24" y="40" width="82" height="3" rx="1.5" fill="#f5d25f" />
-    <text x="24" y="58" class="ui" fill="#b9c2d8" font-size="15">what I build and how I ship it</text>
+  <!-- About section -->
+  <g transform="translate(46 160)">
+    <rect width="548" height="286" rx="20" fill="#060612" stroke="#12122a" stroke-opacity="0.5" />
+    <rect x="0" y="0" width="548" height="286" rx="20" fill="url(#grid)" opacity="0.08" />
+    <rect x="0" y="0" width="548" height="286" rx="20" fill="url(#scanlines)" opacity="0.2" />
 
-    <circle cx="30" cy="90" r="4" fill="#f5d25f" />
-    <text x="44" y="96" class="ui" fill="#f6f9ff" font-size="16">production GenAI on AWS + Kubernetes</text>
-    <circle cx="30" cy="122" r="4" fill="#96b8ff" />
-    <text x="44" y="128" class="ui" fill="#f6f9ff" font-size="16">evaluation, release, and MLOps workflow automation</text>
-    <circle cx="30" cy="154" r="4" fill="#f6f9ff" />
-    <text x="44" y="160" class="ui" fill="#f6f9ff" font-size="16">client-facing delivery and technical communication</text>
-
-    <text x="24" y="188" class="mono" fill="#f5d25f" font-size="13">recent path</text>
-    <rect x="20" y="196" width="508" height="80" rx="16" fill="#05080d" stroke="#1d2330" />
-
-    <text x="24" y="214" class="display" fill="#f6f9ff" font-size="22">UncovAI</text>
-    <text x="168" y="214" class="ui" fill="#b9c2d8" font-size="14">Data Scientist</text>
-    <text x="524" y="214" text-anchor="end" class="mono" fill="#f5d25f" font-size="11">Dec 2025 - Present</text>
-
-    <text x="24" y="242" class="display" fill="#f6f9ff" font-size="22">Ansys</text>
-    <text x="168" y="242" class="ui" fill="#b9c2d8" font-size="14">DevSecOps / MLOps Engineer</text>
-    <text x="524" y="242" text-anchor="end" class="mono" fill="#96b8ff" font-size="11">Mar 2025 - Oct 2025</text>
-
-    <text x="24" y="268" class="display" fill="#f6f9ff" font-size="18">Amadeus</text>
-    <text x="168" y="268" class="ui" fill="#b9c2d8" font-size="13">AI / ML Engineer</text>
-    <text x="524" y="268" text-anchor="end" class="mono" fill="#b9c2d8" font-size="11">Summer 2024</text>
-  </g>
-
-  <g transform="translate(618 154)">
-    <rect width="324" height="108" rx="22" fill="#020407" stroke="#0f1520" />
-    <rect x="0" y="0" width="324" height="108" rx="22" fill="url(#grid)" opacity="0.1" />
-    <text x="20" y="32" class="mono" fill="#f5d25f" font-size="13">stack</text>
-
-    <rect x="20" y="48" width="90" height="24" rx="12" fill="url(#chip-active)" stroke="#a98a2d" />
-    <text x="65" y="64" text-anchor="middle" class="mono" fill="#f5d25f" font-size="12">Python</text>
-    <rect x="118" y="48" width="90" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
-    <text x="163" y="64" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">AWS</text>
-    <rect x="216" y="48" width="88" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
-    <text x="260" y="64" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">Kubernetes</text>
-
-    <rect x="20" y="78" width="90" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
-    <text x="65" y="94" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">MLflow</text>
-    <rect x="118" y="78" width="90" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
-    <text x="163" y="94" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">Kubeflow</text>
-    <rect x="216" y="78" width="88" height="24" rx="12" fill="#090d15" stroke="#1d2330" />
-    <text x="260" y="94" text-anchor="middle" class="mono" fill="#b9c2d8" font-size="12">SageMaker</text>
-  </g>
-
-  <g transform="translate(618 288)">
-    <rect width="324" height="138" rx="22" fill="#020407" stroke="#0f1520" />
-    <rect x="0" y="0" width="324" height="138" rx="22" fill="url(#grid)" opacity="0.1" />
-    <rect x="-80" y="0" width="80" height="138" fill="url(#accent-bar)" opacity="0.18">
-      <animate attributeName="x" values="-80;404;-80" dur="5.2s" repeatCount="indefinite" />
+    <text x="24" y="32" class="mono" fill="#f5c518" font-size="12">MISSION.LOG</text>
+    <rect x="24" y="38" width="82" height="2" rx="1" fill="#f5c518" opacity="0.6">
+      <animate attributeName="width" values="60;100;60" dur="4s" repeatCount="indefinite" />
     </rect>
-    <text x="20" y="32" class="mono" fill="#f5d25f" font-size="13">org spotlight</text>
-    <circle cx="292" cy="28" r="5" fill="#f5d25f">
-      <animate attributeName="opacity" values="0.22;1;0.22" dur="1.8s" repeatCount="indefinite" />
+    <text x="24" y="56" class="ui" fill="#9898b8" font-size="14">what I build and how I ship it</text>
+
+    <!-- Mission items with animated dots -->
+    <circle cx="30" cy="86" r="4" fill="#f5c518" filter="url(#glow-sm)">
+      <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite" />
     </circle>
-    <text x="20" y="62" class="display" fill="#f6f9ff" font-size="30">UncovAI</text>
-    <text x="20" y="84" class="ui" fill="#b9c2d8" font-size="14">production GenAI and evaluation workflows</text>
-    <rect x="20" y="98" width="92" height="20" rx="10" fill="#090d15" stroke="#1d2330" />
-    <text x="66" y="112" text-anchor="middle" class="mono" fill="#73819d" font-size="11">uncovai.com/</text>
+    <text x="44" y="92" class="ui" fill="#e8e8f0" font-size="15">production GenAI on AWS + Kubernetes</text>
+    <circle cx="30" cy="116" r="4" fill="#4a7aff" filter="url(#glow-sm)">
+      <animate attributeName="r" values="3;5;3" dur="3.4s" repeatCount="indefinite" />
+    </circle>
+    <text x="44" y="122" class="ui" fill="#e8e8f0" font-size="15">evaluation, release, and MLOps workflow automation</text>
+    <circle cx="30" cy="146" r="4" fill="#e8e8f0" filter="url(#glow-sm)">
+      <animate attributeName="r" values="3;5;3" dur="3.8s" repeatCount="indefinite" />
+    </circle>
+    <text x="44" y="152" class="ui" fill="#e8e8f0" font-size="15">client-facing delivery and technical communication</text>
+
+    <!-- Experience records -->
+    <text x="24" y="182" class="mono" fill="#f5c518" font-size="12">RECENT.PATH</text>
+    <rect x="20" y="192" width="508" height="84" rx="14" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.4" />
+    <!-- Scan line on experience -->
+    <rect x="20" y="192" width="0" height="84" rx="14" fill="url(#accent-bar)" opacity="0.15">
+      <animate attributeName="width" values="0;508;0" dur="5s" repeatCount="indefinite" />
+    </rect>
+
+    <text x="28" y="214" class="display" fill="#e8e8f0" font-size="20">UncovAI</text>
+    <text x="168" y="214" class="ui" fill="#9898b8" font-size="13">Data Scientist</text>
+    <text x="524" y="214" text-anchor="end" class="mono" fill="#f5c518" font-size="11">Dec 2025 - Present</text>
+
+    <text x="28" y="240" class="display" fill="#e8e8f0" font-size="20">Ansys</text>
+    <text x="168" y="240" class="ui" fill="#9898b8" font-size="13">DevSecOps / MLOps Engineer</text>
+    <text x="524" y="240" text-anchor="end" class="mono" fill="#4a7aff" font-size="11">Mar 2025 - Oct 2025</text>
+
+    <text x="28" y="264" class="display" fill="#e8e8f0" font-size="17">Amadeus</text>
+    <text x="168" y="264" class="ui" fill="#9898b8" font-size="12">AI / ML Engineer</text>
+    <text x="524" y="264" text-anchor="end" class="mono" fill="#9898b8" font-size="11">Summer 2024</text>
   </g>
 
-  <g transform="translate(46 446)">
-    <rect width="896" height="18" rx="9" fill="#04080e" stroke="#1d2330" />
-    <rect x="-110" y="0" width="110" height="18" fill="url(#accent-bar)" opacity="0.22">
-      <animate attributeName="x" values="-110;936;-110" dur="4.8s" repeatCount="indefinite" />
+  <!-- Stack section -->
+  <g transform="translate(618 160)">
+    <rect width="324" height="116" rx="20" fill="#060612" stroke="#12122a" stroke-opacity="0.5" />
+    <rect x="0" y="0" width="324" height="116" rx="20" fill="url(#grid)" opacity="0.08" />
+    <text x="20" y="30" class="mono" fill="#f5c518" font-size="12">ARSENAL</text>
+    <!-- Animated line -->
+    <rect x="20" y="36" width="40" height="2" rx="1" fill="#f5c518" opacity="0.5">
+      <animate attributeName="width" values="30;60;30" dur="3.5s" repeatCount="indefinite" />
     </rect>
-    <text x="14" y="12" class="mono" fill="#f5d25f" font-size="11">production systems • evaluation-first delivery • stakeholder communication</text>
-    <circle cx="860" cy="9" r="2" fill="#f5d25f">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" repeatCount="indefinite" />
+
+    <rect x="20" y="52" width="88" height="24" rx="12" fill="url(#chip-active)" stroke="#a38410" />
+    <text x="64" y="68" text-anchor="middle" class="mono" fill="#f5c518" font-size="11">Python</text>
+    <rect x="116" y="52" width="88" height="24" rx="12" fill="#0e0e22" stroke="#1a1a3a" />
+    <text x="160" y="68" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">AWS</text>
+    <rect x="212" y="52" width="92" height="24" rx="12" fill="#0e0e22" stroke="#1a1a3a" />
+    <text x="258" y="68" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">Kubernetes</text>
+
+    <rect x="20" y="82" width="88" height="24" rx="12" fill="#0e0e22" stroke="#1a1a3a" />
+    <text x="64" y="98" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">MLflow</text>
+    <rect x="116" y="82" width="88" height="24" rx="12" fill="#0e0e22" stroke="#1a1a3a" />
+    <text x="160" y="98" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">Kubeflow</text>
+    <rect x="212" y="82" width="92" height="24" rx="12" fill="#0e0e22" stroke="#1a1a3a" />
+    <text x="258" y="98" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">SageMaker</text>
+  </g>
+
+  <!-- Org spotlight -->
+  <g transform="translate(618 300)">
+    <rect width="324" height="146" rx="20" fill="#060612" stroke="#12122a" stroke-opacity="0.5" />
+    <rect x="0" y="0" width="324" height="146" rx="20" fill="url(#grid)" opacity="0.08" />
+    <rect x="-80" y="0" width="80" height="146" fill="url(#accent-bar)" opacity="0.2">
+      <animate attributeName="x" values="-80;404;-80" dur="4.8s" repeatCount="indefinite" />
+    </rect>
+    <text x="20" y="30" class="mono" fill="#f5c518" font-size="12">ORG.SPOTLIGHT</text>
+    <!-- Animated beacon -->
+    <circle cx="296" cy="26" r="5" fill="#f5c518" filter="url(#glow-sm)">
+      <animate attributeName="opacity" values="0.15;1;0.15" dur="1.5s" repeatCount="indefinite" />
     </circle>
-    <circle cx="872" cy="9" r="2" fill="#96b8ff">
-      <animate attributeName="opacity" values="1;0.2;1" dur="2.1s" repeatCount="indefinite" />
+    <circle cx="296" cy="26" r="12" fill="none" stroke="#f5c518" stroke-opacity="0.2">
+      <animate attributeName="r" values="8;18;8" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.5s" repeatCount="indefinite" />
     </circle>
-    <circle cx="884" cy="9" r="2" fill="#f6f9ff">
-      <animate attributeName="opacity" values="0.24;0.92;0.24" dur="2.4s" repeatCount="indefinite" />
+    <text x="20" y="62" class="display" fill="#e8e8f0" font-size="28">UncovAI</text>
+    <text x="20" y="84" class="ui" fill="#9898b8" font-size="13">production GenAI and evaluation workflows</text>
+    <rect x="20" y="100" width="92" height="20" rx="10" fill="#0e0e22" stroke="#1a1a3a" />
+    <text x="66" y="114" text-anchor="middle" class="mono" fill="#6a6a8a" font-size="10">uncovai.com/</text>
+    <!-- Mini bat -->
+    <g transform="translate(160 130)" opacity="0.25">
+      <path d="M0,-3 C-2,-5 -6,-4 -8,-1 C-10,-2 -13,-4 -16,-7 C-16,-3 -14,0 -11,2 C-9,4 -6,4 -4,3 C-2,6 -1,7 0,9 C1,7 2,6 4,3 C6,4 9,4 11,2 C14,0 16,-3 16,-7 C13,-4 10,-2 8,-1 C6,-4 2,-5 0,-3 Z" fill="#f5c518" />
+    </g>
+  </g>
+
+  <!-- Bottom status bar -->
+  <g transform="translate(46 468)">
+    <rect width="896" height="20" rx="10" fill="#060612" stroke="#1a1a3a" stroke-opacity="0.4" />
+    <rect x="-120" y="0" width="120" height="20" fill="url(#accent-bar)" opacity="0.25">
+      <animate attributeName="x" values="-120;1020;-120" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <text x="14" y="14" class="mono" fill="#f5c518" font-size="10">GOTHAM SYSTEMS ONLINE // PRODUCTION READY // EVALUATION-FIRST</text>
+    <!-- Status dots -->
+    <circle cx="856" cy="10" r="3" fill="#f5c518" filter="url(#glow-sm)">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="870" cy="10" r="3" fill="#4a7aff">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="884" cy="10" r="3" fill="#e8e8f0">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.1s" repeatCount="indefinite" />
     </circle>
   </g>
 </svg>

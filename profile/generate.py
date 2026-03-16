@@ -265,9 +265,9 @@ def write_text_file(path, content):
 def svg_style_block():
     return [
         "    <style>",
-        '      .display { font-family: "Ubuntu Condensed", "Ubuntu", "Avenir Next Condensed", "Segoe UI", sans-serif; letter-spacing: 0.4px; font-weight: 700; }',
-        '      .ui { font-family: "Ubuntu", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif; }',
-        '      .mono { font-family: "Ubuntu Mono", "SFMono-Regular", "Consolas", "Liberation Mono", monospace; }',
+        '      .display { font-family: "Bebas Neue", "Oswald", "Impact", "Ubuntu Condensed", sans-serif; letter-spacing: 2px; font-weight: 700; }',
+        '      .ui { font-family: "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }',
+        '      .mono { font-family: "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.5px; }',
         "    </style>",
     ]
 
@@ -308,12 +308,14 @@ def write_activity_svg(config, stats):
         *svg_style_block(),
         "  </defs>",
         f'  <rect width="1000" height="288" fill="#{theme["BG"]}" />',
-        f'  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" />',
-        '  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#grid)" opacity="0.22" />',
-        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="14">city.telemetry</text>',
-        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">visible GitHub activity</text>',
-        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="15">public profile, repo, and contribution data rendered in a darker Gotham-style deck.</text>',
-        f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">public only</text>',
+        f'  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" stroke-opacity="0.6" />',
+        '  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#grid)" opacity="0.12" />',
+        '  <defs><pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity="0.06"/></pattern></defs>',
+        '  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#scan)" opacity="0.3" />',
+        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="12">BATCOMPUTER // CITY.TELEMETRY</text>',
+        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">VISIBLE GITHUB ACTIVITY</text>',
+        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="14">public profile, repo, and contribution data rendered in dark knight protocol.</text>',
+        f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="11">SECURE CHANNEL</text>',
         f'  <rect x="-120" y="118" width="120" height="124" fill="url(#sweep)" opacity="0.38">',
         '    <animate attributeName="x" values="-120;1040" dur="5.6s" repeatCount="indefinite" />',
         "  </rect>",
@@ -323,16 +325,23 @@ def write_activity_svg(config, stats):
         bar_width = 70 + (index * 12)
         svg.extend(
             [
-                f'  <rect x="{x}" y="128" width="{tile_width}" height="82" rx="14" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
-                f'  <rect x="{x + 18}" y="142" width="{bar_width}" height="4" rx="2" fill="#{theme["ACCENT"]}">',
+                f'  <rect x="{x}" y="128" width="{tile_width}" height="82" rx="14" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" stroke-opacity="0.5" />',
+                f'  <rect x="{x}" y="128" width="{tile_width}" height="82" rx="14" fill="url(#sweep)" opacity="0">',
+                f'    <animate attributeName="opacity" values="0;0.15;0" dur="{4 + index * 0.5:.1f}s" repeatCount="indefinite" />',
+                "  </rect>",
+                f'  <rect x="{x + 18}" y="142" width="{bar_width}" height="3" rx="1.5" fill="#{theme["ACCENT"]}">',
                 f'    <animate attributeName="width" values="{max(48, bar_width - 18)};{bar_width + 18};{bar_width}" dur="{3.5 + index * 0.4:.1f}s" repeatCount="indefinite" />',
                 "  </rect>",
-                f'  <circle cx="{x + tile_width - 26}" cy="146" r="5" fill="#{theme["ACCENT"]}">',
-                f'    <animate attributeName="opacity" values="0.2;1;0.2" dur="{1.8 + index * 0.25:.1f}s" repeatCount="indefinite" />',
+                f'  <circle cx="{x + tile_width - 26}" cy="146" r="4" fill="#{theme["ACCENT"]}">',
+                f'    <animate attributeName="opacity" values="0.15;1;0.15" dur="{1.5 + index * 0.25:.1f}s" repeatCount="indefinite" />',
+                "  </circle>",
+                f'  <circle cx="{x + tile_width - 26}" cy="146" r="10" fill="none" stroke="#{theme["ACCENT"]}" stroke-opacity="0.2">',
+                f'    <animate attributeName="r" values="7;14;7" dur="{1.5 + index * 0.25:.1f}s" repeatCount="indefinite" />',
+                f'    <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="{1.5 + index * 0.25:.1f}s" repeatCount="indefinite" />',
                 "  </circle>",
                 f'  <text x="{x + 18}" y="178" class="display" fill="#{theme["TEXT"]}" font-size="38">{escape(str(value))}</text>',
-                f'  <text x="{x + 18}" y="198" class="ui" fill="#{theme["ACCENT"]}" font-size="15">{escape(label)}</text>',
-                f'  <text x="{x + 18}" y="216" class="mono" fill="#{theme["MUTED"]}" font-size="11">{escape(hint)}</text>',
+                f'  <text x="{x + 18}" y="198" class="ui" fill="#{theme["ACCENT"]}" font-size="14">{escape(label.upper())}</text>',
+                f'  <text x="{x + 18}" y="216" class="mono" fill="#{theme["MUTED"]}" font-size="10">{escape(hint)}</text>',
             ]
         )
 
@@ -386,11 +395,11 @@ def write_languages_svg(config, stats):
         *svg_style_block(),
         "  </defs>",
         f'  <rect width="1000" height="288" fill="#{theme["BG"]}" />',
-        f'  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" />',
-        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="14">language.mix</text>',
-        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">public repo language spread</text>',
-        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="15">weighted by owned public repositories and rendered as a cleaner signal bar.</text>',
-        f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="12">owned public repos</text>',
+        f'  <rect x="24" y="18" width="952" height="252" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" stroke-opacity="0.6" />',
+        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="12">LANGUAGE.ANALYSIS</text>',
+        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">PUBLIC REPO LANGUAGE SPREAD</text>',
+        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="14">weighted by owned public repos, rendered in the dark knight protocol.</text>',
+        f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="11">OWNED PUBLIC REPOS</text>',
         f'  <rect x="44" y="120" width="912" height="22" rx="11" fill="#{theme["PANEL_ALT"]}" />',
     ]
 
@@ -489,10 +498,10 @@ def write_orgs_svg(config, orgs):
         *svg_style_block(),
         "  </defs>",
         f'  <rect width="1000" height="274" fill="#{theme["BG"]}" />',
-        f'  <rect x="24" y="18" width="952" height="238" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" />',
-        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="14">org.spotlight</text>',
-        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">work beyond personal repos</text>',
-        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="15">organization work can stay private on GitHub while the team itself still gets a dedicated profile spotlight.</text>',
+        f'  <rect x="24" y="18" width="952" height="238" rx="18" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" stroke-opacity="0.6" />',
+        f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="12">ORG.SPOTLIGHT</text>',
+        f'  <text x="44" y="82" class="display" fill="#{theme["TEXT"]}" font-size="34">WORK BEYOND PERSONAL REPOS</text>',
+        f'  <text x="44" y="106" class="ui" fill="#{theme["STEEL"]}" font-size="14">organization work rendered in the Gotham protocol. team profiles get their own spotlight.</text>',
     ]
 
     for index, (x, org) in enumerate(zip(positions, display_orgs)):
