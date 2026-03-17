@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" width="1000" height="520" role="img" aria-label="Profile overview board for {{DISPLAY_NAME}}">
+<svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" width="1000" height="560" role="img" aria-label="Profile overview board for {{DISPLAY_NAME}}">
   <defs>
     <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#{{PANEL_SOFT}}" />
@@ -33,19 +33,19 @@
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
     <style>
-      .display { font-family: "Bebas Neue", "Oswald", "Impact", "Ubuntu Condensed", sans-serif; letter-spacing: 2px; font-weight: 700; }
-      .mono { font-family: "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.5px; }
-      .ui { font-family: "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
+      .display { font-family: "Ubuntu Condensed", "Bebas Neue", "Oswald", "Impact", sans-serif; letter-spacing: 1.5px; font-weight: 700; }
+      .mono { font-family: "Ubuntu Mono", "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.35px; }
+      .ui { font-family: "Ubuntu", "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
     </style>
   </defs>
 
   <!-- Base -->
-  <rect width="1000" height="520" fill="#{{BG}}" />
-  <rect x="24" y="18" width="952" height="484" rx="24" fill="url(#panel-grad)" stroke="#{{EDGE}}" stroke-opacity="0.6" />
-  <rect x="24" y="18" width="952" height="484" rx="24" fill="url(#grid)" opacity="0.1" />
-  <rect x="24" y="18" width="952" height="484" rx="24" fill="url(#scanlines)" opacity="0.3" />
+  <rect width="1000" height="560" fill="#{{BG}}" />
+  <rect x="24" y="18" width="952" height="524" rx="24" fill="url(#panel-grad)" stroke="#{{EDGE}}" stroke-opacity="0.6" />
+  <rect x="24" y="18" width="952" height="524" rx="24" fill="url(#grid)" opacity="0.1" />
+  <rect x="24" y="18" width="952" height="524" rx="24" fill="url(#scanlines)" opacity="0.3" />
   <!-- Moving sheen -->
-  <rect x="-200" y="18" width="200" height="484" fill="url(#sheen)" opacity="0.3">
+  <rect x="-200" y="18" width="200" height="524" fill="url(#sheen)" opacity="0.3">
     <animate attributeName="x" values="-200;1100;-200" dur="6s" repeatCount="indefinite" />
   </rect>
   <!-- Corner accents -->
@@ -106,81 +106,81 @@
 
   <!-- About section -->
   <g transform="translate(46 160)">
-    <rect width="548" height="286" rx="20" fill="#060612" stroke="#{{EDGE_SOFT}}" stroke-opacity="0.5" />
-    <rect x="0" y="0" width="548" height="286" rx="20" fill="url(#grid)" opacity="0.08" />
-    <rect x="0" y="0" width="548" height="286" rx="20" fill="url(#scanlines)" opacity="0.2" />
+    <rect width="548" height="324" rx="20" fill="#060612" stroke="#{{EDGE_SOFT}}" stroke-opacity="0.5" />
+    <rect x="0" y="0" width="548" height="324" rx="20" fill="url(#grid)" opacity="0.08" />
+    <rect x="0" y="0" width="548" height="324" rx="20" fill="url(#scanlines)" opacity="0.2" />
 
     <text x="24" y="32" class="mono" fill="#{{ACCENT}}" font-size="12">MISSION.LOG</text>
     <rect x="24" y="38" width="82" height="2" rx="1" fill="#{{ACCENT}}" opacity="0.6">
       <animate attributeName="width" values="60;100;60" dur="4s" repeatCount="indefinite" />
     </rect>
-    <text x="24" y="56" class="ui" fill="#{{STEEL}}" font-size="14">what I build and how I ship it</text>
+    <text x="24" y="58" class="ui" fill="#{{STEEL}}" font-size="15">what I build and how I ship it</text>
 
     <!-- Mission items with animated dots -->
-    <circle cx="30" cy="86" r="4" fill="#{{ACCENT}}" filter="url(#glow-sm)">
+    <circle cx="30" cy="94" r="4" fill="#{{ACCENT}}" filter="url(#glow-sm)">
       <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite" />
     </circle>
-    <text x="44" y="92" class="ui" fill="#{{TEXT}}" font-size="15">{{MISSION_1}}</text>
-    <circle cx="30" cy="116" r="4" fill="#{{ACCENT_2}}" filter="url(#glow-sm)">
+    <text x="44" y="100" class="ui" fill="#{{TEXT}}" font-size="16">{{MISSION_1}}</text>
+    <circle cx="30" cy="132" r="4" fill="#{{ACCENT_2}}" filter="url(#glow-sm)">
       <animate attributeName="r" values="3;5;3" dur="3.4s" repeatCount="indefinite" />
     </circle>
-    <text x="44" y="122" class="ui" fill="#{{TEXT}}" font-size="15">{{MISSION_2}}</text>
-    <circle cx="30" cy="146" r="4" fill="#{{TEXT}}" filter="url(#glow-sm)">
+    <text x="44" y="138" class="ui" fill="#{{TEXT}}" font-size="16">{{MISSION_2}}</text>
+    <circle cx="30" cy="170" r="4" fill="#{{TEXT}}" filter="url(#glow-sm)">
       <animate attributeName="r" values="3;5;3" dur="3.8s" repeatCount="indefinite" />
     </circle>
-    <text x="44" y="152" class="ui" fill="#{{TEXT}}" font-size="15">{{MISSION_3}}</text>
+    <text x="44" y="176" class="ui" fill="#{{TEXT}}" font-size="16">{{MISSION_3}}</text>
 
     <!-- Experience records -->
-    <text x="24" y="182" class="mono" fill="#{{ACCENT}}" font-size="12">RECENT.PATH</text>
-    <rect x="20" y="192" width="508" height="84" rx="14" fill="#0a0a18" stroke="#{{EDGE}}" stroke-opacity="0.4" />
+    <text x="24" y="214" class="mono" fill="#{{ACCENT}}" font-size="12">RECENT.PATH</text>
+    <rect x="20" y="226" width="508" height="82" rx="14" fill="#0a0a18" stroke="#{{EDGE}}" stroke-opacity="0.4" />
     <!-- Scan line on experience -->
-    <rect x="20" y="192" width="0" height="84" rx="14" fill="url(#accent-bar)" opacity="0.15">
+    <rect x="20" y="226" width="0" height="82" rx="14" fill="url(#accent-bar)" opacity="0.15">
       <animate attributeName="width" values="0;508;0" dur="5s" repeatCount="indefinite" />
     </rect>
 
-    <text x="28" y="214" class="display" fill="#{{TEXT}}" font-size="20">{{EXPERIENCE_1_COMPANY}}</text>
-    <text x="168" y="214" class="ui" fill="#{{STEEL}}" font-size="13">{{EXPERIENCE_1_ROLE}}</text>
-    <text x="524" y="214" text-anchor="end" class="mono" fill="#{{ACCENT}}" font-size="11">{{EXPERIENCE_1_PERIOD}}</text>
+    <text x="28" y="248" class="display" fill="#{{TEXT}}" font-size="21">{{EXPERIENCE_1_COMPANY}}</text>
+    <text x="168" y="248" class="ui" fill="#{{STEEL}}" font-size="14">{{EXPERIENCE_1_ROLE}}</text>
+    <text x="524" y="248" text-anchor="end" class="mono" fill="#{{ACCENT}}" font-size="11">{{EXPERIENCE_1_PERIOD}}</text>
 
-    <text x="28" y="240" class="display" fill="#{{TEXT}}" font-size="20">{{EXPERIENCE_2_COMPANY}}</text>
-    <text x="168" y="240" class="ui" fill="#{{STEEL}}" font-size="13">{{EXPERIENCE_2_ROLE}}</text>
-    <text x="524" y="240" text-anchor="end" class="mono" fill="#{{ACCENT_2}}" font-size="11">{{EXPERIENCE_2_PERIOD}}</text>
+    <text x="28" y="274" class="display" fill="#{{TEXT}}" font-size="21">{{EXPERIENCE_2_COMPANY}}</text>
+    <text x="168" y="274" class="ui" fill="#{{STEEL}}" font-size="14">{{EXPERIENCE_2_ROLE}}</text>
+    <text x="524" y="274" text-anchor="end" class="mono" fill="#{{ACCENT_2}}" font-size="11">{{EXPERIENCE_2_PERIOD}}</text>
 
-    <text x="28" y="264" class="display" fill="#{{TEXT}}" font-size="17">{{EXPERIENCE_3_COMPANY}}</text>
-    <text x="168" y="264" class="ui" fill="#{{STEEL}}" font-size="12">{{EXPERIENCE_3_ROLE}}</text>
-    <text x="524" y="264" text-anchor="end" class="mono" fill="#{{STEEL}}" font-size="11">{{EXPERIENCE_3_PERIOD}}</text>
+    <text x="28" y="298" class="display" fill="#{{TEXT}}" font-size="18">{{EXPERIENCE_3_COMPANY}}</text>
+    <text x="168" y="298" class="ui" fill="#{{STEEL}}" font-size="13">{{EXPERIENCE_3_ROLE}}</text>
+    <text x="524" y="298" text-anchor="end" class="mono" fill="#{{STEEL}}" font-size="11">{{EXPERIENCE_3_PERIOD}}</text>
   </g>
 
   <!-- Stack section -->
   <g transform="translate(618 160)">
-    <rect width="324" height="116" rx="20" fill="#060612" stroke="#{{EDGE_SOFT}}" stroke-opacity="0.5" />
-    <rect x="0" y="0" width="324" height="116" rx="20" fill="url(#grid)" opacity="0.08" />
+    <rect width="324" height="132" rx="20" fill="#060612" stroke="#{{EDGE_SOFT}}" stroke-opacity="0.5" />
+    <rect x="0" y="0" width="324" height="132" rx="20" fill="url(#grid)" opacity="0.08" />
     <text x="20" y="30" class="mono" fill="#{{ACCENT}}" font-size="12">ARSENAL</text>
     <!-- Animated line -->
     <rect x="20" y="36" width="40" height="2" rx="1" fill="#{{ACCENT}}" opacity="0.5">
       <animate attributeName="width" values="30;60;30" dur="3.5s" repeatCount="indefinite" />
     </rect>
 
-    <rect x="20" y="52" width="88" height="24" rx="12" fill="url(#chip-active)" stroke="#{{ACCENT_SOFT}}" />
-    <text x="64" y="68" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="11">{{TOOLBELT_1}}</text>
-    <rect x="116" y="52" width="88" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="160" y="68" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_2}}</text>
-    <rect x="212" y="52" width="92" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="258" y="68" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_3}}</text>
+    <rect x="20" y="58" width="88" height="26" rx="13" fill="url(#chip-active)" stroke="#{{ACCENT_SOFT}}" />
+    <text x="64" y="75" text-anchor="middle" class="mono" fill="#{{ACCENT}}" font-size="11">{{TOOLBELT_1}}</text>
+    <rect x="116" y="58" width="88" height="26" rx="13" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="160" y="75" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_2}}</text>
+    <rect x="212" y="58" width="92" height="26" rx="13" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="258" y="75" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_3}}</text>
 
-    <rect x="20" y="82" width="88" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="64" y="98" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_4}}</text>
-    <rect x="116" y="82" width="88" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="160" y="98" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_5}}</text>
-    <rect x="212" y="82" width="92" height="24" rx="12" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="258" y="98" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_6}}</text>
+    <rect x="20" y="92" width="88" height="26" rx="13" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="64" y="109" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_4}}</text>
+    <rect x="116" y="92" width="88" height="26" rx="13" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="160" y="109" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_5}}</text>
+    <rect x="212" y="92" width="92" height="26" rx="13" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="258" y="109" text-anchor="middle" class="mono" fill="#{{STEEL}}" font-size="11">{{TOOLBELT_6}}</text>
   </g>
 
   <!-- Org spotlight -->
-  <g transform="translate(618 300)">
-    <rect width="324" height="146" rx="20" fill="#060612" stroke="#{{EDGE_SOFT}}" stroke-opacity="0.5" />
-    <rect x="0" y="0" width="324" height="146" rx="20" fill="url(#grid)" opacity="0.08" />
-    <rect x="-80" y="0" width="80" height="146" fill="url(#accent-bar)" opacity="0.2">
+  <g transform="translate(618 316)">
+    <rect width="324" height="156" rx="20" fill="#060612" stroke="#{{EDGE_SOFT}}" stroke-opacity="0.5" />
+    <rect x="0" y="0" width="324" height="156" rx="20" fill="url(#grid)" opacity="0.08" />
+    <rect x="-80" y="0" width="80" height="156" fill="url(#accent-bar)" opacity="0.2">
       <animate attributeName="x" values="-80;404;-80" dur="4.8s" repeatCount="indefinite" />
     </rect>
     <text x="20" y="30" class="mono" fill="#{{ACCENT}}" font-size="12">ORG.SPOTLIGHT</text>
@@ -192,18 +192,18 @@
       <animate attributeName="r" values="8;18;8" dur="1.5s" repeatCount="indefinite" />
       <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.5s" repeatCount="indefinite" />
     </circle>
-    <text x="20" y="62" class="display" fill="#{{TEXT}}" font-size="28">{{ORG_1_LABEL}}</text>
-    <text x="20" y="84" class="ui" fill="#{{STEEL}}" font-size="13">production GenAI and evaluation workflows</text>
-    <rect x="20" y="100" width="92" height="20" rx="10" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
-    <text x="66" y="114" text-anchor="middle" class="mono" fill="#{{MUTED}}" font-size="10">{{ORG_1_WEBSITE}}</text>
+    <text x="20" y="64" class="display" fill="#{{TEXT}}" font-size="28">{{ORG_1_LABEL}}</text>
+    <text x="20" y="88" class="ui" fill="#{{STEEL}}" font-size="14">production GenAI and evaluation workflows</text>
+    <rect x="20" y="110" width="108" height="22" rx="11" fill="#{{PANEL_ALT}}" stroke="#{{EDGE}}" />
+    <text x="74" y="125" text-anchor="middle" class="mono" fill="#{{MUTED}}" font-size="10">{{ORG_1_WEBSITE}}</text>
     <!-- Mini bat -->
-    <g transform="translate(160 130)" opacity="0.25">
+    <g transform="translate(160 138)" opacity="0.25">
       <path d="M0,-3 C-2,-5 -6,-4 -8,-1 C-10,-2 -13,-4 -16,-7 C-16,-3 -14,0 -11,2 C-9,4 -6,4 -4,3 C-2,6 -1,7 0,9 C1,7 2,6 4,3 C6,4 9,4 11,2 C14,0 16,-3 16,-7 C13,-4 10,-2 8,-1 C6,-4 2,-5 0,-3 Z" fill="#{{ACCENT}}" />
     </g>
   </g>
 
   <!-- Bottom status bar -->
-  <g transform="translate(46 468)">
+  <g transform="translate(46 510)">
     <rect width="896" height="20" rx="10" fill="#060612" stroke="#{{EDGE}}" stroke-opacity="0.4" />
     <rect x="-120" y="0" width="120" height="20" fill="url(#accent-bar)" opacity="0.25">
       <animate attributeName="x" values="-120;1020;-120" dur="4s" repeatCount="indefinite" />

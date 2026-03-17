@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 274" xmlns="http://www.w3.org/2000/svg" width="1000" height="274" role="img" aria-label="Organization spotlight for lohith">
+<svg viewBox="0 0 1000 332" xmlns="http://www.w3.org/2000/svg" width="1000" height="332" role="img" aria-label="Organization spotlight for lohith">
   <defs>
     <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0b0b1e" />
@@ -10,34 +10,36 @@
       <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
     </linearGradient>
     <style>
-      .display { font-family: "Bebas Neue", "Oswald", "Impact", "Ubuntu Condensed", sans-serif; letter-spacing: 2px; font-weight: 700; }
-      .ui { font-family: "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
-      .mono { font-family: "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.5px; }
+      .display { font-family: "Ubuntu Condensed", "Bebas Neue", "Oswald", "Impact", sans-serif; letter-spacing: 1.5px; font-weight: 700; }
+      .ui { font-family: "Ubuntu", "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
+      .mono { font-family: "Ubuntu Mono", "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.35px; }
     </style>
   </defs>
-  <rect width="1000" height="274" fill="#05050a" />
-  <rect x="24" y="18" width="952" height="238" rx="18" fill="url(#panel-grad)" stroke="#1a1a3a" stroke-opacity="0.6" />
+  <rect width="1000" height="332" fill="#05050a" />
+  <rect x="24" y="18" width="952" height="296" rx="20" fill="url(#panel-grad)" stroke="#1a1a3a" stroke-opacity="0.6" />
   <text x="44" y="50" class="mono" fill="#f5c518" font-size="12">ORG.SPOTLIGHT</text>
-  <text x="44" y="82" class="display" fill="#e8e8f0" font-size="34">WORK BEYOND PERSONAL REPOS</text>
-  <text x="44" y="106" class="ui" fill="#9898b8" font-size="14">organization work rendered in the Gotham protocol. team profiles get their own spotlight.</text>
-  <rect x="44" y="126" width="912" height="104" rx="16" fill="#0e0e22" stroke="#1a1a3a" />
-  <rect x="-76" y="126" width="120" height="104" fill="url(#card-sweep)" opacity="0.26">
-    <animate attributeName="x" values="-76;956;-76" dur="5.8s" repeatCount="indefinite" />
+  <text x="44" y="84" class="display" fill="#e8e8f0" font-size="38">WORK BEYOND PERSONAL REPOS</text>
+  <text x="44" y="114" class="ui" fill="#9898b8" font-size="15">organization contributions, public membership signals, and team context rendered with wider spacing and cleaner type.</text>
+  <rect x="44" y="138" width="912" height="130" rx="18" fill="#0e0e22" stroke="#1a1a3a" />
+  <rect x="-76" y="138" width="120" height="130" fill="url(#card-sweep)" opacity="0.26">
+    <animate attributeName="x" values="-76;956;-76" dur="6.2s" repeatCount="indefinite" />
   </rect>
-  <text x="62" y="154" class="display" fill="#e8e8f0" font-size="28">UncovAI</text>
-  <text x="62" y="176" class="ui" fill="#f5c518" font-size="15">Building production GenAI and evaluation workflows with the UncovAI team</text>
-  <circle cx="934" cy="150" r="5" fill="#4a7aff">
+  <text x="62" y="166" class="display" fill="#e8e8f0" font-size="30">UncovAI</text>
+  <text x="62" y="190" class="ui" fill="#9898b8" font-size="14">Building production GenAI and</text>
+  <text x="62" y="210" class="ui" fill="#9898b8" font-size="14">evaluation workflows with the Unc…</text>
+  <circle cx="934" cy="154" r="5" fill="#4a7aff">
     <animate attributeName="opacity" values="0.24;1;0.24" dur="1.9s" repeatCount="indefinite" />
   </circle>
-  <text x="920" y="154" text-anchor="end" class="mono" fill="#6a6a8a" font-size="11">membership hidden</text>
-  <text x="62" y="198" class="mono" fill="#9898b8" font-size="12">top repo: fake-audio-detection</text>
-  <text x="62" y="216" class="ui" fill="#6a6a8a" font-size="13">Blueprint for training and deploying a machine learning mo</text>
-  <rect x="267.5" y="232" width="102" height="22" rx="11" fill="#08081a" stroke="#1a1a3a" />
-  <text x="318.5" y="247" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">repos 1</text>
-  <rect x="377.5" y="232" width="102" height="22" rx="11" fill="#08081a" stroke="#1a1a3a" />
-  <text x="428.5" y="247" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">followers 3</text>
-  <rect x="487.5" y="232" width="129" height="22" rx="11" fill="#08081a" stroke="#1a1a3a" />
-  <text x="552.0" y="247" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">location France</text>
-  <rect x="624.5" y="232" width="108" height="22" rx="11" fill="#08081a" stroke="#1a1a3a" />
-  <text x="678.5" y="247" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">uncovai.com/</text>
+  <text x="920" y="158" text-anchor="end" class="mono" fill="#6a6a8a" font-size="11">membership hidden</text>
+  <text x="62" y="236" class="mono" fill="#f5c518" font-size="12">top repo: fake-audio-detection</text>
+  <text x="62" y="254" class="ui" fill="#6a6a8a" font-size="13">Blueprint for training and deploying a machine</text>
+  <text x="62" y="272" class="ui" fill="#6a6a8a" font-size="13">learning model that effectively detects synthet…</text>
+  <rect x="267.5" y="284" width="102" height="24" rx="12" fill="#08081a" stroke="#1a1a3a" />
+  <text x="318.5" y="300" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">repos 1</text>
+  <rect x="377.5" y="284" width="102" height="24" rx="12" fill="#08081a" stroke="#1a1a3a" />
+  <text x="428.5" y="300" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">followers 3</text>
+  <rect x="487.5" y="284" width="129" height="24" rx="12" fill="#08081a" stroke="#1a1a3a" />
+  <text x="552.0" y="300" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">location France</text>
+  <rect x="624.5" y="284" width="108" height="24" rx="12" fill="#08081a" stroke="#1a1a3a" />
+  <text x="678.5" y="300" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">uncovai.com/</text>
 </svg>
