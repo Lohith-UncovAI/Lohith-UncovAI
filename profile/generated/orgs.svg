@@ -31,11 +31,11 @@
     <animate attributeName="opacity" values="0.24;1;0.24" dur="1.9s" repeatCount="indefinite" />
   </circle>
   <text x="920" y="158" text-anchor="end" class="mono" fill="#6a6a8a" font-size="11">membership hidden</text>
-  <text x="62" y="236" class="mono" fill="#f5c518" font-size="12">top repo: Dashboard_Cameroun</text>
-  <text x="62" y="254" class="ui" fill="#6a6a8a" font-size="13">public repo details not exposed here yet</text>
-  <text x="62" y="272" class="ui" fill="#6a6a8a" font-size="13"></text>
+  <text x="62" y="236" class="mono" fill="#f5c518" font-size="12">top repo: fake-audio-detection</text>
+  <text x="62" y="254" class="ui" fill="#6a6a8a" font-size="13">Blueprint for training and deploying a machine</text>
+  <text x="62" y="272" class="ui" fill="#6a6a8a" font-size="13">learning model that effectively detects synthet…</text>
   <rect x="267.5" y="284" width="102" height="24" rx="12" fill="#08081a" stroke="#1a1a3a" />
-  <text x="318.5" y="300" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">repos 2</text>
+  <text x="318.5" y="300" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">repos 1</text>
   <rect x="377.5" y="284" width="102" height="24" rx="12" fill="#08081a" stroke="#1a1a3a" />
   <text x="428.5" y="300" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">followers 3</text>
   <rect x="487.5" y="284" width="129" height="24" rx="12" fill="#08081a" stroke="#1a1a3a" />
