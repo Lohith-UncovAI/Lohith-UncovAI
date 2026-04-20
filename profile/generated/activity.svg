@@ -51,7 +51,7 @@
     <animate attributeName="r" values="7;14;7" dur="1.5s" repeatCount="indefinite" />
     <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.5s" repeatCount="indefinite" />
   </circle>
-  <text x="60" y="204" class="display" fill="#e8e8f0" font-size="44">62</text>
+  <text x="60" y="204" class="display" fill="#e8e8f0" font-size="44">63</text>
   <text x="60" y="224" class="ui" fill="#f5c518" font-size="14">PUBLIC CONTRIBUTIONS</text>
   <text x="60" y="240" class="mono" fill="#6a6a8a" font-size="11">last 12 months</text>
   <rect x="274" y="146" width="214" height="96" rx="16" fill="#0e0e22" stroke="#1a1a3a" stroke-opacity="0.55" />
@@ -69,7 +69,7 @@
     <animate attributeName="r" values="7;14;7" dur="1.8s" repeatCount="indefinite" />
     <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.8s" repeatCount="indefinite" />
   </circle>
-  <text x="292" y="204" class="display" fill="#e8e8f0" font-size="44">25</text>
+  <text x="292" y="204" class="display" fill="#e8e8f0" font-size="44">26</text>
   <text x="292" y="224" class="ui" fill="#f5c518" font-size="14">ACTIVE DAYS</text>
   <text x="292" y="240" class="mono" fill="#6a6a8a" font-size="11">days with visible commits</text>
   <rect x="506" y="146" width="214" height="96" rx="16" fill="#0e0e22" stroke="#1a1a3a" stroke-opacity="0.55" />
