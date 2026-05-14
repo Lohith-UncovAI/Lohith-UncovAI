@@ -74,7 +74,7 @@
       <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.6s" repeatCount="indefinite" />
     </circle>
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">PUBLIC CONTRIBUTIONS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">79</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">80</text>
   </g>
 
   <g transform="translate(274 68)">
@@ -85,7 +85,7 @@
       <animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" />
     </circle>
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">ACTIVE DAYS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">40</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">41</text>
   </g>
 
   <g transform="translate(502 68)">
