@@ -74,7 +74,7 @@
       <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.6s" repeatCount="indefinite" />
     </circle>
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">PUBLIC CONTRIBUTIONS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">132</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">133</text>
   </g>
 
   <g transform="translate(274 68)">
@@ -85,7 +85,7 @@
       <animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" />
     </circle>
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">ACTIVE DAYS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">76</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">77</text>
   </g>
 
   <g transform="translate(502 68)">
@@ -93,7 +93,7 @@
     <rect width="212" height="68" rx="16" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.5" />
     <rect x="16" y="14" width="48" height="3" rx="1.5" fill="#f5c518" />
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">PUBLIC REPOS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">1</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">2</text>
   </g>
 
   <g transform="translate(730 68)">
