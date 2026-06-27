@@ -29,8 +29,8 @@
   <text x="44" y="114" class="ui" fill="#9898b8" font-size="15">weighted by owned public repos, with larger labels and darker telemetry spacing for GitHub profile view.</text>
   <text x="952" y="50" text-anchor="end" class="mono" fill="#6a6a8a" font-size="11">OWNED PUBLIC REPOS</text>
   <rect x="44" y="138" width="912" height="24" rx="12" fill="#0e0e22" />
-  <rect x="44" y="138" width="911" height="24" rx="12" fill="#f5c518" />
-  <rect x="955" y="138" width="1" height="24" rx="12" fill="#4a7aff" />
+  <rect x="44" y="138" width="912" height="24" rx="12" fill="#f5c518" />
+  <rect x="956" y="138" width="0" height="24" rx="12" fill="#4a7aff" />
   <g clip-path="url(#mix-clip)">
     <rect x="-120" y="138" width="120" height="24" fill="url(#bar-sweep)" opacity="0.42">
       <animate attributeName="x" values="-120;1020;-120" dur="4.8s" repeatCount="indefinite" />
@@ -43,12 +43,12 @@
     <animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite" />
   </circle>
   <text x="74" y="196" class="ui" fill="#e8e8f0" font-size="20">Python</text>
-  <text x="948" y="196" text-anchor="end" class="mono" fill="#9898b8" font-size="16">99.9%</text>
+  <text x="948" y="196" text-anchor="end" class="mono" fill="#9898b8" font-size="16">100.0%</text>
   <circle cx="54" cy="219" r="6" fill="#4a7aff">
     <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite" />
   </circle>
   <text x="74" y="224" class="ui" fill="#e8e8f0" font-size="20">Makefile</text>
-  <text x="948" y="224" text-anchor="end" class="mono" fill="#9898b8" font-size="16">0.1%</text>
+  <text x="948" y="224" text-anchor="end" class="mono" fill="#9898b8" font-size="16">0.0%</text>
   <text x="948" y="114" text-anchor="end" class="mono" fill="#6a6a8a" font-size="12">public orgs hidden or none</text>
   <rect x="274.5" y="276" width="140" height="26" rx="13" fill="#0e0e22" stroke="#1a1a3a" />
   <text x="344.5" y="293" text-anchor="middle" class="mono" fill="#9898b8" font-size="11">top Python</text>
