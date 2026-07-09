@@ -49,7 +49,7 @@
     <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite" />
   </circle>
   <text x="74" y="224" class="ui" fill="#e8e8f0" font-size="20">YARA</text>
-  <text x="948" y="224" text-anchor="end" class="mono" fill="#9898b8" font-size="16">0.2%</text>
+  <text x="948" y="224" text-anchor="end" class="mono" fill="#9898b8" font-size="16">0.1%</text>
   <circle cx="54" cy="247" r="6" fill="#74d3ae">
     <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite" />
   </circle>
