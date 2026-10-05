@@ -200,7 +200,7 @@ def parse_experience_row(row):
     }
 
 
-def build_context(config, stats):
+def build_context(config, stats, orgs=()):
     context = {
         "USERNAME": config["username"],
         "DISPLAY_NAME": config["display_name"],
@@ -234,6 +234,18 @@ def build_context(config, stats):
     context["ORG_1_LABEL"] = first_org.get("label", "")
     context["ORG_1_HEADLINE"] = first_org.get("headline", "")
     context["ORG_1_WEBSITE"] = first_org.get("website", "").replace("https://", "")
+    context["ORG_1_WEBSITE_URL"] = first_org.get("website", "")
+    context["LANGUAGE_LIST"] = "\n".join(
+        f'- **{escape(row["name"])}** — '
+        + (f'{row["percent"]:.1f}%' if row["percent"] >= 0.05 else "&lt;0.1%")
+        for row in stats["languages"]
+    ) or "No public language data available."
+    context["FEATURED_PROJECT"] = "\n\n".join(
+        f'<p><a href="{escape(org["top_repo_url"], quote=True)}">'
+        f'<strong>{escape(org["top_repo_name"])}</strong></a>'
+        f'<br>{escape(org["top_repo_desc"])}</p>'
+        for org in orgs if org.get("top_repo_url")
+    )
 
     repo = config["repo"]
     context["SNAKE_LIGHT_URL"] = (
@@ -567,7 +579,7 @@ def main():
         stats = empty_stats()
         org_spotlights = []
 
-    context = build_context(config, stats)
+    context = build_context(config, stats, org_spotlights)
 
     for template_name, output_name in config["templates"].items():
         render_template(

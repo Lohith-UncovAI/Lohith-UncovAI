@@ -48,6 +48,7 @@
   "templates": {
     "README.template.md": "../README.md",
     "hero.template.svg": "generated/hero.svg",
+    "hero-mobile.template.svg": "generated/hero-mobile.svg",
     "terminal.template.svg": "generated/terminal.svg",
     "footer.template.svg": "generated/footer.svg"
   },

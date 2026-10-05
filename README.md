@@ -1,45 +1,58 @@
-<!-- profile-refresh: 2026-03-17 -->
+<picture>
+  <source media="(max-width: 600px)" srcset="./profile/generated/hero-mobile.svg">
+  <img src="./profile/generated/hero.svg" width="100%" alt="lohith — AI / ML engineer, GenAI, MLOps, and hybrid cloud">
+</picture>
 
-<div align="center">
-  <img src="./profile/generated/hero.svg" alt="Dark Knight profile banner for lohith" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+AI / ML engineer shipping GenAI, MLOps, and hybrid cloud systems.
 
-<br/>
+## What I build
 
-<div align="center">
-  <img src="./profile/generated/terminal.svg" alt="Batcomputer overview for lohith" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+- production GenAI on AWS + Kubernetes
+- evaluation, release, and MLOps workflow automation
+- client-facing delivery and technical communication
 
-<br/>
+## Toolkit
 
-<div align="center">
-  <img src="./profile/generated/activity.svg" alt="Activity telemetry for lohith" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+`Python` · `AWS` · `Kubernetes` · `MLflow` · `Kubeflow` · `SageMaker`
 
-<br/>
+## Experience
 
-<div align="center">
-  <img src="./profile/generated/languages.svg" alt="Language analysis for lohith" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+- **UncovAI** — Data Scientist · Dec 2025 - Present
+- **Ansys** — DevSecOps / MLOps Engineer · Mar 2025 - Oct 2025
+- **Amadeus** — AI / ML Engineer · Summer 2024
 
-<br/>
+## GitHub activity
 
-<div align="center">
-  <img src="./profile/generated/orgs.svg" alt="Organization spotlight for lohith" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+| Last 12 months | Activity |
+| :--- | ---: |
+| Contributions | 385 |
+| Active days | 130 |
+| Current streak | 9 days |
+| Best streak | 49 days |
 
-<br/>
+### Public code
 
-<div align="center">
+- **Python** — 99.9%
+- **YARA** — 0.1%
+- **Makefile** — &lt;0.1%
+
+2 owned public repositories · 0 stars
+
+## Team & projects
+
+**[UncovAI](https://uncovai.com/)** — Building production GenAI and evaluation workflows with the UncovAI team.
+
+<p><a href="https://github.com/UncovAI/fake-audio-detection"><strong>fake-audio-detection</strong></a><br>Blueprint for training and deploying a machine learning model that effectively detects synthetic and modified audio content.</p>
+
+<details>
+  <summary>Contribution animation</summary>
+  <br>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Lohith-UncovAI/Lohith-UncovAI/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Lohith-UncovAI/Lohith-UncovAI/output/github-contribution-grid-snake.svg">
-    <img alt="GitHub contribution snake animation" src="https://raw.githubusercontent.com/Lohith-UncovAI/Lohith-UncovAI/output/github-contribution-grid-snake-dark.svg" style="display: block; width: 100%; max-width: 1000px;" />
+    <img src="https://raw.githubusercontent.com/Lohith-UncovAI/Lohith-UncovAI/output/github-contribution-grid-snake.svg" width="100%" alt="Animated snake following the GitHub contribution grid">
   </picture>
-</div>
+</details>
 
-<br/>
+---
 
-<div align="center">
-  <img src="./profile/generated/footer.svg" alt="Footer for lohith" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+[uncovai.com/](https://uncovai.com/) · [GitHub repositories](https://github.com/Lohith-UncovAI?tab=repositories)

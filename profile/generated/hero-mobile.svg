@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 280" xmlns="http://www.w3.org/2000/svg" width="1000" height="280" role="img" aria-labelledby="title desc">
+<svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg" width="600" height="240" role="img" aria-labelledby="title desc">
   <title id="title">lohith — AI / ML Engineer</title>
   <desc id="desc">AI / ML engineer shipping GenAI, MLOps, and hybrid cloud systems. Data Scientist at UncovAI. A quiet Gotham skyline and softly glowing bat signal.</desc>
   <defs>
@@ -14,7 +14,7 @@
       <stop stop-color="#f5c518" stop-opacity="0" />
       <stop offset="1" stop-color="#f5c518" stop-opacity="0.08" />
     </linearGradient>
-    <clipPath id="frame"><rect width="1000" height="280" rx="24" /></clipPath>
+    <clipPath id="frame"><rect width="600" height="240" rx="24" /></clipPath>
     <style>
       .ui { font-family: "Helvetica Neue", Arial, sans-serif; }
       .mono { font-family: "SFMono-Regular", Consolas, monospace; letter-spacing: 1px; }
@@ -24,22 +24,22 @@
     </style>
   </defs>
   <g clip-path="url(#frame)">
-    <rect width="1000" height="280" fill="url(#sky)" />
+    <rect width="600" height="240" fill="url(#sky)" />
     <!-- The only decorative motion stays behind the text. -->
     <g class="signal">
-      <circle cx="818" cy="126" r="154" fill="url(#signal-glow)" />
-      <path d="M686 346 L768 108 L866 148 Z" fill="url(#beam)" />
+      <circle cx="476" cy="100" r="154" fill="url(#signal-glow)" />
+      <path d="M390 240 L436 84 L516 124 Z" fill="url(#beam)" />
     </g>
     <g fill="#dce3f0" opacity="0.28">
       <circle cx="644" cy="44" r="1" /><circle cx="727" cy="30" r="1" />
       <circle cx="929" cy="62" r="1.2" /><circle cx="962" cy="143" r="1" />
     </g>
-    <circle cx="818" cy="126" r="67" fill="none" stroke="#f5c518" stroke-opacity="0.12" />
-    <circle cx="818" cy="126" r="56" fill="#f5c518" fill-opacity="0.08" stroke="#f5c518" stroke-opacity="0.3" />
-    <g transform="translate(818 122)" fill="#f5c518">
+    <circle cx="476" cy="100" r="67" fill="none" stroke="#f5c518" stroke-opacity="0.12" />
+    <circle cx="476" cy="100" r="56" fill="#f5c518" fill-opacity="0.08" stroke="#f5c518" stroke-opacity="0.3" />
+    <g transform="translate(476 96) scale(0.8)" fill="#f5c518">
       <path d="M0 -11 L-6 -21 L-10 -12 C-18 -10 -29 -17 -43 -27 C-44 -9 -37 0 -27 5 C-20 9 -13 8 -8 5 C-5 12 -2 18 0 23 C2 18 5 12 8 5 C13 8 20 9 27 5 C37 0 44 -9 43 -27 C29 -17 18 -10 10 -12 L6 -21 Z" />
     </g>
-    <g transform="translate(0 -120)" opacity="0.4">
+    <g transform="translate(0 -160)" opacity="0.4">
     <!-- A static skyline gives the page atmosphere without competing effects. -->
     <path d="M0 400 V330 H38 V306 H68 V346 H104 V290 H134 V312 H170 V274 H210 V318 H248 V296 H284 V344 H322 V300 H356 V272 H392 V314 H432 V282 H464 V400 Z" fill="#101522" />
     <path d="M546 400 V326 H580 V292 H616 V320 H648 V264 H674 V244 H692 V264 H716 V310 H744 V286 H782 V322 H816 V274 H850 V300 H882 V254 H918 V318 H954 V290 H1000 V400 Z" fill="#111724" />
@@ -50,10 +50,10 @@
       <rect x="860" y="317" width="3" height="5" />
     </g>
     </g>
-    <rect x="52" y="52" width="32" height="3" rx="1.5" fill="#f5c518" />
-    <text x="52" y="88" class="mono" fill="#f5c518" font-size="14">AI / ML ENGINEER</text>
-    <text x="48" y="168" class="ui" fill="#e8e8f0" font-size="82" font-weight="700" letter-spacing="-3">lohith</text>
-    <text x="52" y="215" class="ui" fill="#bcc5d6" font-size="22">GenAI · MLOps · Hybrid Cloud</text>
+    <rect x="30" y="30" width="32" height="3" rx="1.5" fill="#f5c518" />
+    <text x="30" y="66" class="mono" fill="#f5c518" font-size="14">AI / ML ENGINEER</text>
+    <text x="27" y="136" class="ui" fill="#e8e8f0" font-size="64" font-weight="700" letter-spacing="-3">lohith</text>
+    <text x="30" y="187" class="ui" fill="#bcc5d6" font-size="21">GenAI · MLOps · Hybrid Cloud</text>
   </g>
-  <rect x="0.5" y="0.5" width="999" height="279" rx="24" fill="none" stroke="#242c3b" />
+  <rect x="0.5" y="0.5" width="599" height="239" rx="24" fill="none" stroke="#242c3b" />
 </svg>

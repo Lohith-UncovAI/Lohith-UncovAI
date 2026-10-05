@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" width="1000" height="400" role="img" aria-labelledby="title desc">
+<svg viewBox="0 0 1000 280" xmlns="http://www.w3.org/2000/svg" width="1000" height="280" role="img" aria-labelledby="title desc">
   <title id="title">{{DISPLAY_NAME}} — AI / ML Engineer</title>
   <desc id="desc">{{TAGLINE}}. {{EXPERIENCE_1_ROLE}} at {{EXPERIENCE_1_COMPANY}}. A quiet Gotham skyline and softly glowing bat signal.</desc>
   <defs>
@@ -14,7 +14,7 @@
       <stop stop-color="#{{ACCENT}}" stop-opacity="0" />
       <stop offset="1" stop-color="#{{ACCENT}}" stop-opacity="0.08" />
     </linearGradient>
-    <clipPath id="frame"><rect width="1000" height="400" rx="24" /></clipPath>
+    <clipPath id="frame"><rect width="1000" height="280" rx="24" /></clipPath>
     <style>
       .ui { font-family: "Helvetica Neue", Arial, sans-serif; }
       .mono { font-family: "SFMono-Regular", Consolas, monospace; letter-spacing: 1px; }
@@ -24,7 +24,7 @@
     </style>
   </defs>
   <g clip-path="url(#frame)">
-    <rect width="1000" height="400" fill="url(#sky)" />
+    <rect width="1000" height="280" fill="url(#sky)" />
     <!-- The only decorative motion stays behind the text. -->
     <g class="signal">
       <circle cx="818" cy="126" r="154" fill="url(#signal-glow)" />
@@ -39,6 +39,7 @@
     <g transform="translate(818 122)" fill="#{{ACCENT}}">
       <path d="M0 -11 L-6 -21 L-10 -12 C-18 -10 -29 -17 -43 -27 C-44 -9 -37 0 -27 5 C-20 9 -13 8 -8 5 C-5 12 -2 18 0 23 C2 18 5 12 8 5 C13 8 20 9 27 5 C37 0 44 -9 43 -27 C29 -17 18 -10 10 -12 L6 -21 Z" />
     </g>
+    <g transform="translate(0 -120)" opacity="0.4">
     <!-- A static skyline gives the page atmosphere without competing effects. -->
     <path d="M0 400 V330 H38 V306 H68 V346 H104 V290 H134 V312 H170 V274 H210 V318 H248 V296 H284 V344 H322 V300 H356 V272 H392 V314 H432 V282 H464 V400 Z" fill="#101522" />
     <path d="M546 400 V326 H580 V292 H616 V320 H648 V264 H674 V244 H692 V264 H716 V310 H744 V286 H782 V322 H816 V274 H850 V300 H882 V254 H918 V318 H954 V290 H1000 V400 Z" fill="#111724" />
@@ -48,14 +49,11 @@
       <rect x="662" y="278" width="3" height="5" /><rect x="898" y="270" width="3" height="5" />
       <rect x="860" y="317" width="3" height="5" />
     </g>
+    </g>
     <rect x="52" y="52" width="32" height="3" rx="1.5" fill="#{{ACCENT}}" />
     <text x="52" y="88" class="mono" fill="#{{ACCENT}}" font-size="14">AI / ML ENGINEER</text>
     <text x="48" y="168" class="ui" fill="#{{TEXT}}" font-size="82" font-weight="700" letter-spacing="-3">{{DISPLAY_NAME}}</text>
-    <text x="52" y="211" class="ui" fill="#bcc5d6" font-size="22">{{TAGLINE_LINES_1}}</text>
-    <text x="52" y="243" class="ui" fill="#bcc5d6" font-size="22">{{TAGLINE_LINES_2}}</text>
-    <text x="52" y="303" class="ui" fill="#{{TEXT}}" font-size="19">{{EXPERIENCE_1_COMPANY}} <tspan fill="#98a5bb"> / {{EXPERIENCE_1_ROLE}}</tspan></text>
-    <text x="52" y="333" class="ui" fill="#98a5bb" font-size="16">Previously {{EXPERIENCE_2_COMPANY}} &amp; {{EXPERIENCE_3_COMPANY}}</text>
-    <text x="52" y="375" class="mono" fill="#{{ACCENT}}" font-size="13">{{TAGS_1}} · {{TAGS_2}} · {{TAGS_3}} · {{TAGS_4}}</text>
+    <text x="52" y="215" class="ui" fill="#bcc5d6" font-size="22">GenAI · MLOps · Hybrid Cloud</text>
   </g>
-  <rect x="0.5" y="0.5" width="999" height="399" rx="24" fill="none" stroke="#242c3b" />
+  <rect x="0.5" y="0.5" width="999" height="279" rx="24" fill="none" stroke="#242c3b" />
 </svg>

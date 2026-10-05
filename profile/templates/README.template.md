@@ -1,45 +1,56 @@
-<!-- profile-refresh: 2026-03-17 -->
+<picture>
+  <source media="(max-width: 600px)" srcset="./profile/generated/hero-mobile.svg">
+  <img src="./profile/generated/hero.svg" width="100%" alt="{{DISPLAY_NAME}} — AI / ML engineer, GenAI, MLOps, and hybrid cloud">
+</picture>
 
-<div align="center">
-  <img src="./profile/generated/hero.svg" alt="Dark Knight profile banner for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+{{TAGLINE}}.
 
-<br/>
+## What I build
 
-<div align="center">
-  <img src="./profile/generated/terminal.svg" alt="Batcomputer overview for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+- {{MISSION_1}}
+- {{MISSION_2}}
+- {{MISSION_3}}
 
-<br/>
+## Toolkit
 
-<div align="center">
-  <img src="./profile/generated/activity.svg" alt="Activity telemetry for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+`{{TOOLBELT_1}}` · `{{TOOLBELT_2}}` · `{{TOOLBELT_3}}` · `{{TOOLBELT_4}}` · `{{TOOLBELT_5}}` · `{{TOOLBELT_6}}`
 
-<br/>
+## Experience
 
-<div align="center">
-  <img src="./profile/generated/languages.svg" alt="Language analysis for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+- **{{EXPERIENCE_1_COMPANY}}** — {{EXPERIENCE_1_ROLE}} · {{EXPERIENCE_1_PERIOD}}
+- **{{EXPERIENCE_2_COMPANY}}** — {{EXPERIENCE_2_ROLE}} · {{EXPERIENCE_2_PERIOD}}
+- **{{EXPERIENCE_3_COMPANY}}** — {{EXPERIENCE_3_ROLE}} · {{EXPERIENCE_3_PERIOD}}
 
-<br/>
+## GitHub activity
 
-<div align="center">
-  <img src="./profile/generated/orgs.svg" alt="Organization spotlight for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+| Last 12 months | Activity |
+| :--- | ---: |
+| Contributions | {{PUBLIC_CONTRIBUTIONS}} |
+| Active days | {{ACTIVE_DAYS}} |
+| Current streak | {{CURRENT_STREAK}} days |
+| Best streak | {{BEST_STREAK}} days |
 
-<br/>
+### Public code
 
-<div align="center">
+{{LANGUAGE_LIST}}
+
+{{PUBLIC_REPOS}} owned public repositories · {{TOTAL_STARS}} stars
+
+## Team & projects
+
+**[{{ORG_1_LABEL}}]({{ORG_1_WEBSITE_URL}})** — {{ORG_1_HEADLINE}}.
+
+{{FEATURED_PROJECT}}
+
+<details>
+  <summary>Contribution animation</summary>
+  <br>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="{{SNAKE_DARK_URL}}">
-    <source media="(prefers-color-scheme: light)" srcset="{{SNAKE_LIGHT_URL}}">
-    <img alt="GitHub contribution snake animation" src="{{SNAKE_DARK_URL}}" style="display: block; width: 100%; max-width: 1000px;" />
+    <img src="{{SNAKE_LIGHT_URL}}" width="100%" alt="Animated snake following the GitHub contribution grid">
   </picture>
-</div>
+</details>
 
-<br/>
+---
 
-<div align="center">
-  <img src="./profile/generated/footer.svg" alt="Footer for {{DISPLAY_NAME}}" style="display: block; width: 100%; max-width: 1000px;" />
-</div>
+[{{ORG_1_WEBSITE}}]({{ORG_1_WEBSITE_URL}}) · [GitHub repositories](https://github.com/{{USERNAME}}?tab=repositories)
