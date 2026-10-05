@@ -4,11 +4,6 @@
       <stop offset="0%" stop-color="#0b0b1e" />
       <stop offset="100%" stop-color="#08081a" />
     </linearGradient>
-    <linearGradient id="card-sweep" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f5c518" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5c518" stop-opacity="0.32" />
-      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
-    </linearGradient>
     <style>
       .display { font-family: "Ubuntu Condensed", "Bebas Neue", "Oswald", "Impact", sans-serif; letter-spacing: 1.5px; font-weight: 700; }
       .ui { font-family: "Ubuntu", "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
@@ -19,16 +14,12 @@
   <rect x="24" y="18" width="952" height="296" rx="20" fill="url(#panel-grad)" stroke="#1a1a3a" stroke-opacity="0.6" />
   <text x="44" y="50" class="mono" fill="#f5c518" font-size="12">ORG.SPOTLIGHT</text>
   <text x="44" y="84" class="display" fill="#e8e8f0" font-size="38">WORK BEYOND PERSONAL REPOS</text>
-  <text x="44" y="114" class="ui" fill="#9898b8" font-size="15">organization contributions, public membership signals, and team context rendered with wider spacing and cleaner type.</text>
+  <text x="44" y="114" class="ui" fill="#9898b8" font-size="15">Teams, public projects, and shared work.</text>
   <rect x="44" y="138" width="912" height="130" rx="18" fill="#0e0e22" stroke="#1a1a3a" />
-  <rect x="-76" y="138" width="120" height="130" fill="url(#card-sweep)" opacity="0.26">
-    <animate attributeName="x" values="-76;956;-76" dur="6.2s" repeatCount="indefinite" />
-  </rect>
   <text x="62" y="166" class="display" fill="#e8e8f0" font-size="30">UncovAI</text>
   <text x="62" y="190" class="ui" fill="#9898b8" font-size="14">Building production GenAI and</text>
   <text x="62" y="210" class="ui" fill="#9898b8" font-size="14">evaluation workflows with the Unc…</text>
   <circle cx="934" cy="154" r="5" fill="#4a7aff">
-    <animate attributeName="opacity" values="0.24;1;0.24" dur="1.9s" repeatCount="indefinite" />
   </circle>
   <text x="920" y="158" text-anchor="end" class="mono" fill="#6a6a8a" font-size="11">membership hidden</text>
   <text x="62" y="236" class="mono" fill="#f5c518" font-size="12">top repo: fake-audio-detection</text>

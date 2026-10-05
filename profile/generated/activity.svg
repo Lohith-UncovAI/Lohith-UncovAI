@@ -4,11 +4,6 @@
       <stop offset="0%" stop-color="#0b0b1e" />
       <stop offset="100%" stop-color="#08081a" />
     </linearGradient>
-    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f5c518" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5c518" stop-opacity="0.34" />
-      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
-    </linearGradient>
     <radialGradient id="tile-glow" cx="50%" cy="0%" r="90%">
       <stop offset="0%" stop-color="#f5c518" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
@@ -31,79 +26,48 @@
   <rect x="24" y="18" width="952" height="296" rx="20" fill="url(#scan)" opacity="0.28" />
   <text x="44" y="50" class="mono" fill="#f5c518" font-size="12">BATCOMPUTER // CITY.TELEMETRY</text>
   <text x="44" y="84" class="display" fill="#e8e8f0" font-size="38">VISIBLE GITHUB ACTIVITY</text>
-  <text x="44" y="114" class="ui" fill="#9898b8" font-size="15">public contribution patterns, repo signals, and visible streak data tuned for cleaner GitHub readability.</text>
+  <text x="44" y="114" class="ui" fill="#9898b8" font-size="15">Public contributions, active days, and streaks over the last year.</text>
   <text x="952" y="50" text-anchor="end" class="mono" fill="#6a6a8a" font-size="11">LIVE UPLINK</text>
-  <rect x="-140" y="136" width="140" height="130" fill="url(#sweep)" opacity="0.34">
-    <animate attributeName="x" values="-140;1040;-140" dur="6.2s" repeatCount="indefinite" />
-  </rect>
   <rect x="42" y="146" width="214" height="96" rx="16" fill="#0e0e22" stroke="#1a1a3a" stroke-opacity="0.55" />
   <rect x="42" y="146" width="214" height="96" rx="16" fill="url(#tile-glow)" />
-  <rect x="42" y="146" width="214" height="96" rx="16" fill="url(#sweep)" opacity="0">
-    <animate attributeName="opacity" values="0;0.18;0" dur="4.2s" repeatCount="indefinite" />
-  </rect>
   <rect x="60" y="162" width="70" height="3" rx="1.5" fill="#f5c518">
-    <animate attributeName="width" values="54;90;70" dur="3.8s" repeatCount="indefinite" />
   </rect>
   <circle cx="230" cy="166" r="4" fill="#f5c518">
-    <animate attributeName="opacity" values="0.15;1;0.15" dur="1.5s" repeatCount="indefinite" />
   </circle>
   <circle cx="230" cy="166" r="10" fill="none" stroke="#f5c518" stroke-opacity="0.2">
-    <animate attributeName="r" values="7;14;7" dur="1.5s" repeatCount="indefinite" />
-    <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.5s" repeatCount="indefinite" />
   </circle>
-  <text x="60" y="204" class="display" fill="#e8e8f0" font-size="44">383</text>
+  <text x="60" y="204" class="display" fill="#e8e8f0" font-size="44">384</text>
   <text x="60" y="224" class="ui" fill="#f5c518" font-size="14">PUBLIC CONTRIBUTIONS</text>
   <text x="60" y="240" class="mono" fill="#6a6a8a" font-size="11">last 12 months</text>
   <rect x="274" y="146" width="214" height="96" rx="16" fill="#0e0e22" stroke="#1a1a3a" stroke-opacity="0.55" />
   <rect x="274" y="146" width="214" height="96" rx="16" fill="url(#tile-glow)" />
-  <rect x="274" y="146" width="214" height="96" rx="16" fill="url(#sweep)" opacity="0">
-    <animate attributeName="opacity" values="0;0.18;0" dur="4.7s" repeatCount="indefinite" />
-  </rect>
   <rect x="292" y="162" width="82" height="3" rx="1.5" fill="#f5c518">
-    <animate attributeName="width" values="66;102;82" dur="4.2s" repeatCount="indefinite" />
   </rect>
   <circle cx="462" cy="166" r="4" fill="#f5c518">
-    <animate attributeName="opacity" values="0.15;1;0.15" dur="1.8s" repeatCount="indefinite" />
   </circle>
   <circle cx="462" cy="166" r="10" fill="none" stroke="#f5c518" stroke-opacity="0.2">
-    <animate attributeName="r" values="7;14;7" dur="1.8s" repeatCount="indefinite" />
-    <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.8s" repeatCount="indefinite" />
   </circle>
-  <text x="292" y="204" class="display" fill="#e8e8f0" font-size="44">129</text>
+  <text x="292" y="204" class="display" fill="#e8e8f0" font-size="44">130</text>
   <text x="292" y="224" class="ui" fill="#f5c518" font-size="14">ACTIVE DAYS</text>
   <text x="292" y="240" class="mono" fill="#6a6a8a" font-size="11">days with visible commits</text>
   <rect x="506" y="146" width="214" height="96" rx="16" fill="#0e0e22" stroke="#1a1a3a" stroke-opacity="0.55" />
   <rect x="506" y="146" width="214" height="96" rx="16" fill="url(#tile-glow)" />
-  <rect x="506" y="146" width="214" height="96" rx="16" fill="url(#sweep)" opacity="0">
-    <animate attributeName="opacity" values="0;0.18;0" dur="5.2s" repeatCount="indefinite" />
-  </rect>
   <rect x="524" y="162" width="94" height="3" rx="1.5" fill="#f5c518">
-    <animate attributeName="width" values="78;114;94" dur="4.6s" repeatCount="indefinite" />
   </rect>
   <circle cx="694" cy="166" r="4" fill="#f5c518">
-    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.0s" repeatCount="indefinite" />
   </circle>
   <circle cx="694" cy="166" r="10" fill="none" stroke="#f5c518" stroke-opacity="0.2">
-    <animate attributeName="r" values="7;14;7" dur="2.0s" repeatCount="indefinite" />
-    <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="2.0s" repeatCount="indefinite" />
   </circle>
-  <text x="524" y="204" class="display" fill="#e8e8f0" font-size="44">8</text>
+  <text x="524" y="204" class="display" fill="#e8e8f0" font-size="44">9</text>
   <text x="524" y="224" class="ui" fill="#f5c518" font-size="14">CURRENT STREAK</text>
   <text x="524" y="240" class="mono" fill="#6a6a8a" font-size="11">consecutive active days</text>
   <rect x="738" y="146" width="214" height="96" rx="16" fill="#0e0e22" stroke="#1a1a3a" stroke-opacity="0.55" />
   <rect x="738" y="146" width="214" height="96" rx="16" fill="url(#tile-glow)" />
-  <rect x="738" y="146" width="214" height="96" rx="16" fill="url(#sweep)" opacity="0">
-    <animate attributeName="opacity" values="0;0.18;0" dur="5.7s" repeatCount="indefinite" />
-  </rect>
   <rect x="756" y="162" width="106" height="3" rx="1.5" fill="#f5c518">
-    <animate attributeName="width" values="90;126;106" dur="5.0s" repeatCount="indefinite" />
   </rect>
   <circle cx="926" cy="166" r="4" fill="#f5c518">
-    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.2s" repeatCount="indefinite" />
   </circle>
   <circle cx="926" cy="166" r="10" fill="none" stroke="#f5c518" stroke-opacity="0.2">
-    <animate attributeName="r" values="7;14;7" dur="2.2s" repeatCount="indefinite" />
-    <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="2.2s" repeatCount="indefinite" />
   </circle>
   <text x="756" y="204" class="display" fill="#e8e8f0" font-size="44">49</text>
   <text x="756" y="224" class="ui" fill="#f5c518" font-size="14">BEST STREAK</text>

@@ -1,275 +1,61 @@
-<svg viewBox="0 0 1000 468" xmlns="http://www.w3.org/2000/svg" width="1000" height="468" role="img" aria-label="Batman-inspired profile banner for lohith">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" width="1000" height="400" role="img" aria-labelledby="title desc">
+  <title id="title">lohith — AI / ML Engineer</title>
+  <desc id="desc">AI / ML engineer shipping GenAI, MLOps, and hybrid cloud systems. Data Scientist at UncovAI. A quiet Gotham skyline and softly glowing bat signal.</desc>
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#02020a" />
-      <stop offset="40%" stop-color="#0a0a1e" />
-      <stop offset="100%" stop-color="#0d0d24" />
+    <linearGradient id="sky" x2="0" y2="100%">
+      <stop stop-color="#0b101c" />
+      <stop offset="1" stop-color="#05050a" />
     </linearGradient>
-    <radialGradient id="moon" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="#fffbe6" stop-opacity="1" />
-      <stop offset="60%" stop-color="#f5c518" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#f5c518" stop-opacity="0.04" />
+    <radialGradient id="signal-glow">
+      <stop stop-color="#f5c518" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#f5c518" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="moon-glow" cx="50%" cy="50%" r="100%">
-      <stop offset="0%" stop-color="#f5c518" stop-opacity="0.35" />
-      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="vignette" cx="50%" cy="30%" r="88%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="100%" stop-color="#000000" stop-opacity="0.92" />
-    </radialGradient>
-    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f5c518" stop-opacity="0.5" />
-      <stop offset="30%" stop-color="#f5c518" stop-opacity="0.18" />
-      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
+    <linearGradient id="beam" x1="0" y1="100%" x2="100%" y2="0">
+      <stop stop-color="#f5c518" stop-opacity="0" />
+      <stop offset="1" stop-color="#f5c518" stop-opacity="0.08" />
     </linearGradient>
-    <linearGradient id="panel-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b0b1e" stop-opacity="0.96" />
-      <stop offset="100%" stop-color="#08081a" stop-opacity="0.96" />
-    </linearGradient>
-    <linearGradient id="panel-sheen" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f5c518" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5c518" stop-opacity="0.06" />
-      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
-    </linearGradient>
-    <linearGradient id="name-grad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f5c518" />
-      <stop offset="50%" stop-color="#fffbe6" />
-      <stop offset="100%" stop-color="#f5c518" />
-    </linearGradient>
-    <linearGradient id="chip-active" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3a2a06" />
-      <stop offset="100%" stop-color="#1a1400" />
-    </linearGradient>
-    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M48 0H0V48" fill="none" stroke="#12122a" stroke-width="0.8" opacity="0.12" />
-    </pattern>
-    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-      <rect width="4" height="2" fill="#000000" opacity="0.08" />
-    </pattern>
-    <filter id="soft-blur">
-      <feGaussianBlur stdDeviation="18" />
-    </filter>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
+    <clipPath id="frame"><rect width="1000" height="400" rx="24" /></clipPath>
     <style>
-      .display { font-family: "Ubuntu Condensed", "Bebas Neue", "Oswald", "Impact", sans-serif; letter-spacing: 1.6px; font-weight: 700; }
-      .mono { font-family: "Ubuntu Mono", "JetBrains Mono", "Fira Code", "SF Mono", "Consolas", monospace; letter-spacing: 0.35px; }
-      .ui { font-family: "Ubuntu", "Inter", "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-weight: 500; }
+      .ui { font-family: "Helvetica Neue", Arial, sans-serif; }
+      .mono { font-family: "SFMono-Regular", Consolas, monospace; letter-spacing: 1px; }
+      .signal { opacity: 0.8; animation: signal-glow 18s ease-in-out infinite; }
+      @keyframes signal-glow { 0%, 100% { opacity: 0.65; } 50% { opacity: 0.95; } }
+      @media (prefers-reduced-motion: reduce) { .signal { animation: none; } }
     </style>
   </defs>
-
-  <!-- Base layers -->
-  <rect width="1000" height="468" fill="#05050a" />
-  <rect width="1000" height="310" fill="url(#sky)" />
-  <rect width="1000" height="310" fill="url(#grid)" opacity="0.15" />
-  <rect width="1000" height="468" fill="url(#vignette)" />
-  <rect width="1000" height="468" fill="url(#scanlines)" opacity="0.35" />
-
-  <!-- Stars -->
-  <g opacity="0.7">
-    <circle cx="52" cy="28" r="1.0" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.7;0.1" dur="3.2s" repeatCount="indefinite" /></circle>
-    <circle cx="134" cy="58" r="1.8" fill="#ffffff"><animate attributeName="opacity" values="0.15;0.9;0.15" dur="4.1s" repeatCount="indefinite" /></circle>
-    <circle cx="218" cy="22" r="0.8" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.6;0.2" dur="2.8s" repeatCount="indefinite" /></circle>
-    <circle cx="288" cy="76" r="1.4" fill="#fffbe6"><animate attributeName="opacity" values="0.1;0.85;0.1" dur="5.2s" repeatCount="indefinite" /></circle>
-    <circle cx="396" cy="42" r="1.0" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.75;0.2" dur="3.8s" repeatCount="indefinite" /></circle>
-    <circle cx="462" cy="18" r="1.6" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.65;0.1" dur="4.5s" repeatCount="indefinite" /></circle>
-    <circle cx="558" cy="64" r="0.9" fill="#fffbe6"><animate attributeName="opacity" values="0.15;0.8;0.15" dur="3.4s" repeatCount="indefinite" /></circle>
-    <circle cx="612" cy="32" r="1.2" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.7;0.1" dur="5.6s" repeatCount="indefinite" /></circle>
-    <circle cx="688" cy="52" r="1.5" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="4.8s" repeatCount="indefinite" /></circle>
-    <circle cx="778" cy="28" r="0.7" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.5;0.1" dur="3.1s" repeatCount="indefinite" /></circle>
-    <circle cx="862" cy="68" r="1.3" fill="#fffbe6"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="5.9s" repeatCount="indefinite" /></circle>
-    <circle cx="942" cy="36" r="1.1" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="4.3s" repeatCount="indefinite" /></circle>
-    <circle cx="168" cy="94" r="0.6" fill="#ffffff"><animate attributeName="opacity" values="0.1;0.55;0.1" dur="6.2s" repeatCount="indefinite" /></circle>
-    <circle cx="516" cy="88" r="1.0" fill="#ffffff"><animate attributeName="opacity" values="0.2;0.75;0.2" dur="3.6s" repeatCount="indefinite" /></circle>
-  </g>
-
-  <!-- Atmospheric fog -->
-  <g filter="url(#soft-blur)" opacity="0.1">
-    <ellipse cx="240" cy="190" rx="260" ry="32" fill="#f5c518">
-      <animateTransform attributeName="transform" type="translate" values="-18 0;16 0;-18 0" dur="14s" repeatCount="indefinite" />
-    </ellipse>
-    <ellipse cx="760" cy="180" rx="220" ry="28" fill="#1a1a4a">
-      <animateTransform attributeName="transform" type="translate" values="14 0;-14 0;14 0" dur="11s" repeatCount="indefinite" />
-    </ellipse>
-    <ellipse cx="500" cy="200" rx="340" ry="20" fill="#1a1a3a">
-      <animateTransform attributeName="transform" type="translate" values="-10 0;12 0;-10 0" dur="16s" repeatCount="indefinite" />
-    </ellipse>
-  </g>
-
-  <!-- Moon with pulsing glow -->
-  <circle cx="830" cy="88" r="120" fill="url(#moon-glow)">
-    <animate attributeName="r" values="110;130;110" dur="5s" repeatCount="indefinite" />
-    <animate attributeName="opacity" values="0.4;0.7;0.4" dur="5s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="830" cy="88" r="52" fill="url(#moon)" />
-  <circle cx="830" cy="88" r="62" fill="none" stroke="#f5c518" stroke-width="1.5" stroke-opacity="0.15">
-    <animate attributeName="r" values="58;68;58" dur="3.5s" repeatCount="indefinite" />
-    <animate attributeName="stroke-opacity" values="0.08;0.22;0.08" dur="3.5s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="830" cy="88" r="78" fill="none" stroke="#f5c518" stroke-width="0.8" stroke-opacity="0.08">
-    <animate attributeName="r" values="74;86;74" dur="4.2s" repeatCount="indefinite" />
-    <animate attributeName="stroke-opacity" values="0.04;0.14;0.04" dur="4.2s" repeatCount="indefinite" />
-  </circle>
-
-  <!-- Bat signal on moon -->
-  <g transform="translate(830 88)" opacity="0.85">
-    <path d="M0,-18 C-8,-26 -20,-24 -28,-14 C-34,-16 -42,-22 -50,-32 C-52,-18 -48,-8 -38,2 C-30,8 -22,12 -14,8 C-10,18 -5,26 0,34 C5,26 10,18 14,8 C22,12 30,8 38,2 C48,-8 52,-18 50,-32 C42,-22 34,-16 28,-14 C20,-24 8,-26 0,-18 Z" fill="#08081a">
-      <animate attributeName="opacity" values="0.75;0.95;0.75" dur="6s" repeatCount="indefinite" />
-    </path>
-  </g>
-
-  <!-- Flying bats -->
-  <g transform="translate(750 72)" opacity="0.6">
-    <path d="M0,-5 C-5,-10 -12,-9 -16,-3 C-20,-4 -26,-8 -32,-15 C-33,-7 -30,-1 -23,4 C-18,7 -13,9 -7,6 C-5,12 -3,16 0,20 C3,16 5,12 7,6 C13,9 18,7 23,4 C30,-1 33,-7 32,-15 C26,-8 20,-4 16,-3 C12,-9 5,-10 0,-5 Z" fill="#0a0a18">
-      <animateTransform attributeName="transform" type="translate" values="0 0;30 -12;60 -4;90 -14;120 0" dur="12s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.5;0.8;0.4;0.7;0.5" dur="12s" repeatCount="indefinite" />
-    </path>
-  </g>
-  <g transform="translate(680 56)" opacity="0.35">
-    <path d="M0,-3 C-3,-6 -7,-5 -10,-2 C-12,-2 -16,-5 -19,-9 C-20,-4 -18,0 -14,3 C-11,5 -8,5 -4,4 C-3,7 -2,10 0,12 C2,10 3,7 4,4 C8,5 11,5 14,3 C18,0 20,-4 19,-9 C16,-5 12,-2 10,-2 C7,-5 3,-6 0,-3 Z" fill="#0a0a18">
-      <animateTransform attributeName="transform" type="translate" values="0 0;-20 -6;-40 2;-60 -8;-80 0" dur="15s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.3;0.6;0.25;0.55;0.3" dur="15s" repeatCount="indefinite" />
-    </path>
-  </g>
-
-  <!-- Bat signal beam from rooftop -->
-  <g transform="translate(700 278)">
-    <circle cx="0" cy="0" r="8" fill="#f5c518" opacity="0.35">
-      <animate attributeName="opacity" values="0.2;0.45;0.2" dur="2.5s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="0" cy="0" r="22" fill="none" stroke="#f5c518" stroke-opacity="0.2">
-      <animate attributeName="r" values="12;32;12" dur="3s" repeatCount="indefinite" />
-      <animate attributeName="stroke-opacity" values="0.25;0;0.25" dur="3s" repeatCount="indefinite" />
-    </circle>
-    <g>
-      <animateTransform attributeName="transform" type="rotate" values="-6 0 0;6 0 0;-6 0 0" dur="8s" repeatCount="indefinite" />
-      <polygon points="0,0 320,-190 400,-140 120,18" fill="url(#beam)" opacity="0.45" />
+  <g clip-path="url(#frame)">
+    <rect width="1000" height="400" fill="url(#sky)" />
+    <!-- The only decorative motion stays behind the text. -->
+    <g class="signal">
+      <circle cx="818" cy="126" r="154" fill="url(#signal-glow)" />
+      <path d="M686 346 L768 108 L866 148 Z" fill="url(#beam)" />
     </g>
-  </g>
-
-  <!-- Rain -->
-  <g opacity="0.15" stroke="#b8b8d8" stroke-width="0.6">
-    <line x1="80" y1="-20" x2="76" y2="468"><animate attributeName="y1" values="-20;468" dur="1.8s" repeatCount="indefinite" /><animate attributeName="y2" values="0;488" dur="1.8s" repeatCount="indefinite" /></line>
-    <line x1="200" y1="-30" x2="196" y2="468"><animate attributeName="y1" values="-30;468" dur="2.1s" repeatCount="indefinite" begin="-0.4s"/><animate attributeName="y2" values="-10;488" dur="2.1s" repeatCount="indefinite" begin="-0.4s"/></line>
-    <line x1="340" y1="-10" x2="336" y2="468"><animate attributeName="y1" values="-10;468" dur="1.6s" repeatCount="indefinite" begin="-0.8s"/><animate attributeName="y2" values="10;488" dur="1.6s" repeatCount="indefinite" begin="-0.8s"/></line>
-    <line x1="480" y1="-40" x2="476" y2="468"><animate attributeName="y1" values="-40;468" dur="2.3s" repeatCount="indefinite" begin="-1.2s"/><animate attributeName="y2" values="-20;488" dur="2.3s" repeatCount="indefinite" begin="-1.2s"/></line>
-    <line x1="600" y1="-15" x2="596" y2="468"><animate attributeName="y1" values="-15;468" dur="1.9s" repeatCount="indefinite" begin="-0.6s"/><animate attributeName="y2" values="5;488" dur="1.9s" repeatCount="indefinite" begin="-0.6s"/></line>
-    <line x1="740" y1="-25" x2="736" y2="468"><animate attributeName="y1" values="-25;468" dur="2.0s" repeatCount="indefinite" begin="-1.0s"/><animate attributeName="y2" values="-5;488" dur="2.0s" repeatCount="indefinite" begin="-1.0s"/></line>
-    <line x1="900" y1="-35" x2="896" y2="468"><animate attributeName="y1" values="-35;468" dur="1.7s" repeatCount="indefinite" begin="-0.2s"/><animate attributeName="y2" values="-15;488" dur="1.7s" repeatCount="indefinite" begin="-0.2s"/></line>
-  </g>
-
-  <!-- Gotham skyline -->
-  <g transform="translate(0 304)">
-    <rect width="1000" height="136" fill="#05050a" />
-    <path d="M0 136 L0 78 L24 78 L24 52 L48 52 L48 88 L68 88 L68 46 L96 46 L96 136 Z" fill="#04040c" />
-    <path d="M84 136 L84 38 L118 38 L118 12 L150 12 L150 136 Z" fill="#06061a" />
-    <path d="M140 136 L140 28 L166 28 L166 56 L192 56 L192 6 L224 6 L224 136 Z" fill="#08081a" />
-    <path d="M210 136 L210 44 L244 44 L244 16 L278 16 L278 136 Z" fill="#04040c" />
-    <path d="M266 136 L266 22 L306 22 L306 -12 L338 -12 L338 136 Z" fill="#08081a" />
-    <path d="M328 136 L328 48 L358 48 L358 28 L388 28 L388 136 Z" fill="#0a0a20" />
-    <!-- Wayne Tower -->
-    <path d="M420 136 L420 -8 L438 -8 L438 -28 L448 -38 L458 -28 L458 -8 L476 -8 L476 136 Z" fill="#06061a" />
-    <rect x="443" y="-36" width="10" height="8" fill="#f5c518" opacity="0.7">
-      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
-    </rect>
-    <path d="M466 136 L466 32 L496 32 L496 8 L528 8 L528 136 Z" fill="#08081a" />
-    <path d="M520 136 L520 52 L552 52 L552 24 L584 24 L584 136 Z" fill="#04040c" />
-    <path d="M580 136 L580 44 L612 44 L612 18 L644 18 L644 136 Z" fill="#06061a" />
-    <path d="M636 136 L636 38 L668 38 L668 4 L698 4 L698 136 Z" fill="#08081a" />
-    <path d="M694 136 L694 28 L726 28 L726 -6 L758 -6 L758 136 Z" fill="#0a0a20" />
-    <path d="M752 136 L752 52 L782 52 L782 -2 L814 -2 L814 136 Z" fill="#04040c" />
-    <path d="M808 136 L808 34 L840 34 L840 -14 L872 -14 L872 136 Z" fill="#08081a" />
-    <path d="M864 136 L864 20 L900 20 L900 48 L928 48 L928 -8 L960 -8 L960 136 Z" fill="#06061a" />
-    <path d="M952 136 L952 36 L978 36 L978 12 L1000 12 L1000 136 Z" fill="#08081a" />
-
-    <!-- Building windows -->
-    <g fill="#f5c518" opacity="0.9">
-      <rect x="92" y="78" width="4" height="6"><animate attributeName="opacity" values="0.15;0.95;0.15" dur="3.8s" repeatCount="indefinite" /></rect>
-      <rect x="126" y="52" width="4" height="6"><animate attributeName="opacity" values="0.9;0.12;0.9" dur="4.6s" repeatCount="indefinite" /></rect>
-      <rect x="160" y="68" width="4" height="6"><animate attributeName="opacity" values="0.2;0.85;0.2" dur="5.1s" repeatCount="indefinite" /></rect>
-      <rect x="248" y="56" width="4" height="6"><animate attributeName="opacity" values="0.8;0.1;0.8" dur="3.4s" repeatCount="indefinite" /></rect>
-      <rect x="306" y="32" width="4" height="6"><animate attributeName="opacity" values="0.15;0.92;0.15" dur="6.2s" repeatCount="indefinite" /></rect>
-      <rect x="350" y="62" width="4" height="6"><animate attributeName="opacity" values="0.85;0.18;0.85" dur="4.1s" repeatCount="indefinite" /></rect>
-      <rect x="440" y="18" width="4" height="6"><animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.8s" repeatCount="indefinite" /></rect>
-      <rect x="498" y="42" width="4" height="6"><animate attributeName="opacity" values="0.75;0.15;0.75" dur="5.5s" repeatCount="indefinite" /></rect>
-      <rect x="556" y="58" width="4" height="6"><animate attributeName="opacity" values="0.12;0.88;0.12" dur="3.2s" repeatCount="indefinite" /></rect>
-      <rect x="648" y="42" width="4" height="6"><animate attributeName="opacity" values="0.82;0.16;0.82" dur="4.8s" repeatCount="indefinite" /></rect>
-      <rect x="728" y="38" width="4" height="6"><animate attributeName="opacity" values="0.18;0.94;0.18" dur="3.6s" repeatCount="indefinite" /></rect>
-      <rect x="786" y="28" width="4" height="6"><animate attributeName="opacity" values="0.9;0.2;0.9" dur="5.8s" repeatCount="indefinite" /></rect>
-      <rect x="848" y="48" width="4" height="6"><animate attributeName="opacity" values="0.14;0.88;0.14" dur="4.4s" repeatCount="indefinite" /></rect>
-      <rect x="912" y="62" width="4" height="6"><animate attributeName="opacity" values="0.86;0.12;0.86" dur="6.4s" repeatCount="indefinite" /></rect>
-      <rect x="968" y="46" width="4" height="6"><animate attributeName="opacity" values="0.2;0.92;0.2" dur="3.9s" repeatCount="indefinite" /></rect>
+    <g fill="#dce3f0" opacity="0.28">
+      <circle cx="644" cy="44" r="1" /><circle cx="727" cy="30" r="1" />
+      <circle cx="929" cy="62" r="1.2" /><circle cx="962" cy="143" r="1" />
     </g>
-  </g>
-
-  <!-- Main info panel -->
-  <g transform="translate(40 50)">
-    <rect width="560" height="216" rx="20" fill="url(#panel-grad)" stroke="#1a1a3a" stroke-opacity="0.6" />
-    <rect width="560" height="216" rx="20" fill="url(#scanlines)" opacity="0.25" />
-    <rect x="10" y="10" width="540" height="196" rx="16" fill="none" stroke="#12122a" stroke-opacity="0.4" />
-    <rect x="-180" y="0" width="180" height="216" fill="url(#panel-sheen)" opacity="0.3">
-      <animate attributeName="x" values="-180;600;-180" dur="5.6s" repeatCount="indefinite" />
-    </rect>
-    <!-- Corner brackets -->
-    <path d="M24 24 H60" stroke="#f5c518" stroke-width="2" stroke-linecap="round" opacity="0.9" />
-    <path d="M24 24 V52" stroke="#f5c518" stroke-width="2" stroke-linecap="round" opacity="0.9" />
-    <path d="M500 176 H536" stroke="#f5c518" stroke-width="2" stroke-linecap="round" opacity="0.4" />
-    <path d="M536 148 V176" stroke="#f5c518" stroke-width="2" stroke-linecap="round" opacity="0.4" />
-
-    <text x="30" y="42" class="mono" fill="#f5c518" font-size="11">LOHITH // AI-ML ENGINEER // GOTHAM DIVISION</text>
-    <text x="30" y="110" class="display" fill="url(#name-grad)" font-size="88" filter="url(#glow)">lohith</text>
-
-    <!-- Animated underline -->
-    <rect x="30" y="126" width="0" height="3" rx="1.5" fill="#f5c518">
-      <animate attributeName="width" values="0;260;180;0" dur="5s" repeatCount="indefinite" />
-    </rect>
-
-    <text x="32" y="158" class="ui" fill="#9898b8" font-size="19">AI / ML engineer shipping GenAI,</text>
-    <text x="32" y="186" class="ui" fill="#9898b8" font-size="19">MLOps, and hybrid cloud systems</text>
-  </g>
-
-  <!-- Current role card -->
-  <g transform="translate(630 50)">
-    <rect width="330" height="144" rx="18" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.5" />
-    <rect width="330" height="144" rx="18" fill="url(#scanlines)" opacity="0.25" />
-    <rect x="16" y="14" width="88" height="22" rx="11" fill="url(#chip-active)" stroke="#a38410" />
-    <text x="60" y="29" text-anchor="middle" class="mono" fill="#f5c518" font-size="10">ACTIVE ARC</text>
-    <circle cx="304" cy="24" r="5" fill="#f5c518">
-      <animate attributeName="opacity" values="0.15;1;0.15" dur="1.5s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="304" cy="24" r="10" fill="none" stroke="#f5c518" stroke-opacity="0.3">
-      <animate attributeName="r" values="8;16;8" dur="1.5s" repeatCount="indefinite" />
-      <animate attributeName="stroke-opacity" values="0.3;0;0.3" dur="1.5s" repeatCount="indefinite" />
-    </circle>
-    <text x="16" y="72" class="display" fill="#e8e8f0" font-size="34">UncovAI</text>
-    <text x="16" y="96" class="ui" fill="#9898b8" font-size="15">Data Scientist</text>
-    <text x="16" y="122" class="mono" fill="#4a7aff" font-size="12">Dec 2025 - Present</text>
-    <text x="16" y="138" class="ui" fill="#6a6a8a" font-size="12">prev: Ansys &amp; Amadeus</text>
-  </g>
-
-  <!-- Tag chips -->
-  <g transform="translate(80 378)">
-    <rect width="130" height="32" rx="16" fill="url(#chip-active)" stroke="#a38410" />
-    <text x="65" y="21" text-anchor="middle" class="mono" fill="#f5c518" font-size="13">GenAI</text>
-    <rect x="148" width="130" height="32" rx="16" fill="#0e0e22" stroke="#1a1a3a" />
-    <text x="213" y="21" text-anchor="middle" class="mono" fill="#e8e8f0" font-size="13">MLOps</text>
-    <rect x="296" width="130" height="32" rx="16" fill="#0e0e22" stroke="#1a1a3a" />
-    <text x="361" y="21" text-anchor="middle" class="mono" fill="#e8e8f0" font-size="13">AWS</text>
-    <rect x="444" width="130" height="32" rx="16" fill="#0e0e22" stroke="#1a1a3a" />
-    <text x="509" y="21" text-anchor="middle" class="mono" fill="#e8e8f0" font-size="13">Kubernetes</text>
-    <!-- Mini bat icon -->
-    <g transform="translate(620 16)" opacity="0.45">
-      <path d="M0,-4 C-3,-7 -8,-6 -10,-2 C-13,-3 -16,-5 -20,-9 C-20,-4 -18,0 -14,3 C-11,5 -8,5 -5,4 C-3,7 -2,9 0,12 C2,9 3,7 5,4 C8,5 11,5 14,3 C18,0 20,-4 20,-9 C16,-5 13,-3 10,-2 C8,-6 3,-7 0,-4 Z" fill="#f5c518">
-        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite" />
-      </path>
+    <circle cx="818" cy="126" r="67" fill="none" stroke="#f5c518" stroke-opacity="0.12" />
+    <circle cx="818" cy="126" r="56" fill="#f5c518" fill-opacity="0.08" stroke="#f5c518" stroke-opacity="0.3" />
+    <g transform="translate(818 122)" fill="#f5c518">
+      <path d="M0 -11 L-6 -21 L-10 -12 C-18 -10 -29 -17 -43 -27 C-44 -9 -37 0 -27 5 C-20 9 -13 8 -8 5 C-5 12 -2 18 0 23 C2 18 5 12 8 5 C13 8 20 9 27 5 C37 0 44 -9 43 -27 C29 -17 18 -10 10 -12 L6 -21 Z" />
     </g>
+    <!-- A static skyline gives the page atmosphere without competing effects. -->
+    <path d="M0 400 V330 H38 V306 H68 V346 H104 V290 H134 V312 H170 V274 H210 V318 H248 V296 H284 V344 H322 V300 H356 V272 H392 V314 H432 V282 H464 V400 Z" fill="#101522" />
+    <path d="M546 400 V326 H580 V292 H616 V320 H648 V264 H674 V244 H692 V264 H716 V310 H744 V286 H782 V322 H816 V274 H850 V300 H882 V254 H918 V318 H954 V290 H1000 V400 Z" fill="#111724" />
+    <path d="M0 400 V362 H72 V336 H118 V374 H168 V344 H226 V362 H282 V328 H324 V368 H384 V340 H424 V376 H498 V354 H552 V374 H616 V344 H666 V364 H724 V332 H772 V374 H832 V348 H882 V364 H944 V340 H1000 V400 Z" fill="#080c14" />
+    <g fill="#f5c518" opacity="0.3">
+      <rect x="180" y="289" width="3" height="5" /><rect x="366" y="285" width="3" height="5" />
+      <rect x="662" y="278" width="3" height="5" /><rect x="898" y="270" width="3" height="5" />
+      <rect x="860" y="317" width="3" height="5" />
+    </g>
+    <rect x="52" y="52" width="32" height="3" rx="1.5" fill="#f5c518" />
+    <text x="52" y="88" class="mono" fill="#f5c518" font-size="14">AI / ML ENGINEER</text>
+    <text x="48" y="168" class="ui" fill="#e8e8f0" font-size="82" font-weight="700" letter-spacing="-3">lohith</text>
+    <text x="52" y="211" class="ui" fill="#bcc5d6" font-size="22">AI / ML engineer shipping GenAI,</text>
+    <text x="52" y="243" class="ui" fill="#bcc5d6" font-size="22">MLOps, and hybrid cloud systems</text>
+    <text x="52" y="303" class="ui" fill="#e8e8f0" font-size="19">UncovAI <tspan fill="#98a5bb"> / Data Scientist</tspan></text>
+    <text x="52" y="333" class="ui" fill="#98a5bb" font-size="16">Previously Ansys &amp; Amadeus</text>
+    <text x="52" y="375" class="mono" fill="#f5c518" font-size="13">GenAI · MLOps · AWS · Kubernetes</text>
   </g>
-
-  <!-- Bottom accent line -->
-  <rect x="0" y="462" width="1000" height="2" fill="#f5c518" opacity="0.12">
-    <animate attributeName="opacity" values="0.05;0.18;0.05" dur="3s" repeatCount="indefinite" />
-  </rect>
+  <rect x="0.5" y="0.5" width="999" height="399" rx="24" fill="none" stroke="#242c3b" />
 </svg>

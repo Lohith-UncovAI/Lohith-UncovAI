@@ -22,11 +22,6 @@ def themed_shell(fill):
       <stop offset="55%" stop-color="#060a11" />
       <stop offset="100%" stop-color="#03050a" />
     </linearGradient>
-    <linearGradient id="snake-sheen" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.09" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-    </linearGradient>
     <linearGradient id="snake-beam" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#f5d25f" stop-opacity="0.48" />
       <stop offset="40%" stop-color="#f5d25f" stop-opacity="0.16" />
@@ -40,10 +35,6 @@ def themed_shell(fill):
       <stop offset="0%" stop-color="#fff8cf" />
       <stop offset="72%" stop-color="#f5d25f" stop-opacity="0.95" />
       <stop offset="100%" stop-color="#f4d35e" stop-opacity="0.08" />
-    </radialGradient>
-    <radialGradient id="snake-ember" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#f5d25f" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#f5d25f" stop-opacity="0" />
     </radialGradient>
     <pattern id="snake-grid" width="20" height="20" patternUnits="userSpaceOnUse">
       <path d="M20 0H0V20" fill="none" stroke="#111827" stroke-width="1" opacity="0.22" />
@@ -59,6 +50,9 @@ def themed_shell(fill):
         font-family: "Ubuntu Mono", "SFMono-Regular", "Consolas", monospace;
         letter-spacing: 0.5px;
       }}
+      @media (prefers-reduced-motion: reduce) {{
+        .c, .s, .u {{ animation: none !important; }}
+      }}
     </style>
   </defs>
   <g data-profile-bg="true" clip-path="url(#snake-panel-clip)">
@@ -69,9 +63,6 @@ def themed_shell(fill):
     <rect x="-2" y="-24" width="852" height="184" rx="18" fill="url(#snake-grid)" opacity="0.26" />
     <path d="M-2 124 H850 V160 H-2 Z" fill="url(#snake-floor)" />
     <rect x="-2" y="-24" width="852" height="1" fill="#1f2838" opacity="0.85" />
-    <rect x="-110" y="-24" width="112" height="184" fill="url(#snake-sheen)" opacity="0.20">
-      <animate attributeName="x" values="-110;910;-110" dur="8.4s" repeatCount="indefinite" />
-    </rect>
 
     <g transform="translate(18 -27)">
       <circle cx="0" cy="0" r="4.5" fill="#f5d25f" />
@@ -87,7 +78,6 @@ def themed_shell(fill):
       <circle cx="0" cy="0" r="13" fill="url(#snake-moon)" />
       <g opacity="0.9">
         <path d="M0,-4 C-6,-10 -12,-8 -18,-1 C-23,-1 -31,-5 -37,-14 C-39,-6 -35,0 -28,5 C-21,11 -14,11 -7,8 C-5,12 -3,16 0,20 C3,16 5,12 7,8 C14,11 21,11 28,5 C35,0 39,-6 37,-14 C31,-5 23,-1 18,-1 C12,-8 6,-10 0,-4 Z" fill="#0a0d14">
-          <animateTransform attributeName="transform" type="translate" values="0 0;12 -4;24 0" dur="8.6s" repeatCount="indefinite" />
         </path>
       </g>
     </g>
@@ -95,11 +85,8 @@ def themed_shell(fill):
     <g transform="translate(660 142)" opacity="0.78">
       <circle cx="0" cy="0" r="5" fill="#f5d25f" />
       <circle cx="0" cy="0" r="12" fill="none" stroke="#f5d25f" stroke-opacity="0.32">
-        <animate attributeName="r" values="8;20;8" dur="2.9s" repeatCount="indefinite" />
-        <animate attributeName="stroke-opacity" values="0.28;0;0.28" dur="2.9s" repeatCount="indefinite" />
       </circle>
       <g>
-        <animateTransform attributeName="transform" type="rotate" values="-9 0 0;10 0 0;-9 0 0" dur="7.4s" repeatCount="indefinite" />
         <polygon points="0,0 112,-112 194,-74 38,10" fill="url(#snake-beam)" />
       </g>
     </g>
@@ -124,21 +111,6 @@ def themed_shell(fill):
       <rect x="740" y="126" width="4" height="6" fill="#f5d25f" />
       <rect x="786" y="96" width="4" height="6" fill="#f5d25f" />
       <rect x="824" y="136" width="4" height="6" fill="#f5d25f" />
-    </g>
-
-    <g opacity="0.48">
-      <circle cx="286" cy="18" r="8" fill="url(#snake-ember)">
-        <animate attributeName="cy" values="18;116;18" dur="8.8s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0;0.42;0" dur="8.8s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="512" cy="6" r="6" fill="url(#snake-ember)">
-        <animate attributeName="cy" values="6;124;6" dur="7.1s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0;0.32;0" dur="7.1s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="602" cy="10" r="5" fill="url(#snake-ember)">
-        <animate attributeName="cy" values="10;108;10" dur="6.4s" repeatCount="indefinite" />
-        <animate attributeName="opacity" values="0;0.28;0" dur="6.4s" repeatCount="indefinite" />
-      </circle>
     </g>
   </g>
 """

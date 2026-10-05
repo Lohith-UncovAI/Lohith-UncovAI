@@ -4,16 +4,6 @@
       <stop offset="0%" stop-color="#0b0b1e" />
       <stop offset="100%" stop-color="#08081a" />
     </linearGradient>
-    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f5c518" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5c518" stop-opacity="0.05" />
-      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
-    </linearGradient>
-    <linearGradient id="accent-bar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#f5c518" stop-opacity="0" />
-      <stop offset="50%" stop-color="#f5c518" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#f5c518" stop-opacity="0" />
-    </linearGradient>
     <linearGradient id="chip-active" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#3a2a06" />
       <stop offset="100%" stop-color="#1a1400" />
@@ -44,10 +34,6 @@
   <rect x="24" y="18" width="952" height="524" rx="24" fill="url(#panel-grad)" stroke="#1a1a3a" stroke-opacity="0.6" />
   <rect x="24" y="18" width="952" height="524" rx="24" fill="url(#grid)" opacity="0.1" />
   <rect x="24" y="18" width="952" height="524" rx="24" fill="url(#scanlines)" opacity="0.3" />
-  <!-- Moving sheen -->
-  <rect x="-200" y="18" width="200" height="524" fill="url(#sheen)" opacity="0.3">
-    <animate attributeName="x" values="-200;1100;-200" dur="6s" repeatCount="indefinite" />
-  </rect>
   <!-- Corner accents -->
   <path d="M36 30 H64" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
   <path d="M36 30 V54" stroke="#f5c518" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
@@ -62,19 +48,13 @@
     <!-- Public Contributions -->
     <rect width="212" height="68" rx="16" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.5" />
     <rect width="212" height="68" rx="16" fill="url(#card-glow)" />
-    <rect x="-80" y="0" width="80" height="68" fill="url(#accent-bar)" opacity="0.2">
-      <animate attributeName="x" values="-80;292;-80" dur="4.2s" repeatCount="indefinite" />
-    </rect>
     <rect x="16" y="14" width="66" height="3" rx="1.5" fill="#f5c518" />
     <circle cx="188" cy="18" r="4" fill="#f5c518" filter="url(#glow-sm)">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" repeatCount="indefinite" />
     </circle>
     <circle cx="188" cy="18" r="9" fill="none" stroke="#f5c518" stroke-opacity="0.2">
-      <animate attributeName="r" values="7;13;7" dur="1.6s" repeatCount="indefinite" />
-      <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.6s" repeatCount="indefinite" />
     </circle>
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">PUBLIC CONTRIBUTIONS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">383</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">384</text>
   </g>
 
   <g transform="translate(274 68)">
@@ -82,10 +62,9 @@
     <rect width="212" height="68" rx="16" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.5" />
     <rect x="16" y="14" width="52" height="3" rx="1.5" fill="#4a7aff" />
     <circle cx="188" cy="18" r="4" fill="#4a7aff" filter="url(#glow-sm)">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.9s" repeatCount="indefinite" />
     </circle>
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">ACTIVE DAYS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">129</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">130</text>
   </g>
 
   <g transform="translate(502 68)">
@@ -112,31 +91,23 @@
 
     <text x="24" y="32" class="mono" fill="#f5c518" font-size="12">MISSION.LOG</text>
     <rect x="24" y="38" width="82" height="2" rx="1" fill="#f5c518" opacity="0.6">
-      <animate attributeName="width" values="60;100;60" dur="4s" repeatCount="indefinite" />
     </rect>
     <text x="24" y="58" class="ui" fill="#9898b8" font-size="15">what I build and how I ship it</text>
 
-    <!-- Mission items with animated dots -->
+    <!-- Mission items -->
     <circle cx="30" cy="94" r="4" fill="#f5c518" filter="url(#glow-sm)">
-      <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite" />
     </circle>
     <text x="44" y="100" class="ui" fill="#e8e8f0" font-size="16">production GenAI on AWS + Kubernetes</text>
     <circle cx="30" cy="132" r="4" fill="#4a7aff" filter="url(#glow-sm)">
-      <animate attributeName="r" values="3;5;3" dur="3.4s" repeatCount="indefinite" />
     </circle>
     <text x="44" y="138" class="ui" fill="#e8e8f0" font-size="16">evaluation, release, and MLOps workflow automation</text>
     <circle cx="30" cy="170" r="4" fill="#e8e8f0" filter="url(#glow-sm)">
-      <animate attributeName="r" values="3;5;3" dur="3.8s" repeatCount="indefinite" />
     </circle>
     <text x="44" y="176" class="ui" fill="#e8e8f0" font-size="16">client-facing delivery and technical communication</text>
 
     <!-- Experience records -->
     <text x="24" y="214" class="mono" fill="#f5c518" font-size="12">RECENT.PATH</text>
     <rect x="20" y="226" width="508" height="82" rx="14" fill="#0a0a18" stroke="#1a1a3a" stroke-opacity="0.4" />
-    <!-- Scan line on experience -->
-    <rect x="20" y="226" width="0" height="82" rx="14" fill="url(#accent-bar)" opacity="0.15">
-      <animate attributeName="width" values="0;508;0" dur="5s" repeatCount="indefinite" />
-    </rect>
 
     <text x="28" y="248" class="display" fill="#e8e8f0" font-size="21">UncovAI</text>
     <text x="168" y="248" class="ui" fill="#9898b8" font-size="14">Data Scientist</text>
@@ -156,9 +127,8 @@
     <rect width="324" height="132" rx="20" fill="#060612" stroke="#12122a" stroke-opacity="0.5" />
     <rect x="0" y="0" width="324" height="132" rx="20" fill="url(#grid)" opacity="0.08" />
     <text x="20" y="30" class="mono" fill="#f5c518" font-size="12">ARSENAL</text>
-    <!-- Animated line -->
+    <!-- Section accent -->
     <rect x="20" y="36" width="40" height="2" rx="1" fill="#f5c518" opacity="0.5">
-      <animate attributeName="width" values="30;60;30" dur="3.5s" repeatCount="indefinite" />
     </rect>
 
     <rect x="20" y="58" width="88" height="26" rx="13" fill="url(#chip-active)" stroke="#a38410" />
@@ -180,17 +150,11 @@
   <g transform="translate(618 316)">
     <rect width="324" height="156" rx="20" fill="#060612" stroke="#12122a" stroke-opacity="0.5" />
     <rect x="0" y="0" width="324" height="156" rx="20" fill="url(#grid)" opacity="0.08" />
-    <rect x="-80" y="0" width="80" height="156" fill="url(#accent-bar)" opacity="0.2">
-      <animate attributeName="x" values="-80;404;-80" dur="4.8s" repeatCount="indefinite" />
-    </rect>
     <text x="20" y="30" class="mono" fill="#f5c518" font-size="12">ORG.SPOTLIGHT</text>
-    <!-- Animated beacon -->
+    <!-- Organization marker -->
     <circle cx="296" cy="26" r="5" fill="#f5c518" filter="url(#glow-sm)">
-      <animate attributeName="opacity" values="0.15;1;0.15" dur="1.5s" repeatCount="indefinite" />
     </circle>
     <circle cx="296" cy="26" r="12" fill="none" stroke="#f5c518" stroke-opacity="0.2">
-      <animate attributeName="r" values="8;18;8" dur="1.5s" repeatCount="indefinite" />
-      <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="1.5s" repeatCount="indefinite" />
     </circle>
     <text x="20" y="64" class="display" fill="#e8e8f0" font-size="28">UncovAI</text>
     <text x="20" y="88" class="ui" fill="#9898b8" font-size="14">production GenAI and evaluation workflows</text>
@@ -205,19 +169,13 @@
   <!-- Bottom status bar -->
   <g transform="translate(46 510)">
     <rect width="896" height="20" rx="10" fill="#060612" stroke="#1a1a3a" stroke-opacity="0.4" />
-    <rect x="-120" y="0" width="120" height="20" fill="url(#accent-bar)" opacity="0.25">
-      <animate attributeName="x" values="-120;1020;-120" dur="4s" repeatCount="indefinite" />
-    </rect>
     <text x="14" y="14" class="mono" fill="#f5c518" font-size="10">GOTHAM SYSTEMS ONLINE // PRODUCTION READY // EVALUATION-FIRST</text>
     <!-- Status dots -->
     <circle cx="856" cy="10" r="3" fill="#f5c518" filter="url(#glow-sm)">
-      <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite" />
     </circle>
     <circle cx="870" cy="10" r="3" fill="#4a7aff">
-      <animate attributeName="opacity" values="1;0.2;1" dur="1.8s" repeatCount="indefinite" />
     </circle>
     <circle cx="884" cy="10" r="3" fill="#e8e8f0">
-      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.1s" repeatCount="indefinite" />
     </circle>
   </g>
 </svg>

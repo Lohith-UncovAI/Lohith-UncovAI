@@ -332,11 +332,6 @@ def write_activity_svg(config, stats):
         f'      <stop offset="0%" stop-color="#{theme["PANEL_SOFT"]}" />',
         f'      <stop offset="100%" stop-color="#{theme["PANEL"]}" />',
         "    </linearGradient>",
-        '    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">',
-        f'      <stop offset="0%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
-        f'      <stop offset="50%" stop-color="#{theme["ACCENT"]}" stop-opacity="0.34" />',
-        f'      <stop offset="100%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
-        "    </linearGradient>",
         '    <radialGradient id="tile-glow" cx="50%" cy="0%" r="90%">',
         f'      <stop offset="0%" stop-color="#{theme["ACCENT"]}" stop-opacity="0.12" />',
         f'      <stop offset="100%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
@@ -355,11 +350,8 @@ def write_activity_svg(config, stats):
         '  <rect x="24" y="18" width="952" height="296" rx="20" fill="url(#scan)" opacity="0.28" />',
         f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="12">BATCOMPUTER // CITY.TELEMETRY</text>',
         f'  <text x="44" y="84" class="display" fill="#{theme["TEXT"]}" font-size="38">VISIBLE GITHUB ACTIVITY</text>',
-        f'  <text x="44" y="114" class="ui" fill="#{theme["STEEL"]}" font-size="15">public contribution patterns, repo signals, and visible streak data tuned for cleaner GitHub readability.</text>',
+        f'  <text x="44" y="114" class="ui" fill="#{theme["STEEL"]}" font-size="15">Public contributions, active days, and streaks over the last year.</text>',
         f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="11">LIVE UPLINK</text>',
-        f'  <rect x="-140" y="136" width="140" height="130" fill="url(#sweep)" opacity="0.34">',
-        '    <animate attributeName="x" values="-140;1040;-140" dur="6.2s" repeatCount="indefinite" />',
-        "  </rect>",
     ]
 
     for index, (x, (label, value, hint)) in enumerate(zip(tile_xs, tiles)):
@@ -368,18 +360,11 @@ def write_activity_svg(config, stats):
             [
                 f'  <rect x="{x}" y="146" width="{tile_width}" height="96" rx="16" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" stroke-opacity="0.55" />',
                 f'  <rect x="{x}" y="146" width="{tile_width}" height="96" rx="16" fill="url(#tile-glow)" />',
-                f'  <rect x="{x}" y="146" width="{tile_width}" height="96" rx="16" fill="url(#sweep)" opacity="0">',
-                f'    <animate attributeName="opacity" values="0;0.18;0" dur="{4.2 + index * 0.5:.1f}s" repeatCount="indefinite" />',
-                "  </rect>",
                 f'  <rect x="{x + 18}" y="162" width="{bar_width}" height="3" rx="1.5" fill="#{theme["ACCENT"]}">',
-                f'    <animate attributeName="width" values="{max(52, bar_width - 16)};{bar_width + 20};{bar_width}" dur="{3.8 + index * 0.4:.1f}s" repeatCount="indefinite" />',
                 "  </rect>",
                 f'  <circle cx="{x + tile_width - 26}" cy="166" r="4" fill="#{theme["ACCENT"]}">',
-                f'    <animate attributeName="opacity" values="0.15;1;0.15" dur="{1.5 + index * 0.25:.1f}s" repeatCount="indefinite" />',
                 "  </circle>",
                 f'  <circle cx="{x + tile_width - 26}" cy="166" r="10" fill="none" stroke="#{theme["ACCENT"]}" stroke-opacity="0.2">',
-                f'    <animate attributeName="r" values="7;14;7" dur="{1.5 + index * 0.25:.1f}s" repeatCount="indefinite" />',
-                f'    <animate attributeName="stroke-opacity" values="0.2;0;0.2" dur="{1.5 + index * 0.25:.1f}s" repeatCount="indefinite" />',
                 "  </circle>",
                 f'  <text x="{x + 18}" y="204" class="display" fill="#{theme["TEXT"]}" font-size="44">{escape(str(value))}</text>',
                 f'  <text x="{x + 18}" y="224" class="ui" fill="#{theme["ACCENT"]}" font-size="14">{escape(label.upper())}</text>',
@@ -426,25 +411,13 @@ def write_languages_svg(config, stats):
         f'      <stop offset="0%" stop-color="#{theme["PANEL_SOFT"]}" />',
         f'      <stop offset="100%" stop-color="#{theme["PANEL"]}" />',
         "    </linearGradient>",
-        '    <linearGradient id="bar-sweep" x1="0" y1="0" x2="1" y2="0">',
-        f'      <stop offset="0%" stop-color="#{theme["TEXT"]}" stop-opacity="0" />',
-        f'      <stop offset="50%" stop-color="#{theme["TEXT"]}" stop-opacity="0.24" />',
-        f'      <stop offset="100%" stop-color="#{theme["TEXT"]}" stop-opacity="0" />',
-        "    </linearGradient>",
-        '    <clipPath id="mix-clip">',
-        '      <rect x="44" y="138" width="912" height="24" rx="12" />',
-        "    </clipPath>",
-        '    <radialGradient id="marker-glow" cx="50%" cy="50%" r="50%">',
-        f'      <stop offset="0%" stop-color="#{theme["ACCENT"]}" stop-opacity="0.9" />',
-        f'      <stop offset="100%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
-        "    </radialGradient>",
         *svg_style_block(),
         "  </defs>",
         f'  <rect width="1000" height="332" fill="#{theme["BG"]}" />',
         f'  <rect x="24" y="18" width="952" height="296" rx="20" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" stroke-opacity="0.6" />',
         f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="12">LANGUAGE.ANALYSIS</text>',
         f'  <text x="44" y="84" class="display" fill="#{theme["TEXT"]}" font-size="38">PUBLIC REPO LANGUAGE SPREAD</text>',
-        f'  <text x="44" y="114" class="ui" fill="#{theme["STEEL"]}" font-size="15">weighted by owned public repos, with larger labels and darker telemetry spacing for GitHub profile view.</text>',
+        f'  <text x="44" y="114" class="ui" fill="#{theme["STEEL"]}" font-size="15">Language mix across owned public repositories.</text>',
         f'  <text x="952" y="50" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="11">OWNED PUBLIC REPOS</text>',
         f'  <rect x="44" y="138" width="912" height="24" rx="12" fill="#{theme["PANEL_ALT"]}" />',
     ]
@@ -460,19 +433,6 @@ def write_languages_svg(config, stats):
         )
         current_x += width
 
-    svg.extend(
-        [
-            '  <g clip-path="url(#mix-clip)">',
-            '    <rect x="-120" y="138" width="120" height="24" fill="url(#bar-sweep)" opacity="0.42">',
-            '      <animate attributeName="x" values="-120;1020;-120" dur="4.8s" repeatCount="indefinite" />',
-            "    </rect>",
-            f'    <circle cx="44" cy="150" r="9" fill="url(#marker-glow)" opacity="0.58">',
-            '      <animate attributeName="cx" values="44;956;44" dur="6.2s" repeatCount="indefinite" />',
-            '    </circle>',
-            "  </g>",
-        ]
-    )
-
     start_y = 196
     for index, row in enumerate(rows[:5]):
         color = colors[index % len(colors)]
@@ -480,7 +440,6 @@ def write_languages_svg(config, stats):
         svg.extend(
             [
                 f'  <circle cx="54" cy="{y - 5}" r="6" fill="#{color}">',
-                f'    <animate attributeName="opacity" values="0.4;1;0.4" dur="{2.2 + index * 0.3:.1f}s" repeatCount="indefinite" />',
                 "  </circle>",
                 f'  <text x="74" y="{y}" class="ui" fill="#{theme["TEXT"]}" font-size="20">{escape(row["name"])}</text>',
                 f'  <text x="948" y="{y}" text-anchor="end" class="mono" fill="#{theme["STEEL"]}" font-size="16">{row["percent"]:.1f}%</text>',
@@ -539,18 +498,13 @@ def write_orgs_svg(config, orgs):
         f'      <stop offset="0%" stop-color="#{theme["PANEL_SOFT"]}" />',
         f'      <stop offset="100%" stop-color="#{theme["PANEL"]}" />',
         "    </linearGradient>",
-        '    <linearGradient id="card-sweep" x1="0" y1="0" x2="1" y2="0">',
-        f'      <stop offset="0%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
-        f'      <stop offset="50%" stop-color="#{theme["ACCENT"]}" stop-opacity="0.32" />',
-        f'      <stop offset="100%" stop-color="#{theme["ACCENT"]}" stop-opacity="0" />',
-        "    </linearGradient>",
         *svg_style_block(),
         "  </defs>",
         f'  <rect width="1000" height="332" fill="#{theme["BG"]}" />',
         f'  <rect x="24" y="18" width="952" height="296" rx="20" fill="url(#panel-grad)" stroke="#{theme["EDGE"]}" stroke-opacity="0.6" />',
         f'  <text x="44" y="50" class="mono" fill="#{theme["ACCENT"]}" font-size="12">ORG.SPOTLIGHT</text>',
         f'  <text x="44" y="84" class="display" fill="#{theme["TEXT"]}" font-size="38">WORK BEYOND PERSONAL REPOS</text>',
-        f'  <text x="44" y="114" class="ui" fill="#{theme["STEEL"]}" font-size="15">organization contributions, public membership signals, and team context rendered with wider spacing and cleaner type.</text>',
+        f'  <text x="44" y="114" class="ui" fill="#{theme["STEEL"]}" font-size="15">Teams, public projects, and shared work.</text>',
     ]
 
     for index, (x, org) in enumerate(zip(positions, display_orgs)):
@@ -564,14 +518,10 @@ def write_orgs_svg(config, orgs):
         svg.extend(
             [
                 f'  <rect x="{x}" y="138" width="{card_width}" height="130" rx="18" fill="#{theme["PANEL_ALT"]}" stroke="#{theme["EDGE"]}" />',
-                f'  <rect x="{x - 120}" y="138" width="120" height="130" fill="url(#card-sweep)" opacity="0.26">',
-                f'    <animate attributeName="x" values="{x - 120};{x + card_width};{x - 120}" dur="{6.2 + index * 0.6:.1f}s" repeatCount="indefinite" />',
-                "  </rect>",
                 f'  <text x="{x + 18}" y="166" class="display" fill="#{theme["TEXT"]}" font-size="30">{escape(org["label"])}</text>',
                 f'  <text x="{x + 18}" y="190" class="ui" fill="#{theme["STEEL"]}" font-size="14">{escape(headline_lines[0])}</text>',
                 f'  <text x="{x + 18}" y="210" class="ui" fill="#{theme["STEEL"]}" font-size="14">{escape(headline_lines[1])}</text>',
                 f'  <circle cx="{x + card_width - 22}" cy="154" r="5" fill="#{beacon_color}">',
-                f'    <animate attributeName="opacity" values="0.24;1;0.24" dur="{1.9 + index * 0.4:.1f}s" repeatCount="indefinite" />',
                 "  </circle>",
                 f'  <text x="{x + card_width - 36}" y="158" text-anchor="end" class="mono" fill="#{theme["MUTED"]}" font-size="11">{escape(member_text)}</text>',
                 f'  <text x="{x + 18}" y="236" class="mono" fill="#{theme["ACCENT"]}" font-size="12">top repo: {escape(top_repo_name)}</text>',
