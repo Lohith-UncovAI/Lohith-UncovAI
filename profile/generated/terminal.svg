@@ -54,7 +54,7 @@
     <circle cx="188" cy="18" r="9" fill="none" stroke="#f5c518" stroke-opacity="0.2">
     </circle>
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">PUBLIC CONTRIBUTIONS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">392</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">399</text>
   </g>
 
   <g transform="translate(274 68)">
@@ -64,7 +64,7 @@
     <circle cx="188" cy="18" r="4" fill="#4a7aff" filter="url(#glow-sm)">
     </circle>
     <text x="16" y="24" class="mono" fill="#6a6a8a" font-size="10">ACTIVE DAYS</text>
-    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">130</text>
+    <text x="16" y="56" class="display" fill="#e8e8f0" font-size="34">131</text>
   </g>
 
   <g transform="translate(502 68)">
